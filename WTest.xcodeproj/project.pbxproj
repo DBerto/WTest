@@ -3,29 +3,60 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		96A61C9D238E70BC00EF0439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61C9C238E70BC00EF0439 /* AppDelegate.swift */; };
 		96A61C9F238E70BC00EF0439 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61C9E238E70BC00EF0439 /* SceneDelegate.swift */; };
-		96A61CA1238E70BC00EF0439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CA0238E70BC00EF0439 /* ViewController.swift */; };
+		96A61CA1238E70BC00EF0439 /* DownlPostalCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CA0238E70BC00EF0439 /* DownlPostalCodeViewController.swift */; };
 		96A61CA4238E70BC00EF0439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A61CA2238E70BC00EF0439 /* Main.storyboard */; };
-		96A61CA7238E70BC00EF0439 /* WTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CA5238E70BC00EF0439 /* WTest.xcdatamodeld */; };
 		96A61CA9238E70BF00EF0439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A61CA8238E70BF00EF0439 /* Assets.xcassets */; };
 		96A61CAC238E70BF00EF0439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A61CAA238E70BF00EF0439 /* LaunchScreen.storyboard */; };
+		96A61CBA238E75B400EF0439 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 96A61CB9238E75B400EF0439 /* Swinject */; };
+		96A61CBF238E770300EF0439 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CBE238E770300EF0439 /* Utils.swift */; };
+		96A61CC1238E779C00EF0439 /* PostalCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CC0238E779C00EF0439 /* PostalCode.swift */; };
+		96A61CC4238E79E400EF0439 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CC3238E79E400EF0439 /* DownloadManager.swift */; };
+		96A61CC8238E7D2400EF0439 /* IPostalCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CC7238E7D2400EF0439 /* IPostalCodeService.swift */; };
+		96A61CCA238E7D8200EF0439 /* PostalCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CC9238E7D8200EF0439 /* PostalCodeService.swift */; };
+		96A61CCC238E917400EF0439 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CCB238E917400EF0439 /* Extensions.swift */; };
+		96A61CCE238E949400EF0439 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A61CCD238E949400EF0439 /* Menu.storyboard */; };
+		96A61CD1238EA39800EF0439 /* CSVImporter in Frameworks */ = {isa = PBXBuildFile; productRef = 96A61CD0238EA39800EF0439 /* CSVImporter */; };
+		96A61CD4238EAACF00EF0439 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CD3238EAACF00EF0439 /* IRepository.swift */; };
+		96A61CD7238EAB1A00EF0439 /* WTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CD5238EAB1A00EF0439 /* WTest.xcdatamodeld */; };
+		96A61CD9238EAB6A00EF0439 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CD8238EAB6A00EF0439 /* Entity.swift */; };
+		96A61CDF238EABDF00EF0439 /* StorablePostalCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CDE238EABDF00EF0439 /* StorablePostalCode.swift */; };
+		96A61CE1238EC61100EF0439 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CE0238EC61100EF0439 /* Repository.swift */; };
+		96A61CE4238EC73300EF0439 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 96A61CE3238EC73300EF0439 /* RealmSwift */; };
+		96A61CE8238EC92000EF0439 /* IPostalCodeDal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CE7238EC92000EF0439 /* IPostalCodeDal.swift */; };
+		96A61CEA238ECA2F00EF0439 /* PostalCodeDal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CE9238ECA2F00EF0439 /* PostalCodeDal.swift */; };
+		96A61CEC238EFD5100EF0439 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CEB238EFD5100EF0439 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		96A61C99238E70BC00EF0439 /* WTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A61C9C238E70BC00EF0439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96A61C9E238E70BC00EF0439 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		96A61CA0238E70BC00EF0439 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		96A61CA0238E70BC00EF0439 /* DownlPostalCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownlPostalCodeViewController.swift; sourceTree = "<group>"; };
 		96A61CA3238E70BC00EF0439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		96A61CA6238E70BC00EF0439 /* WTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WTest.xcdatamodel; sourceTree = "<group>"; };
 		96A61CA8238E70BF00EF0439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96A61CAB238E70BF00EF0439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96A61CAD238E70BF00EF0439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96A61CBE238E770300EF0439 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		96A61CC0238E779C00EF0439 /* PostalCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCode.swift; sourceTree = "<group>"; };
+		96A61CC3238E79E400EF0439 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		96A61CC7238E7D2400EF0439 /* IPostalCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPostalCodeService.swift; sourceTree = "<group>"; };
+		96A61CC9238E7D8200EF0439 /* PostalCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeService.swift; sourceTree = "<group>"; };
+		96A61CCB238E917400EF0439 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		96A61CCD238E949400EF0439 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		96A61CD3238EAACF00EF0439 /* IRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRepository.swift; sourceTree = "<group>"; };
+		96A61CD6238EAB1A00EF0439 /* WTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WTest.xcdatamodel; sourceTree = "<group>"; };
+		96A61CD8238EAB6A00EF0439 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		96A61CDE238EABDF00EF0439 /* StorablePostalCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorablePostalCode.swift; sourceTree = "<group>"; };
+		96A61CE0238EC61100EF0439 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		96A61CE7238EC92000EF0439 /* IPostalCodeDal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPostalCodeDal.swift; sourceTree = "<group>"; };
+		96A61CE9238ECA2F00EF0439 /* PostalCodeDal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeDal.swift; sourceTree = "<group>"; };
+		96A61CEB238EFD5100EF0439 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A61CE4238EC73300EF0439 /* RealmSwift in Frameworks */,
+				96A61CBA238E75B400EF0439 /* Swinject in Frameworks */,
+				96A61CD1238EA39800EF0439 /* CSVImporter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +92,158 @@
 		96A61C9B238E70BC00EF0439 /* WTest */ = {
 			isa = PBXGroup;
 			children = (
+				96A61CB7238E739F00EF0439 /* Model */,
+				96A61CB6238E739700EF0439 /* Core */,
+				96A61CB3238E736800EF0439 /* Presentation Layer */,
+				96A61CB5238E738500EF0439 /* Services Layer */,
+				96A61CB4238E737300EF0439 /* Data Access Layer */,
+				96A61CDB238EABAF00EF0439 /* Database Layer */,
 				96A61C9C238E70BC00EF0439 /* AppDelegate.swift */,
 				96A61C9E238E70BC00EF0439 /* SceneDelegate.swift */,
-				96A61CA0238E70BC00EF0439 /* ViewController.swift */,
-				96A61CA2238E70BC00EF0439 /* Main.storyboard */,
 				96A61CA8238E70BF00EF0439 /* Assets.xcassets */,
-				96A61CAA238E70BF00EF0439 /* LaunchScreen.storyboard */,
 				96A61CAD238E70BF00EF0439 /* Info.plist */,
-				96A61CA5238E70BC00EF0439 /* WTest.xcdatamodeld */,
 			);
 			path = WTest;
+			sourceTree = "<group>";
+		};
+		96A61CB3238E736800EF0439 /* Presentation Layer */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CBB238E75C300EF0439 /* Storyboard */,
+				96A61CBC238E75D900EF0439 /* ViewController */,
+			);
+			path = "Presentation Layer";
+			sourceTree = "<group>";
+		};
+		96A61CB4238E737300EF0439 /* Data Access Layer */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CC2238E79C000EF0439 /* Helpers */,
+				96A61CE5238EC8F600EF0439 /* Protocols */,
+				96A61CE6238EC90000EF0439 /* Implementation */,
+				96A61CD5238EAB1A00EF0439 /* WTest.xcdatamodeld */,
+			);
+			path = "Data Access Layer";
+			sourceTree = "<group>";
+		};
+		96A61CB5238E738500EF0439 /* Services Layer */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CC5238E7CEF00EF0439 /* Protocols */,
+				96A61CC6238E7CF900EF0439 /* Implementation */,
+			);
+			path = "Services Layer";
+			sourceTree = "<group>";
+		};
+		96A61CB6238E739700EF0439 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CBE238E770300EF0439 /* Utils.swift */,
+				96A61CCB238E917400EF0439 /* Extensions.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		96A61CB7238E739F00EF0439 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CC0238E779C00EF0439 /* PostalCode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96A61CBB238E75C300EF0439 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CAA238E70BF00EF0439 /* LaunchScreen.storyboard */,
+				96A61CA2238E70BC00EF0439 /* Main.storyboard */,
+				96A61CCD238E949400EF0439 /* Menu.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		96A61CBC238E75D900EF0439 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CA0238E70BC00EF0439 /* DownlPostalCodeViewController.swift */,
+				96A61CEB238EFD5100EF0439 /* BaseViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		96A61CC2238E79C000EF0439 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CC3238E79E400EF0439 /* DownloadManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		96A61CC5238E7CEF00EF0439 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CC7238E7D2400EF0439 /* IPostalCodeService.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		96A61CC6238E7CF900EF0439 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CC9238E7D8200EF0439 /* PostalCodeService.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		96A61CD2238EAAC500EF0439 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CD3238EAACF00EF0439 /* IRepository.swift */,
+				96A61CE0238EC61100EF0439 /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		96A61CDB238EABAF00EF0439 /* Database Layer */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CDC238EABC400EF0439 /* Realm */,
+			);
+			path = "Database Layer";
+			sourceTree = "<group>";
+		};
+		96A61CDC238EABC400EF0439 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CD2238EAAC500EF0439 /* Repository */,
+				96A61CDD238EABCB00EF0439 /* Model */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		96A61CDD238EABCB00EF0439 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CD8238EAB6A00EF0439 /* Entity.swift */,
+				96A61CDE238EABDF00EF0439 /* StorablePostalCode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96A61CE5238EC8F600EF0439 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CE7238EC92000EF0439 /* IPostalCodeDal.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		96A61CE6238EC90000EF0439 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CE9238ECA2F00EF0439 /* PostalCodeDal.swift */,
+			);
+			path = Implementation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +262,11 @@
 			dependencies = (
 			);
 			name = WTest;
+			packageProductDependencies = (
+				96A61CB9238E75B400EF0439 /* Swinject */,
+				96A61CD0238EA39800EF0439 /* CSVImporter */,
+				96A61CE3238EC73300EF0439 /* RealmSwift */,
+			);
 			productName = WTest;
 			productReference = 96A61C99238E70BC00EF0439 /* WTest.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +295,11 @@
 				Base,
 			);
 			mainGroup = 96A61C90238E70BC00EF0439;
+			packageReferences = (
+				96A61CB8238E75B400EF0439 /* XCRemoteSwiftPackageReference "Swinject" */,
+				96A61CCF238EA39800EF0439 /* XCRemoteSwiftPackageReference "CSVImporter" */,
+				96A61CE2238EC73300EF0439 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 96A61C9A238E70BC00EF0439 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,6 +317,7 @@
 				96A61CAC238E70BF00EF0439 /* LaunchScreen.storyboard in Resources */,
 				96A61CA9238E70BF00EF0439 /* Assets.xcassets in Resources */,
 				96A61CA4238E70BC00EF0439 /* Main.storyboard in Resources */,
+				96A61CCE238E949400EF0439 /* Menu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +328,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96A61CA1238E70BC00EF0439 /* ViewController.swift in Sources */,
-				96A61CA7238E70BC00EF0439 /* WTest.xcdatamodeld in Sources */,
+				96A61CD7238EAB1A00EF0439 /* WTest.xcdatamodeld in Sources */,
+				96A61CBF238E770300EF0439 /* Utils.swift in Sources */,
+				96A61CA1238E70BC00EF0439 /* DownlPostalCodeViewController.swift in Sources */,
+				96A61CE8238EC92000EF0439 /* IPostalCodeDal.swift in Sources */,
+				96A61CCA238E7D8200EF0439 /* PostalCodeService.swift in Sources */,
+				96A61CC8238E7D2400EF0439 /* IPostalCodeService.swift in Sources */,
+				96A61CD4238EAACF00EF0439 /* IRepository.swift in Sources */,
+				96A61CEC238EFD5100EF0439 /* BaseViewController.swift in Sources */,
+				96A61CCC238E917400EF0439 /* Extensions.swift in Sources */,
+				96A61CE1238EC61100EF0439 /* Repository.swift in Sources */,
+				96A61CC1238E779C00EF0439 /* PostalCode.swift in Sources */,
+				96A61CD9238EAB6A00EF0439 /* Entity.swift in Sources */,
 				96A61C9D238E70BC00EF0439 /* AppDelegate.swift in Sources */,
 				96A61C9F238E70BC00EF0439 /* SceneDelegate.swift in Sources */,
+				96A61CEA238ECA2F00EF0439 /* PostalCodeDal.swift in Sources */,
+				96A61CDF238EABDF00EF0439 /* StorablePostalCode.swift in Sources */,
+				96A61CC4238E79E400EF0439 /* DownloadManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +498,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "David-Berto.WTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -316,7 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "David-Berto.WTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -343,13 +543,58 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		96A61CB8238E75B400EF0439 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
+		96A61CCF238EA39800EF0439 /* XCRemoteSwiftPackageReference "CSVImporter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flinesoft/CSVImporter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.1;
+			};
+		};
+		96A61CE2238EC73300EF0439 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		96A61CB9238E75B400EF0439 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96A61CB8238E75B400EF0439 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		96A61CD0238EA39800EF0439 /* CSVImporter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96A61CCF238EA39800EF0439 /* XCRemoteSwiftPackageReference "CSVImporter" */;
+			productName = CSVImporter;
+		};
+		96A61CE3238EC73300EF0439 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96A61CE2238EC73300EF0439 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCVersionGroup section */
-		96A61CA5238E70BC00EF0439 /* WTest.xcdatamodeld */ = {
+		96A61CD5238EAB1A00EF0439 /* WTest.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				96A61CA6238E70BC00EF0439 /* WTest.xcdatamodel */,
+				96A61CD6238EAB1A00EF0439 /* WTest.xcdatamodel */,
 			);
-			currentVersion = 96A61CA6238E70BC00EF0439 /* WTest.xcdatamodel */;
+			currentVersion = 96A61CD6238EAB1A00EF0439 /* WTest.xcdatamodel */;
 			path = WTest.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

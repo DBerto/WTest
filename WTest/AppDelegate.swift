@@ -8,12 +8,22 @@
 
 import UIKit
 import CoreData
+import Swinject
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
+    static let container: Container = {
+        let container = Container()
+        container.register(IDownloadManager.self) { _ in DownloadManager() }
+        container.register(IPostalCodeDal.self) { _ in PostalCodeDal() }
+        container.register(IPostalCodeService.self) { resolver in
+        let downloadManager = resolver.resolve(IDownloadManager.self)
+        let postalCodeDal = resolver.resolve(IPostalCodeDal.self)
+            return PostalCodeService(downloadManager: downloadManager!, postalCodeDal: postalCodeDal!)}
+        return container
+    }()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
