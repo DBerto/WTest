@@ -10,7 +10,7 @@
         <!--Downl Postal Code View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DownlPostalCodeViewController" customModule="WTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DownlPostalCodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="DownlPostalCodeViewController" customModule="WTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,17 +85,17 @@
                     <connections>
                         <outlet property="loadingLabel" destination="eTH-RH-IrP" id="2fb-Aw-Lcc"/>
                         <outlet property="progressIndicator" destination="n5q-JE-WgI" id="Irq-u2-Z6P"/>
-                        <segue destination="MFg-JQ-PgK" kind="show" identifier="goToMenu" id="OgG-z4-8ne"/>
+                        <segue destination="MFg-JQ-PgK" kind="presentation" identifier="goToMenu" modalPresentationStyle="fullScreen" id="8Ty-9f-5Bc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="190" y="96"/>
         </scene>
-        <!--Menu-->
+        <!--MenuViewController-->
         <scene sceneID="mIg-aN-Byi">
             <objects>
-                <viewControllerPlaceholder storyboardName="Menu" id="MFg-JQ-PgK" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="MenuViewController" id="MFg-JQ-PgK" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fSt-xi-vyG"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyV-qi-LO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

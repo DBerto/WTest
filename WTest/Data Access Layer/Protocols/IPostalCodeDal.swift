@@ -12,4 +12,5 @@ protocol IPostalCodeDal {
     func insert(postalCode: PostalCode)-> Bool
     func insertMany(postalCodeList: [PostalCode])-> Bool
     func getAll()-> [PostalCode]
+    func getAllThatContains(text: String)-> [PostalCode]
 }

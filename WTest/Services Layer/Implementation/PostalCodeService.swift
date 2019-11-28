@@ -28,22 +28,22 @@ final class PostalCodeService: IPostalCodeService{
             completion(true)
             return
         }
-
+        
         self.markPostalCodesDownloadOperation(asDownloaded: false)
         downloadManager.loadFileAsync(url: postalCodeUrl, destination: destinationURL, completion: {
             (complete) in
             if complete{
                 self.markPostalCodesDownloadOperation(asDownloaded: true)
-               completion(true)
+                completion(true)
             }else{
-               completion(false)
+                completion(false)
             }
         })
     }
     private func markPostalCodesDownloadOperation(asDownloaded: Bool){
         UserDefaults.standard.set(asDownloaded.toString(), forKey: "isPostalCodeDownloaded")
     }
-    private func arePostalCodesDownloaded()-> Bool{
+    func arePostalCodesDownloaded()-> Bool{
         guard let result = UserDefaults.standard.string(forKey: "isPostalCodeDownloaded") else{
             return false
         }
@@ -66,7 +66,7 @@ final class PostalCodeService: IPostalCodeService{
         }
         
     }
-
+    
     // Realm Service
     func savePostalCodeListToRealm(postalCodeList: [PostalCode])-> Bool{
         markPostalCodesRealmOperation(asSaved: false)
@@ -77,13 +77,18 @@ final class PostalCodeService: IPostalCodeService{
         return result
     }
     private func markPostalCodesRealmOperation(asSaved: Bool){
-          UserDefaults.standard.set(asSaved.toString(), forKey: "isPostalCodeSaved")
-      }
-    private func arePostalCodesSaved()-> Bool{
+        UserDefaults.standard.set(asSaved.toString(), forKey: "isPostalCodeSaved")
+    }
+    func arePostalCodesSaved()-> Bool{
         guard let result = UserDefaults.standard.string(forKey: "isPostalCodeSaved") else{
             return false
         }
         return result == true.toString()
     }
-
+    func getAllPostalCodeList(completion: @escaping ([PostalCode])-> Void){
+        completion(postalCodeDal.getAll())
+    }
+    func getAllPostalCodeListWhere(text: String, completion: @escaping ([PostalCode])-> Void){
+        completion(postalCodeDal.getAllThatContains(text: text))
+    }
 }

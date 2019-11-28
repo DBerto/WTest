@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostalCodeView" customModule="WTest" customModuleProvider="target">
+            <connections>
+                <outlet property="postalCodeDesc" destination="bIn-ax-63M" id="hrb-Ux-8hd"/>
+                <outlet property="postalCodeExt" destination="it1-9B-b0z" id="A9K-PF-I0J"/>
+                <outlet property="postalCodeNum" destination="Fug-mV-wIv" id="Qnb-t5-fD6"/>
+                <outlet property="postalCodeView" destination="iN0-l3-epB" id="VWa-tv-psP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="PostalCodeView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="postalCodeNum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fug-mV-wIv">
+                    <rect key="frame" x="0.0" y="54" width="125" height="43"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12a-VJ-mNk" userLabel="-">
+                    <rect key="frame" x="125" y="54" width="8" height="43"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="postalCodeExt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="it1-9B-b0z">
+                    <rect key="frame" x="133" y="54" width="114" height="43"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="postalCodeDesc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIn-ax-63M">
+                    <rect key="frame" x="257" y="54" width="120" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bIn-ax-63M" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="6LV-FT-A4Z"/>
+                <constraint firstItem="Fug-mV-wIv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="6zT-N3-8E7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="it1-9B-b0z" secondAttribute="bottom" constant="10" id="ADM-7h-RWn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Fug-mV-wIv" secondAttribute="bottom" constant="10" id="BqY-0p-yMh"/>
+                <constraint firstItem="it1-9B-b0z" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="CfD-7g-mMl"/>
+                <constraint firstItem="it1-9B-b0z" firstAttribute="leading" secondItem="12a-VJ-mNk" secondAttribute="trailing" id="Chm-MQ-RH0"/>
+                <constraint firstItem="bIn-ax-63M" firstAttribute="leading" secondItem="it1-9B-b0z" secondAttribute="trailing" constant="10" id="HRa-sT-zpE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bIn-ax-63M" secondAttribute="bottom" constant="10" id="ULT-br-bDB"/>
+                <constraint firstItem="Fug-mV-wIv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="X08-LB-enj"/>
+                <constraint firstItem="12a-VJ-mNk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="bOG-uR-QJK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="12a-VJ-mNk" secondAttribute="bottom" constant="10" id="ekk-GM-ByK"/>
+                <constraint firstItem="12a-VJ-mNk" firstAttribute="leading" secondItem="Fug-mV-wIv" secondAttribute="trailing" id="wSJ-zb-j1d"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.8840579710145" y="145.64732142857142"/>
+        </view>
+    </objects>
+</document>

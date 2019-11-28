@@ -36,4 +36,19 @@ class PostalCodeDal: IPostalCodeDal{
     func getAll() -> [PostalCode] {
         return respository.getAll(where: nil)
     }
+    func getAllThatContains(text: String) -> [PostalCode] {
+        let splitedText = text.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).split(separator: " ")
+        
+        var subPredicates: [NSPredicate] = []
+        if splitedText.count <= 1{
+            subPredicates.append(NSPredicate(format: "uuid CONTAINS[cd] %@", splitedText.joined()))
+        }else{
+            for text in splitedText {
+                subPredicates.append(NSPredicate(format: "uuid CONTAINS[cd] %@", text.description))
+            }
+        }
+        
+        return respository.getAll(where: NSCompoundPredicate(type: .and, subpredicates: subPredicates))
+    }
 }
+

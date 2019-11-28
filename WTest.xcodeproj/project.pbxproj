@@ -23,7 +23,6 @@
 		96A61CCE238E949400EF0439 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A61CCD238E949400EF0439 /* Menu.storyboard */; };
 		96A61CD1238EA39800EF0439 /* CSVImporter in Frameworks */ = {isa = PBXBuildFile; productRef = 96A61CD0238EA39800EF0439 /* CSVImporter */; };
 		96A61CD4238EAACF00EF0439 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CD3238EAACF00EF0439 /* IRepository.swift */; };
-		96A61CD7238EAB1A00EF0439 /* WTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CD5238EAB1A00EF0439 /* WTest.xcdatamodeld */; };
 		96A61CD9238EAB6A00EF0439 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CD8238EAB6A00EF0439 /* Entity.swift */; };
 		96A61CDF238EABDF00EF0439 /* StorablePostalCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CDE238EABDF00EF0439 /* StorablePostalCode.swift */; };
 		96A61CE1238EC61100EF0439 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CE0238EC61100EF0439 /* Repository.swift */; };
@@ -31,6 +30,13 @@
 		96A61CE8238EC92000EF0439 /* IPostalCodeDal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CE7238EC92000EF0439 /* IPostalCodeDal.swift */; };
 		96A61CEA238ECA2F00EF0439 /* PostalCodeDal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CE9238ECA2F00EF0439 /* PostalCodeDal.swift */; };
 		96A61CEC238EFD5100EF0439 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CEB238EFD5100EF0439 /* BaseViewController.swift */; };
+		96A61CF4238FCA8300EF0439 /* InitialViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CF3238FCA8300EF0439 /* InitialViewControllerFactory.swift */; };
+		96A61CF6238FCB7B00EF0439 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CF5238FCB7B00EF0439 /* MenuViewController.swift */; };
+		96A61CFB238FE46200EF0439 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CFA238FE46200EF0439 /* GenericTableViewController.swift */; };
+		96A61CFE238FE53200EF0439 /* PostalCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CFD238FE53200EF0439 /* PostalCodeTableViewCell.swift */; };
+		96A61D03238FE6BE00EF0439 /* PostalCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A61D02238FE6BE00EF0439 /* PostalCodeView.xib */; };
+		96A61D05238FE6C900EF0439 /* PostalCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61D04238FE6C900EF0439 /* PostalCodeView.swift */; };
+		96A61D07238FEBB700EF0439 /* PostalCodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61D06238FEBB700EF0439 /* PostalCodesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,13 +56,19 @@
 		96A61CCB238E917400EF0439 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		96A61CCD238E949400EF0439 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		96A61CD3238EAACF00EF0439 /* IRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRepository.swift; sourceTree = "<group>"; };
-		96A61CD6238EAB1A00EF0439 /* WTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WTest.xcdatamodel; sourceTree = "<group>"; };
 		96A61CD8238EAB6A00EF0439 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		96A61CDE238EABDF00EF0439 /* StorablePostalCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorablePostalCode.swift; sourceTree = "<group>"; };
 		96A61CE0238EC61100EF0439 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		96A61CE7238EC92000EF0439 /* IPostalCodeDal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPostalCodeDal.swift; sourceTree = "<group>"; };
 		96A61CE9238ECA2F00EF0439 /* PostalCodeDal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeDal.swift; sourceTree = "<group>"; };
 		96A61CEB238EFD5100EF0439 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		96A61CF3238FCA8300EF0439 /* InitialViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewControllerFactory.swift; sourceTree = "<group>"; };
+		96A61CF5238FCB7B00EF0439 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		96A61CFA238FE46200EF0439 /* GenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewController.swift; sourceTree = "<group>"; };
+		96A61CFD238FE53200EF0439 /* PostalCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeTableViewCell.swift; sourceTree = "<group>"; };
+		96A61D02238FE6BE00EF0439 /* PostalCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostalCodeView.xib; sourceTree = "<group>"; };
+		96A61D04238FE6C900EF0439 /* PostalCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeView.swift; sourceTree = "<group>"; };
+		96A61D06238FEBB700EF0439 /* PostalCodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +121,7 @@
 		96A61CB3238E736800EF0439 /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				96A61CFF238FE67400EF0439 /* CustomViews */,
 				96A61CBB238E75C300EF0439 /* Storyboard */,
 				96A61CBC238E75D900EF0439 /* ViewController */,
 			);
@@ -121,7 +134,6 @@
 				96A61CC2238E79C000EF0439 /* Helpers */,
 				96A61CE5238EC8F600EF0439 /* Protocols */,
 				96A61CE6238EC90000EF0439 /* Implementation */,
-				96A61CD5238EAB1A00EF0439 /* WTest.xcdatamodeld */,
 			);
 			path = "Data Access Layer";
 			sourceTree = "<group>";
@@ -165,8 +177,11 @@
 		96A61CBC238E75D900EF0439 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				96A61CF9238FE42400EF0439 /* Commun */,
+				96A61CFC238FE51800EF0439 /* ViewCell */,
 				96A61CA0238E70BC00EF0439 /* DownlPostalCodeViewController.swift */,
-				96A61CEB238EFD5100EF0439 /* BaseViewController.swift */,
+				96A61CF5238FCB7B00EF0439 /* MenuViewController.swift */,
+				96A61D06238FEBB700EF0439 /* PostalCodesViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -246,6 +261,49 @@
 			path = Implementation;
 			sourceTree = "<group>";
 		};
+		96A61CF9238FE42400EF0439 /* Commun */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CEB238EFD5100EF0439 /* BaseViewController.swift */,
+				96A61CF3238FCA8300EF0439 /* InitialViewControllerFactory.swift */,
+				96A61CFA238FE46200EF0439 /* GenericTableViewController.swift */,
+			);
+			path = Commun;
+			sourceTree = "<group>";
+		};
+		96A61CFC238FE51800EF0439 /* ViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				96A61CFD238FE53200EF0439 /* PostalCodeTableViewCell.swift */,
+			);
+			path = ViewCell;
+			sourceTree = "<group>";
+		};
+		96A61CFF238FE67400EF0439 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				96A61D00238FE68300EF0439 /* Views */,
+				96A61D01238FE69000EF0439 /* Xibs */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		96A61D00238FE68300EF0439 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96A61D04238FE6C900EF0439 /* PostalCodeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96A61D01238FE69000EF0439 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				96A61D02238FE6BE00EF0439 /* PostalCodeView.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -316,6 +374,7 @@
 			files = (
 				96A61CAC238E70BF00EF0439 /* LaunchScreen.storyboard in Resources */,
 				96A61CA9238E70BF00EF0439 /* Assets.xcassets in Resources */,
+				96A61D03238FE6BE00EF0439 /* PostalCodeView.xib in Resources */,
 				96A61CA4238E70BC00EF0439 /* Main.storyboard in Resources */,
 				96A61CCE238E949400EF0439 /* Menu.storyboard in Resources */,
 			);
@@ -328,7 +387,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96A61CD7238EAB1A00EF0439 /* WTest.xcdatamodeld in Sources */,
 				96A61CBF238E770300EF0439 /* Utils.swift in Sources */,
 				96A61CA1238E70BC00EF0439 /* DownlPostalCodeViewController.swift in Sources */,
 				96A61CE8238EC92000EF0439 /* IPostalCodeDal.swift in Sources */,
@@ -338,13 +396,19 @@
 				96A61CEC238EFD5100EF0439 /* BaseViewController.swift in Sources */,
 				96A61CCC238E917400EF0439 /* Extensions.swift in Sources */,
 				96A61CE1238EC61100EF0439 /* Repository.swift in Sources */,
+				96A61CFE238FE53200EF0439 /* PostalCodeTableViewCell.swift in Sources */,
+				96A61CFB238FE46200EF0439 /* GenericTableViewController.swift in Sources */,
+				96A61D05238FE6C900EF0439 /* PostalCodeView.swift in Sources */,
+				96A61D07238FEBB700EF0439 /* PostalCodesViewController.swift in Sources */,
 				96A61CC1238E779C00EF0439 /* PostalCode.swift in Sources */,
 				96A61CD9238EAB6A00EF0439 /* Entity.swift in Sources */,
 				96A61C9D238E70BC00EF0439 /* AppDelegate.swift in Sources */,
 				96A61C9F238E70BC00EF0439 /* SceneDelegate.swift in Sources */,
+				96A61CF6238FCB7B00EF0439 /* MenuViewController.swift in Sources */,
 				96A61CEA238ECA2F00EF0439 /* PostalCodeDal.swift in Sources */,
 				96A61CDF238EABDF00EF0439 /* StorablePostalCode.swift in Sources */,
 				96A61CC4238E79E400EF0439 /* DownloadManager.swift in Sources */,
+				96A61CF4238FCA8300EF0439 /* InitialViewControllerFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,19 +651,6 @@
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		96A61CD5238EAB1A00EF0439 /* WTest.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				96A61CD6238EAB1A00EF0439 /* WTest.xcdatamodel */,
-			);
-			currentVersion = 96A61CD6238EAB1A00EF0439 /* WTest.xcdatamodel */;
-			path = WTest.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 96A61C91238E70BC00EF0439 /* Project object */;
 }

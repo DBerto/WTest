@@ -19,8 +19,7 @@ class DownlPostalCodeViewController: BaseViewController {
     
     // MARK: Overrides
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()        
         // regist services
         postalCodeService = AppDelegate.container.resolve(IPostalCodeService.self)!
     }
@@ -34,6 +33,11 @@ class DownlPostalCodeViewController: BaseViewController {
         downloadPostalCodes(from: postalCodeUrl, to: destinationURL)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    
     // MARK: Functions
     func downloadPostalCodes(from postalCodeUrl: URL, to destinationURL: URL){
         print("Downloading Postal Codes...")
@@ -41,27 +45,40 @@ class DownlPostalCodeViewController: BaseViewController {
             (complete) in
             if complete{
                 print("Downloaded Postal Codes with success")
-                self.loadingLabel.text = "A ler ficheiro de códigos postais!"
+                DispatchQueue.main.async {
+                    self.loadingLabel.text = "A ler ficheiro de códigos postais!"
+                }
                 print("Parsing CSV Postal Codes...")
                 self.postalCodeService.parseCSVToPostalCodeList(originPath: destinationURL.path, completion: {
                     (postalCodeList) in
+                    print("Parsed CSV Postal Codes")
                     print("Saving Postal Codes to Realm...")
-                    self.loadingLabel.text = "A armazenar ficheiro de códigos postais!"        
-                    let result = self.postalCodeService.savePostalCodeListToRealm(postalCodeList: postalCodeList)
-                    if result{
-                        DispatchQueue.main.async {
-                            self.performSegue(withIdentifier: "goToMenu", sender: nil)
+                    self.loadingLabel.text = "A armazenar ficheiro de códigos postais!"
+                    DispatchQueue.global(qos: .utility).async {
+                        self.postalCodeService = AppDelegate.container.resolve(IPostalCodeService.self)!
+                        let result = self.postalCodeService.savePostalCodeListToRealm(postalCodeList: postalCodeList)
+                        if result{
+                            print("Saved Postal Codes to Realm")
+                            DispatchQueue.main.async {
+                                self.performSegue(withIdentifier: "goToMenu", sender: self)
+                            }
+                        }else{
+                            DispatchQueue.main.async {
+                                self.showAlertBar(title: "Error", message: "Erro ao guardar os códigos postais.")
+                                self.progressIndicator.stopAnimating()
+                                print("Error on saving Postal Codes to Realm")           
+                            }
                         }
-                    }else{
-                        self.showAlertBar(title: "Error", message: "Erro ao guardar os códigos postais.")
-                        self.progressIndicator.stopAnimating()
-                        print("Error on saving Postal Codes to Realm")
                     }
+                    
                 })
             }else{
-                self.showAlertBar(title: "Error", message: "Erro ao descarregar os códigos postais.")
-                self.progressIndicator.stopAnimating()
-                print("Error on downloading Postal Codes")
+                DispatchQueue.main.async {
+                    self.loadingLabel.text = "Erro ao descarregar os códigos postais."
+                    self.showAlertBar(title: "Error", message: "Erro ao descarregar os códigos postais.")
+                    self.progressIndicator.stopAnimating()
+                    print("Error on downloading Postal Codes")
+                }
             }
         })
         

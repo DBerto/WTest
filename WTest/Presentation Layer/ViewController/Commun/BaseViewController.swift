@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-class BaseViewController: UIViewController{
+class BaseViewController: UIViewController{    
     func showAlertBar(title: String, message: String){
         let alertController = UIAlertController(title: title, message:
-               message, preferredStyle: .alert)
-           alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-           self.present(alertController, animated: true, completion: nil)
+            message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
