@@ -55,6 +55,7 @@ class DownlPostalCodeViewController: BaseViewController {
                     print("Saving Postal Codes to Realm...")
                     self.loadingLabel.text = "A armazenar ficheiro de códigos postais!"
                     DispatchQueue.global(qos: .utility).async {
+                        // Realm needs to be initialize in the same thread that is used
                         self.postalCodeService = AppDelegate.container.resolve(IPostalCodeService.self)!
                         let result = self.postalCodeService.savePostalCodeListToRealm(postalCodeList: postalCodeList)
                         if result{
@@ -66,7 +67,7 @@ class DownlPostalCodeViewController: BaseViewController {
                             DispatchQueue.main.async {
                                 self.showAlertBar(title: "Error", message: "Erro ao guardar os códigos postais.")
                                 self.progressIndicator.stopAnimating()
-                                print("Error on saving Postal Codes to Realm")           
+                                print("Error on saving Postal Codes to Realm")
                             }
                         }
                     }

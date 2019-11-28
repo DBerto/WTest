@@ -18,6 +18,7 @@ final class PostalCodesListViewController: GenericTableViewController<PostalCode
         let src = UISearchController(searchResultsController: nil)
         src.searchResultsUpdater = self
         src.obscuresBackgroundDuringPresentation = false
+        src.hidesNavigationBarDuringPresentation = false
         src.definesPresentationContext = true
         src.searchBar.placeholder = "Search"
         return src
@@ -32,6 +33,9 @@ final class PostalCodesListViewController: GenericTableViewController<PostalCode
     var isFiltering: Bool {
         return !isSearchBarEmpty
     }
+    
+    // MARK: Constraints
+    var bottomPostalCodesTableConstraint: NSLayoutConstraint?
     
     // MARK: Services
     private var postalCodeService: IPostalCodeService!
@@ -48,6 +52,10 @@ final class PostalCodesListViewController: GenericTableViewController<PostalCode
         
         // Setup Search Controller
         navigationItem.searchController = searchController
+        
+        // Add observer for keyboard
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -114,6 +122,16 @@ final class PostalCodesListViewController: GenericTableViewController<PostalCode
         self.postalCodeService = AppDelegate.container.resolve(IPostalCodeService.self)
         postalCodeService.getAllPostalCodeListWhere(text: searchText, completion: { (resultList) in self.filteredPostalCodes = resultList })
         postalCodesTableCell.reloadData()
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        let keyboardSize = (notification.userInfo?  [UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        
+        bottomPostalCodesTableConstraint = NSLayoutConstraint(item: self.view!, attribute: .bottom, relatedBy: .equal, toItem: postalCodesTableCell, attribute: .bottom, multiplier: 1.0, constant: keyboardSize!.height)
+        NSLayoutConstraint.activate([bottomPostalCodesTableConstraint!])
+    }
+    @objc func keyboardWillHide() {
+        NSLayoutConstraint.deactivate([bottomPostalCodesTableConstraint!])
     }
 }
 
