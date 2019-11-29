@@ -7,6 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		966D6432239131B3001E5033 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D6431239131B3001E5033 /* APIError.swift */; };
+		966D6434239131E0001E5033 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D6433239131E0001E5033 /* Endpoint.swift */; };
+		966D643623913207001E5033 /* GenericAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D643523913207001E5033 /* GenericAPIClient.swift */; };
+		966D643823913262001E5033 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D643723913262001E5033 /* HTTPHeader.swift */; };
+		966D643A2391327A001E5033 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64392391327A001E5033 /* HTTPMethods.swift */; };
+		966D643C23913290001E5033 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D643B23913290001E5033 /* Result.swift */; };
+		966D643F239138DE001E5033 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 966D643E239138DE001E5033 /* Config.plist */; };
+		966D647C23913DE6001E5033 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CBE238E770300EF0439 /* Config.swift */; };
+		966D647D23913DE6001E5033 /* DownlPostalCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CA0238E70BC00EF0439 /* DownlPostalCodeViewController.swift */; };
+		966D647E23913DE6001E5033 /* IPostalCodeDal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CE7238EC92000EF0439 /* IPostalCodeDal.swift */; };
+		966D647F23913DE6001E5033 /* PostalCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CC9238E7D8200EF0439 /* PostalCodeService.swift */; };
+		966D648023913DE6001E5033 /* IPostalCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CC7238E7D2400EF0439 /* IPostalCodeService.swift */; };
+		966D648123913DE6001E5033 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64392391327A001E5033 /* HTTPMethods.swift */; };
+		966D648223913DE6001E5033 /* IRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CD3238EAACF00EF0439 /* IRepository.swift */; };
+		966D648323913DE6001E5033 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CEB238EFD5100EF0439 /* BaseViewController.swift */; };
+		966D648423913DE6001E5033 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CCB238E917400EF0439 /* Extensions.swift */; };
+		966D648523913DE6001E5033 /* GenericAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D643523913207001E5033 /* GenericAPIClient.swift */; };
+		966D648623913DE6001E5033 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CE0238EC61100EF0439 /* Repository.swift */; };
+		966D648723913DE6001E5033 /* PostalCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CFD238FE53200EF0439 /* PostalCodeTableViewCell.swift */; };
+		966D648823913DE6001E5033 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D6433239131E0001E5033 /* Endpoint.swift */; };
+		966D648923913DE6001E5033 /* GenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CFA238FE46200EF0439 /* GenericTableViewController.swift */; };
+		966D648A23913DE6001E5033 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D6431239131B3001E5033 /* APIError.swift */; };
+		966D648B23913DE6001E5033 /* PostalCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61D04238FE6C900EF0439 /* PostalCodeView.swift */; };
+		966D648C23913DE6001E5033 /* PostalCodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61D06238FEBB700EF0439 /* PostalCodesViewController.swift */; };
+		966D648D23913DE6001E5033 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D643723913262001E5033 /* HTTPHeader.swift */; };
+		966D648E23913DE6001E5033 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D643B23913290001E5033 /* Result.swift */; };
+		966D648F23913DE6001E5033 /* PostalCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CC0238E779C00EF0439 /* PostalCode.swift */; };
+		966D649023913DE6001E5033 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CD8238EAB6A00EF0439 /* Entity.swift */; };
+		966D649123913DE6001E5033 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61C9C238E70BC00EF0439 /* AppDelegate.swift */; };
+		966D649223913DE6001E5033 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61C9E238E70BC00EF0439 /* SceneDelegate.swift */; };
+		966D649323913DE6001E5033 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CF5238FCB7B00EF0439 /* MenuViewController.swift */; };
+		966D649423913DE6001E5033 /* PostalCodeDal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CE9238ECA2F00EF0439 /* PostalCodeDal.swift */; };
+		966D649523913DE6001E5033 /* StorablePostalCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CDE238EABDF00EF0439 /* StorablePostalCode.swift */; };
+		966D649623913DE6001E5033 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CC3238E79E400EF0439 /* DownloadManager.swift */; };
+		966D649723913DE6001E5033 /* InitialViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CF3238FCA8300EF0439 /* InitialViewControllerFactory.swift */; };
+		966D649923913DE6001E5033 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 966D647923913DE6001E5033 /* RealmSwift */; };
+		966D649A23913DE6001E5033 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 966D647523913DE6001E5033 /* Swinject */; };
+		966D649B23913DE6001E5033 /* CSVImporter in Frameworks */ = {isa = PBXBuildFile; productRef = 966D647723913DE6001E5033 /* CSVImporter */; };
+		966D649D23913DE6001E5033 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A61CAA238E70BF00EF0439 /* LaunchScreen.storyboard */; };
+		966D649E23913DE6001E5033 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A61CA8238E70BF00EF0439 /* Assets.xcassets */; };
+		966D649F23913DE6001E5033 /* PostalCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A61D02238FE6BE00EF0439 /* PostalCodeView.xib */; };
+		966D64A023913DE6001E5033 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A61CA2238E70BC00EF0439 /* Main.storyboard */; };
+		966D64A123913DE6001E5033 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 966D643E239138DE001E5033 /* Config.plist */; };
+		966D64A223913DE6001E5033 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A61CCD238E949400EF0439 /* Menu.storyboard */; };
+		966D64AC23914158001E5033 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64AB23914158001E5033 /* Article.swift */; };
+		966D64AE239142E8001E5033 /* ArticleDal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64AD239142E8001E5033 /* ArticleDal.swift */; };
+		966D64B023915C25001E5033 /* IArticleDal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64AF23915C25001E5033 /* IArticleDal.swift */; };
+		966D64B223915C99001E5033 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64B123915C99001E5033 /* ArticleService.swift */; };
+		966D64B423915D55001E5033 /* IArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64B323915D55001E5033 /* IArticleService.swift */; };
+		966D64B523915D59001E5033 /* IArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64B323915D55001E5033 /* IArticleService.swift */; };
+		966D64B623915D5C001E5033 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64B123915C99001E5033 /* ArticleService.swift */; };
+		966D64B723915D61001E5033 /* ArticleDal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64AD239142E8001E5033 /* ArticleDal.swift */; };
+		966D64B823915D62001E5033 /* IArticleDal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64AF23915C25001E5033 /* IArticleDal.swift */; };
+		966D64BD23916D77001E5033 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64BC23916D76001E5033 /* ArticleViewController.swift */; };
+		966D64BF23916E73001E5033 /* ArticleItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966D64BE23916E73001E5033 /* ArticleItemView.xib */; };
+		966D64C123916FC1001E5033 /* ArticleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64C023916FC1001E5033 /* ArticleItemView.swift */; };
+		966D64C223916FC7001E5033 /* ArticleItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966D64BE23916E73001E5033 /* ArticleItemView.xib */; };
+		966D64C323916FC9001E5033 /* ArticleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64C023916FC1001E5033 /* ArticleItemView.swift */; };
+		966D64C52391706C001E5033 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64C42391706C001E5033 /* ArticleTableViewCell.swift */; };
+		966D64C623917076001E5033 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64C42391706C001E5033 /* ArticleTableViewCell.swift */; };
+		966D64C72391767A001E5033 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64AB23914158001E5033 /* Article.swift */; };
+		966D64C8239176B7001E5033 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D64BC23916D76001E5033 /* ArticleViewController.swift */; };
 		96A61C9D238E70BC00EF0439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61C9C238E70BC00EF0439 /* AppDelegate.swift */; };
 		96A61C9F238E70BC00EF0439 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61C9E238E70BC00EF0439 /* SceneDelegate.swift */; };
 		96A61CA1238E70BC00EF0439 /* DownlPostalCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CA0238E70BC00EF0439 /* DownlPostalCodeViewController.swift */; };
@@ -14,7 +76,7 @@
 		96A61CA9238E70BF00EF0439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A61CA8238E70BF00EF0439 /* Assets.xcassets */; };
 		96A61CAC238E70BF00EF0439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A61CAA238E70BF00EF0439 /* LaunchScreen.storyboard */; };
 		96A61CBA238E75B400EF0439 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 96A61CB9238E75B400EF0439 /* Swinject */; };
-		96A61CBF238E770300EF0439 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CBE238E770300EF0439 /* Utils.swift */; };
+		96A61CBF238E770300EF0439 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CBE238E770300EF0439 /* Config.swift */; };
 		96A61CC1238E779C00EF0439 /* PostalCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CC0238E779C00EF0439 /* PostalCode.swift */; };
 		96A61CC4238E79E400EF0439 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CC3238E79E400EF0439 /* DownloadManager.swift */; };
 		96A61CC8238E7D2400EF0439 /* IPostalCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CC7238E7D2400EF0439 /* IPostalCodeService.swift */; };
@@ -40,6 +102,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		966D6431239131B3001E5033 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		966D6433239131E0001E5033 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		966D643523913207001E5033 /* GenericAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAPIClient.swift; sourceTree = "<group>"; };
+		966D643723913262001E5033 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
+		966D64392391327A001E5033 /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
+		966D643B23913290001E5033 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		966D643E239138DE001E5033 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		966D64A623913DE6001E5033 /* WTest_V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTest_V2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		966D64A723913DE7001E5033 /* WTest_V2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = WTest_V2.plist; path = "/Users/dberto/Library/Autosave Information/WTest/WTest_V2.plist"; sourceTree = "<absolute>"; };
+		966D64AB23914158001E5033 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		966D64AD239142E8001E5033 /* ArticleDal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDal.swift; sourceTree = "<group>"; };
+		966D64AF23915C25001E5033 /* IArticleDal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IArticleDal.swift; sourceTree = "<group>"; };
+		966D64B123915C99001E5033 /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
+		966D64B323915D55001E5033 /* IArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IArticleService.swift; sourceTree = "<group>"; };
+		966D64BC23916D76001E5033 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		966D64BE23916E73001E5033 /* ArticleItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleItemView.xib; sourceTree = "<group>"; };
+		966D64C023916FC1001E5033 /* ArticleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleItemView.swift; sourceTree = "<group>"; };
+		966D64C42391706C001E5033 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		96A61C99238E70BC00EF0439 /* WTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A61C9C238E70BC00EF0439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96A61C9E238E70BC00EF0439 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +128,7 @@
 		96A61CA8238E70BF00EF0439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96A61CAB238E70BF00EF0439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96A61CAD238E70BF00EF0439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96A61CBE238E770300EF0439 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		96A61CBE238E770300EF0439 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		96A61CC0238E779C00EF0439 /* PostalCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCode.swift; sourceTree = "<group>"; };
 		96A61CC3238E79E400EF0439 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		96A61CC7238E7D2400EF0439 /* IPostalCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPostalCodeService.swift; sourceTree = "<group>"; };
@@ -72,6 +152,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		966D649823913DE6001E5033 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				966D649923913DE6001E5033 /* RealmSwift in Frameworks */,
+				966D649A23913DE6001E5033 /* Swinject in Frameworks */,
+				966D649B23913DE6001E5033 /* CSVImporter in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		96A61C96238E70BC00EF0439 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,11 +175,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		966D643023913187001E5033 /* Web Services Layer */ = {
+			isa = PBXGroup;
+			children = (
+				966D6431239131B3001E5033 /* APIError.swift */,
+				966D6433239131E0001E5033 /* Endpoint.swift */,
+				966D643523913207001E5033 /* GenericAPIClient.swift */,
+				966D643723913262001E5033 /* HTTPHeader.swift */,
+				966D64392391327A001E5033 /* HTTPMethods.swift */,
+				966D643B23913290001E5033 /* Result.swift */,
+			);
+			path = "Web Services Layer";
+			sourceTree = "<group>";
+		};
 		96A61C90238E70BC00EF0439 = {
 			isa = PBXGroup;
 			children = (
 				96A61C9B238E70BC00EF0439 /* WTest */,
 				96A61C9A238E70BC00EF0439 /* Products */,
+				966D64A723913DE7001E5033 /* WTest_V2.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				96A61C99238E70BC00EF0439 /* WTest.app */,
+				966D64A623913DE6001E5033 /* WTest_V2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,10 +215,12 @@
 				96A61CB5238E738500EF0439 /* Services Layer */,
 				96A61CB4238E737300EF0439 /* Data Access Layer */,
 				96A61CDB238EABAF00EF0439 /* Database Layer */,
+				966D643023913187001E5033 /* Web Services Layer */,
 				96A61C9C238E70BC00EF0439 /* AppDelegate.swift */,
 				96A61C9E238E70BC00EF0439 /* SceneDelegate.swift */,
 				96A61CA8238E70BF00EF0439 /* Assets.xcassets */,
 				96A61CAD238E70BF00EF0439 /* Info.plist */,
+				966D643E239138DE001E5033 /* Config.plist */,
 			);
 			path = WTest;
 			sourceTree = "<group>";
@@ -150,7 +257,7 @@
 		96A61CB6238E739700EF0439 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				96A61CBE238E770300EF0439 /* Utils.swift */,
+				96A61CBE238E770300EF0439 /* Config.swift */,
 				96A61CCB238E917400EF0439 /* Extensions.swift */,
 			);
 			path = Core;
@@ -160,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				96A61CC0238E779C00EF0439 /* PostalCode.swift */,
+				966D64AB23914158001E5033 /* Article.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +290,7 @@
 				96A61CA0238E70BC00EF0439 /* DownlPostalCodeViewController.swift */,
 				96A61CF5238FCB7B00EF0439 /* MenuViewController.swift */,
 				96A61D06238FEBB700EF0439 /* PostalCodesViewController.swift */,
+				966D64BC23916D76001E5033 /* ArticleViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -198,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				96A61CC7238E7D2400EF0439 /* IPostalCodeService.swift */,
+				966D64B323915D55001E5033 /* IArticleService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -206,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				96A61CC9238E7D8200EF0439 /* PostalCodeService.swift */,
+				966D64B123915C99001E5033 /* ArticleService.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -249,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				96A61CE7238EC92000EF0439 /* IPostalCodeDal.swift */,
+				966D64AF23915C25001E5033 /* IArticleDal.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -257,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				96A61CE9238ECA2F00EF0439 /* PostalCodeDal.swift */,
+				966D64AD239142E8001E5033 /* ArticleDal.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -275,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				96A61CFD238FE53200EF0439 /* PostalCodeTableViewCell.swift */,
+				966D64C42391706C001E5033 /* ArticleTableViewCell.swift */,
 			);
 			path = ViewCell;
 			sourceTree = "<group>";
@@ -292,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				96A61D04238FE6C900EF0439 /* PostalCodeView.swift */,
+				966D64C023916FC1001E5033 /* ArticleItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				96A61D02238FE6BE00EF0439 /* PostalCodeView.xib */,
+				966D64BE23916E73001E5033 /* ArticleItemView.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -307,6 +423,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		966D647423913DE6001E5033 /* WTest_V2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 966D64A323913DE6001E5033 /* Build configuration list for PBXNativeTarget "WTest_V2" */;
+			buildPhases = (
+				966D647B23913DE6001E5033 /* Sources */,
+				966D649823913DE6001E5033 /* Frameworks */,
+				966D649C23913DE6001E5033 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WTest_V2;
+			packageProductDependencies = (
+				966D647523913DE6001E5033 /* Swinject */,
+				966D647723913DE6001E5033 /* CSVImporter */,
+				966D647923913DE6001E5033 /* RealmSwift */,
+			);
+			productName = WTest;
+			productReference = 966D64A623913DE6001E5033 /* WTest_V2.app */;
+			productType = "com.apple.product-type.application";
+		};
 		96A61C98238E70BC00EF0439 /* WTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96A61CB0238E70BF00EF0439 /* Build configuration list for PBXNativeTarget "WTest" */;
@@ -363,11 +501,26 @@
 			projectRoot = "";
 			targets = (
 				96A61C98238E70BC00EF0439 /* WTest */,
+				966D647423913DE6001E5033 /* WTest_V2 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		966D649C23913DE6001E5033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				966D649D23913DE6001E5033 /* LaunchScreen.storyboard in Resources */,
+				966D649E23913DE6001E5033 /* Assets.xcassets in Resources */,
+				966D649F23913DE6001E5033 /* PostalCodeView.xib in Resources */,
+				966D64A023913DE6001E5033 /* Main.storyboard in Resources */,
+				966D64C223916FC7001E5033 /* ArticleItemView.xib in Resources */,
+				966D64A123913DE6001E5033 /* Config.plist in Resources */,
+				966D64A223913DE6001E5033 /* Menu.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		96A61C97238E70BC00EF0439 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -376,6 +529,8 @@
 				96A61CA9238E70BF00EF0439 /* Assets.xcassets in Resources */,
 				96A61D03238FE6BE00EF0439 /* PostalCodeView.xib in Resources */,
 				96A61CA4238E70BC00EF0439 /* Main.storyboard in Resources */,
+				966D64BF23916E73001E5033 /* ArticleItemView.xib in Resources */,
+				966D643F239138DE001E5033 /* Config.plist in Resources */,
 				96A61CCE238E949400EF0439 /* Menu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,25 +538,82 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		966D647B23913DE6001E5033 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				966D647C23913DE6001E5033 /* Config.swift in Sources */,
+				966D64B523915D59001E5033 /* IArticleService.swift in Sources */,
+				966D647D23913DE6001E5033 /* DownlPostalCodeViewController.swift in Sources */,
+				966D647E23913DE6001E5033 /* IPostalCodeDal.swift in Sources */,
+				966D647F23913DE6001E5033 /* PostalCodeService.swift in Sources */,
+				966D648023913DE6001E5033 /* IPostalCodeService.swift in Sources */,
+				966D648123913DE6001E5033 /* HTTPMethods.swift in Sources */,
+				966D64B723915D61001E5033 /* ArticleDal.swift in Sources */,
+				966D648223913DE6001E5033 /* IRepository.swift in Sources */,
+				966D648323913DE6001E5033 /* BaseViewController.swift in Sources */,
+				966D64C623917076001E5033 /* ArticleTableViewCell.swift in Sources */,
+				966D64B823915D62001E5033 /* IArticleDal.swift in Sources */,
+				966D648423913DE6001E5033 /* Extensions.swift in Sources */,
+				966D64C8239176B7001E5033 /* ArticleViewController.swift in Sources */,
+				966D648523913DE6001E5033 /* GenericAPIClient.swift in Sources */,
+				966D64C72391767A001E5033 /* Article.swift in Sources */,
+				966D648623913DE6001E5033 /* Repository.swift in Sources */,
+				966D648723913DE6001E5033 /* PostalCodeTableViewCell.swift in Sources */,
+				966D648823913DE6001E5033 /* Endpoint.swift in Sources */,
+				966D648923913DE6001E5033 /* GenericTableViewController.swift in Sources */,
+				966D64C323916FC9001E5033 /* ArticleItemView.swift in Sources */,
+				966D648A23913DE6001E5033 /* APIError.swift in Sources */,
+				966D648B23913DE6001E5033 /* PostalCodeView.swift in Sources */,
+				966D648C23913DE6001E5033 /* PostalCodesViewController.swift in Sources */,
+				966D648D23913DE6001E5033 /* HTTPHeader.swift in Sources */,
+				966D648E23913DE6001E5033 /* Result.swift in Sources */,
+				966D64B623915D5C001E5033 /* ArticleService.swift in Sources */,
+				966D648F23913DE6001E5033 /* PostalCode.swift in Sources */,
+				966D649023913DE6001E5033 /* Entity.swift in Sources */,
+				966D649123913DE6001E5033 /* AppDelegate.swift in Sources */,
+				966D649223913DE6001E5033 /* SceneDelegate.swift in Sources */,
+				966D649323913DE6001E5033 /* MenuViewController.swift in Sources */,
+				966D649423913DE6001E5033 /* PostalCodeDal.swift in Sources */,
+				966D649523913DE6001E5033 /* StorablePostalCode.swift in Sources */,
+				966D649623913DE6001E5033 /* DownloadManager.swift in Sources */,
+				966D649723913DE6001E5033 /* InitialViewControllerFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		96A61C95238E70BC00EF0439 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96A61CBF238E770300EF0439 /* Utils.swift in Sources */,
+				96A61CBF238E770300EF0439 /* Config.swift in Sources */,
+				966D64B423915D55001E5033 /* IArticleService.swift in Sources */,
 				96A61CA1238E70BC00EF0439 /* DownlPostalCodeViewController.swift in Sources */,
 				96A61CE8238EC92000EF0439 /* IPostalCodeDal.swift in Sources */,
 				96A61CCA238E7D8200EF0439 /* PostalCodeService.swift in Sources */,
+				966D64B223915C99001E5033 /* ArticleService.swift in Sources */,
+				966D64AE239142E8001E5033 /* ArticleDal.swift in Sources */,
 				96A61CC8238E7D2400EF0439 /* IPostalCodeService.swift in Sources */,
+				966D64B023915C25001E5033 /* IArticleDal.swift in Sources */,
+				966D643A2391327A001E5033 /* HTTPMethods.swift in Sources */,
 				96A61CD4238EAACF00EF0439 /* IRepository.swift in Sources */,
 				96A61CEC238EFD5100EF0439 /* BaseViewController.swift in Sources */,
 				96A61CCC238E917400EF0439 /* Extensions.swift in Sources */,
+				966D64C123916FC1001E5033 /* ArticleItemView.swift in Sources */,
+				966D643623913207001E5033 /* GenericAPIClient.swift in Sources */,
 				96A61CE1238EC61100EF0439 /* Repository.swift in Sources */,
 				96A61CFE238FE53200EF0439 /* PostalCodeTableViewCell.swift in Sources */,
+				966D6434239131E0001E5033 /* Endpoint.swift in Sources */,
 				96A61CFB238FE46200EF0439 /* GenericTableViewController.swift in Sources */,
+				966D64AC23914158001E5033 /* Article.swift in Sources */,
+				966D6432239131B3001E5033 /* APIError.swift in Sources */,
 				96A61D05238FE6C900EF0439 /* PostalCodeView.swift in Sources */,
 				96A61D07238FEBB700EF0439 /* PostalCodesViewController.swift in Sources */,
+				966D643823913262001E5033 /* HTTPHeader.swift in Sources */,
+				966D64BD23916D77001E5033 /* ArticleViewController.swift in Sources */,
+				966D643C23913290001E5033 /* Result.swift in Sources */,
 				96A61CC1238E779C00EF0439 /* PostalCode.swift in Sources */,
 				96A61CD9238EAB6A00EF0439 /* Entity.swift in Sources */,
+				966D64C52391706C001E5033 /* ArticleTableViewCell.swift in Sources */,
 				96A61C9D238E70BC00EF0439 /* AppDelegate.swift in Sources */,
 				96A61C9F238E70BC00EF0439 /* SceneDelegate.swift in Sources */,
 				96A61CF6238FCB7B00EF0439 /* MenuViewController.swift in Sources */,
@@ -434,6 +646,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		966D64A423913DE6001E5033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 87BK9R4743;
+				INFOPLIST_FILE = WTest_V2.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Berto.WTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG VERSION2";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		966D64A523913DE6001E5033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 87BK9R4743;
+				INFOPLIST_FILE = WTest_V2.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "David-Berto.WTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		96A61CAE238E70BF00EF0439 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -587,6 +836,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		966D64A323913DE6001E5033 /* Build configuration list for PBXNativeTarget "WTest_V2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				966D64A423913DE6001E5033 /* Debug */,
+				966D64A523913DE6001E5033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		96A61C94238E70BC00EF0439 /* Build configuration list for PBXProject "WTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -608,6 +866,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		966D647623913DE6001E5033 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
+		966D647823913DE6001E5033 /* XCRemoteSwiftPackageReference "CSVImporter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flinesoft/CSVImporter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.1;
+			};
+		};
+		966D647A23913DE6001E5033 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
 		96A61CB8238E75B400EF0439 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
@@ -635,6 +917,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		966D647523913DE6001E5033 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 966D647623913DE6001E5033 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		966D647723913DE6001E5033 /* CSVImporter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 966D647823913DE6001E5033 /* XCRemoteSwiftPackageReference "CSVImporter" */;
+			productName = CSVImporter;
+		};
+		966D647923913DE6001E5033 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 966D647A23913DE6001E5033 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
 		96A61CB9238E75B400EF0439 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 96A61CB8238E75B400EF0439 /* XCRemoteSwiftPackageReference "Swinject" */;

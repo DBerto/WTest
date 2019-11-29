@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArticleItemView" customModule="WTest" customModuleProvider="target">
+            <connections>
+                <outlet property="articleItemView" destination="iN0-l3-epB" id="Agg-go-P1n"/>
+                <outlet property="author" destination="BYx-uY-ig2" id="fd3-kA-CmK"/>
+                <outlet property="desc" destination="3SZ-CY-5fO" id="nOb-aP-La2"/>
+                <outlet property="title" destination="nve-K2-0rL" id="mUZ-Px-uZp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="176"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYx-uY-ig2" userLabel="Author">
+                    <rect key="frame" x="0.0" y="40.5" width="40" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="t3I-pw-p7Z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SZ-CY-5fO" userLabel="Desc">
+                    <rect key="frame" x="0.0" y="65.5" width="414" height="100.5"/>
+                    <string key="text">"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty..."</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nve-K2-0rL">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="35.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="nve-K2-0rL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2So-ju-lPo"/>
+                <constraint firstItem="3SZ-CY-5fO" firstAttribute="top" secondItem="BYx-uY-ig2" secondAttribute="bottom" constant="5" id="B5C-9K-qCw"/>
+                <constraint firstAttribute="trailing" secondItem="3SZ-CY-5fO" secondAttribute="trailing" id="GzH-xN-hoH"/>
+                <constraint firstItem="3SZ-CY-5fO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="H1C-BE-At9"/>
+                <constraint firstItem="BYx-uY-ig2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MUP-IO-cgz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3SZ-CY-5fO" secondAttribute="bottom" constant="10" id="RZd-SD-J0l"/>
+                <constraint firstItem="BYx-uY-ig2" firstAttribute="top" secondItem="nve-K2-0rL" secondAttribute="bottom" constant="5" id="hDY-n3-HBQ"/>
+                <constraint firstItem="nve-K2-0rL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="n3B-Y1-6qQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.8840579710145" y="353.57142857142856"/>
+        </view>
+    </objects>
+</document>

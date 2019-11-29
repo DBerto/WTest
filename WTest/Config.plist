@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ARTICLE_V1_URL</key>
+	<string>https://5bb1cd166418d70014071c8e.mockapi.io/mobile/1-1/articles</string>
+	<key>ARTICLE_V2_URL</key>
+	<string>https://5bb1d1e66418d70014071c9c.mockapi.io/mobile/2-0/articles</string>
+</dict>
+</plist>

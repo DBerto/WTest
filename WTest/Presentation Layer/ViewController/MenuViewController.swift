@@ -18,9 +18,7 @@ class MenuViewController: BaseViewController{
     
     // MARK: Overrides
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        listaColecaoArtigosButton.isEnabled = false
+        super.viewDidLoad()        
         formularioButton.isEnabled = false
     }
     

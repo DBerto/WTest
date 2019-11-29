@@ -43,7 +43,7 @@ final class PostalCodesListViewController: GenericTableViewController<PostalCode
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         //Table View
         //How to remove extra empty cells in TableViewController, iOS - Swift
         self.postalCodesTableCell.backgroundColor = UIColor.clear

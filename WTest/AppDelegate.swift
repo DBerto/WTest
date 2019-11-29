@@ -16,23 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let container: Container = {
         let container = Container()
         container.register(IDownloadManager.self) { _ in DownloadManager() }
+        container.register(IArticleDal.self) { _ in ArticleDal() }
         container.register(IPostalCodeDal.self) { _ in PostalCodeDal() }
         container.register(IPostalCodeService.self) { resolver in
             let downloadManager = resolver.resolve(IDownloadManager.self)
             let postalCodeDal = resolver.resolve(IPostalCodeDal.self)
             return PostalCodeService(downloadManager: downloadManager!, postalCodeDal: postalCodeDal!)}
+        container.register(IArticleService.self) { resolver in
+            let articleDal = resolver.resolve(IArticleDal.self)
+            return ArticleService(articleDal: articleDal!)}
         return container
     }()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
+        
         return true
         
     }
     
     // MARK: UISceneSession Lifecycle
-    
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
