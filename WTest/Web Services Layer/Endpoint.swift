@@ -8,19 +8,26 @@
 
 import Foundation
 
-/// Protocol for easy construction of URls, ideally an enum will be the one conforming to this protocol.
 protocol Endpoint {
     var path: String { get }
+    var queryItems: [URLQueryItem] { get }
 }
 
 extension Endpoint {
+    var url: URL? {
+        var components = URLComponents(string: path)
+        if(!queryItems.isEmpty){
+            components?.queryItems = queryItems
+        }
+        return components?.url
+    }
+    
     var request: URLRequest? {
-        
-        guard let url = URL(string: "\(self.path)") else { return nil }
+        guard let url = url else { return nil }
         let request = URLRequest(url: url)
         return request
     }
-
+    
     func postRequest<T: Encodable>(parameters: T, headers: [HTTPHeader]) -> URLRequest? {
         
         guard var request = self.request else { return nil }
@@ -35,10 +42,12 @@ extension Endpoint {
         return request
     }
     
-    func getRequest<T: Encodable>(parameters: T, headers: [HTTPHeader]) -> URLRequest? {
-           
-           guard var request = self.request else { return nil }
-           request.httpMethod = HTTPMethods.get.rawValue
-           return request
-       }
+    func getRequest(headers: [HTTPHeader]) -> URLRequest? {
+        
+        guard var request = self.request else { return nil }
+        request.httpMethod = HTTPMethods.get.rawValue
+        
+        headers.forEach { request.addValue($0.header.value, forHTTPHeaderField: $0.header.field) }
+        return request
+    }
 }

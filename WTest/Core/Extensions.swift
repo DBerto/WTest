@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+extension Int{
+    func toString()-> String{
+        return "\(self)"
+    }
+}
+
 extension Bool{
     func toString()-> String{
         return self ? "true":"false"

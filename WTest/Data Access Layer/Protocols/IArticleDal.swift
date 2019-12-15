@@ -12,8 +12,10 @@ protocol IArticleDal{
     #if VERSION2
     /// Fetch Item
      func fetchItem(page: String, limit: String, completion: @escaping (Result<[Item]?, APIError>) -> ())
+    func fetchItem(completion: @escaping (Result<[Item]?, APIError>) -> ())
     #else
     /// Fetch Article
      func fetchArticle(page: String, limit: String, completion: @escaping (Result<Article?, APIError>) -> ())
+    func fetchArticle(completion: @escaping (Result<Article?, APIError>) -> ())
     #endif
 }

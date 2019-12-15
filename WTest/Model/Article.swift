@@ -29,6 +29,17 @@ struct ArticleParameter: Encodable{
 
 /// ENDPOINT CONFORMANCE
 struct ArticleFeed: Endpoint {
+    var articleParameter: ArticleParameter?
+    var queryItems: [URLQueryItem]{
+        var queryItems: [URLQueryItem] = []
+        if articleParameter != nil {
+            let mirror = Mirror(reflecting: articleParameter!.self)
+            for child in mirror.children{
+                queryItems.append(URLQueryItem(name: child.label!, value: (child.value as! String)))
+            }
+        }
+        return queryItems
+    }
     var path: String {
         return Config.articlesApiUrl
     }

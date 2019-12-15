@@ -10,8 +10,8 @@ import Foundation
 
 protocol IArticleService{
     #if VERSION2
-    func getItemList(page: String, limit: String, completion: @escaping (Result<[Item]?, APIError>) -> ())
+    func getItemList(page: String?, limit: String?, completion: @escaping (Result<[Item]?, APIError>) -> ())
     #else
-    func getArticleList(page: String, limit: String, completion: @escaping (Result<Article?, APIError>) -> ())
+    func getArticleList(page: String?, limit: String?, completion: @escaping (Result<Article?, APIError>) -> ())
     #endif
 }

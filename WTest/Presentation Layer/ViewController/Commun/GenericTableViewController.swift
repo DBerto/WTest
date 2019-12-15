@@ -50,4 +50,8 @@ class GenericTableViewController<T, Cell: UITableViewCell>: BaseViewController, 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+      
+     }
 }
