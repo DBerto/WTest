@@ -1,11 +1,13 @@
 {
   "images" : [
     {
+      "filename" : "icons8-post-box-40.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
+      "filename" : "icons8-post-box-60.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
@@ -21,6 +23,7 @@
       "size" : "29x29"
     },
     {
+      "filename" : "icons8-post-box-80.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"

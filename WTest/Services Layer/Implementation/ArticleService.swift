@@ -31,9 +31,9 @@ final class ArticleService: IArticleService{
         }
     }
     #else
-    func getArticleList(page: String, limit: String, completion: @escaping (Result<Article?, APIError>) -> ()){
+    func getArticleList(page: String?, limit: String?, completion: @escaping (Result<Article?, APIError>) -> ()){
         
-        if page != nil && limit != nil{
+        if let page = page, let limit = limit {
             articleDal.fetchArticle(page: page, limit: limit, completion: ({
                 (result) in
                 completion(result)

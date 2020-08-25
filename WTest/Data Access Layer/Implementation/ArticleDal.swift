@@ -52,7 +52,8 @@ class ArticleDal: GenericAPIClient, IArticleDal{
             return results
         }, completion: completion)
     }
-    func fetchArticle(page: String, limit: String, completion: @escaping (Result<Article?, APIError>) -> ()) {
+    
+    func fetchArticle(completion: @escaping (Result<Article?, APIError>) -> ()) {
         
         guard let request = ArticleFeed(articleParameter: nil).getRequest(headers: []) else { return }
         
