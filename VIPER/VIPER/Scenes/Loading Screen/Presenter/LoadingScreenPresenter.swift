@@ -19,8 +19,20 @@ class LoadingScreenPresenter: LoadingScreenEventHandler, LoadingScreenPresenterI
     // MARK: - LoadingScreenEventHandler
     
     func viewIsLoaded() {
-        let viewModel = LoadingViewModel(title: "Teste title", image: #imageLiteral(resourceName: "post-box"),
-                                         downloadingLabel: "Cenas a carregar", isDownloading: true)
+        let viewModel = LoadingViewModel(title: R.string.localizable.appTitle(), image: #imageLiteral(resourceName: "post-box"),
+                                         downloadingLabel: R.string.localizable.downloadingLabel(),
+                                         isDownloading: true)
         view.updateView(with: viewModel)
     }
+    
+    func viewAppeared() {
+        interactor.fetchPostalCodes()
+    }
+    
+    // MARK: - LoadingScreenInteractorInterface
+    
+    func postalCodeFetchFailed() {
+        
+    }
+    
 }

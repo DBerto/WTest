@@ -108,7 +108,7 @@
 		966D643723913262001E5033 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
 		966D64392391327A001E5033 /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
 		966D643B23913290001E5033 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		966D643E239138DE001E5033 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		966D643E239138DE001E5033 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Config.plist; path = ../VIPER/VIPER/Resources/Config.plist; sourceTree = "<group>"; };
 		966D64A623913DE6001E5033 /* WTest_V2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTest_V2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966D64A723913DE7001E5033 /* WTest_V2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = WTest_V2.plist; path = "/Users/dberto/Library/Autosave Information/WTest/WTest_V2.plist"; sourceTree = "<absolute>"; };
 		966D64AB23914158001E5033 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };

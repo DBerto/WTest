@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "Commander",
-        "repositoryURL": "https://github.com/kylef/Commander.git",
-        "state": {
-          "branch": null,
-          "revision": "4b6133c3071d521489a80c38fb92d7983f19d438",
-          "version": "0.9.1"
-        }
-      },
-      {
         "package": "CSVImporter",
         "repositoryURL": "https://github.com/Flinesoft/CSVImporter.git",
         "state": {
@@ -47,12 +38,12 @@
         }
       },
       {
-        "package": "rswift",
-        "repositoryURL": "https://github.com/mac-cain13/R.swift",
+        "package": "R.swift.Library",
+        "repositoryURL": "https://github.com/mac-cain13/R.swift.Library",
         "state": {
           "branch": null,
-          "revision": "99838fd65e772145d7a71d821e2ce9e7e90d1f2c",
-          "version": "5.2.2"
+          "revision": "5a54805e3d08077e46edb2274ff27b20b700f568",
+          "version": "5.2.0"
         }
       },
       {
@@ -83,30 +74,12 @@
         }
       },
       {
-        "package": "Spectre",
-        "repositoryURL": "https://github.com/kylef/Spectre.git",
-        "state": {
-          "branch": null,
-          "revision": "f717bbce0e19f0129fc001b2b6bed43b70fd8b87",
-          "version": "0.9.1"
-        }
-      },
-      {
         "package": "Swinject",
         "repositoryURL": "https://github.com/Swinject/Swinject.git",
         "state": {
           "branch": null,
           "revision": "8a76d2c74bafbb455763487cc6a08e91bad1f78b",
           "version": "2.7.1"
-        }
-      },
-      {
-        "package": "XcodeEdit",
-        "repositoryURL": "https://github.com/tomlokhorst/XcodeEdit",
-        "state": {
-          "branch": null,
-          "revision": "dab519997ca05833470c88f0926b27498911ecbf",
-          "version": "2.7.7"
         }
       }
     ]

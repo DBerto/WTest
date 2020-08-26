@@ -27,9 +27,9 @@ protocol LoadingScreenEventHandler: class {
 // MARK: Business Layer
 
 protocol LoadingScreenInteractorInterface: class {
-
+    func fetchPostalCodes()
 }
 
 protocol LoadingScreenPresenterInterface: class {
-
+    func postalCodeFetchFailed()
 }

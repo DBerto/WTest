@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  VIPER
+
+  Created by David Manuel da Costa Berto on 26/08/2020.
+  Copyright © 2020 David Manuel da Costa Berto. All rights reserved.
+*/
+
+"App Title" = "WTTest for VIPER";
+"DownloadingLabel" = "Downloading postal codes";
