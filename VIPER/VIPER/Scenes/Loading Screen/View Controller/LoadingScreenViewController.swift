@@ -28,6 +28,11 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
         eventHandler.viewIsLoaded()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        eventHandler.viewAppeared()
+    }
+    
     // MARK: - Setup
     
     private func setupView() {
@@ -38,7 +43,8 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
     private func setupConstraints() {
         loadingView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.centerX.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-10)
+            make.leading.equalToSuperview().offset(10)
         }
     }
     

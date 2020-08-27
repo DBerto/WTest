@@ -14,6 +14,8 @@ class LoadingView: UIView {
     
     lazy var title: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     
@@ -22,8 +24,14 @@ class LoadingView: UIView {
         return imgvw
     }()
     
+    lazy var containerView: UIView = {
+       return UIView()
+    }()
+    
     lazy var downloadingLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     
@@ -37,7 +45,7 @@ class LoadingView: UIView {
         let stackView = UIStackView()
         stackView.alignment = .fill
         stackView.distribution = .fill
-        stackView.spacing = 40
+        stackView.spacing = 20
         stackView.axis = .vertical
         return stackView
     }()
@@ -58,9 +66,10 @@ class LoadingView: UIView {
         addSubview(verticalStackView)
         backgroundColor = .white
         verticalStackView.addArrangedSubview(title)
-        verticalStackView.addArrangedSubview(imageView)
+        verticalStackView.addArrangedSubview(containerView)
         verticalStackView.addArrangedSubview(downloadingLabel)
         verticalStackView.addArrangedSubview(activityIndicator)
+        containerView.addSubview(imageView)
         setupConstraints()
     }
     
@@ -70,7 +79,13 @@ class LoadingView: UIView {
         }
         
         imageView.snp.makeConstraints { (make) in
-            make.height.equalTo(80)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(60)
+            make.height.equalToSuperview()
+        }
+        
+        containerView.snp.makeConstraints { (make) in
+            make.height.equalTo(60)
         }
     }
     

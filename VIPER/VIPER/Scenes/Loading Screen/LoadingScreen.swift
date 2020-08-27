@@ -22,6 +22,7 @@ protocol LoadingScreenViewInterface: class {
 
 protocol LoadingScreenEventHandler: class {
     func viewIsLoaded()
+    func viewAppeared()
 }
 
 // MARK: Business Layer
