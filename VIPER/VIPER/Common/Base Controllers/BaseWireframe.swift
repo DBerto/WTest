@@ -10,9 +10,10 @@ import Foundation
 import UIKit
 
 protocol WireframeInterface: class {
+    
 }
 
-class BaseWireframe {
+class BaseWireframe: WireframeInterface {
 
     private unowned var _viewController: UIViewController
 
@@ -23,10 +24,6 @@ class BaseWireframe {
         _temporaryStoredViewController = viewController
         _viewController = viewController
     }
-
-}
-
-extension BaseWireframe: WireframeInterface {
 
 }
 
@@ -45,7 +42,7 @@ extension BaseWireframe {
 
 extension UIViewController {
 
-    func presentWireframe(_ wireframe: BaseWireframe, animated: Bool = true, completion: (()->Void)? = nil) {
+    func presentWireframe(_ wireframe: BaseWireframe, animated: Bool = true, completion: (() -> Void)? = nil) {
         present(wireframe.viewController, animated: animated, completion: completion)
     }
 

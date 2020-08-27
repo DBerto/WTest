@@ -16,7 +16,7 @@ protocol LoadingScreenWireframeInterface: WireframeInterface {
 
 // MARK: User Interface Layer
 
-protocol LoadingScreenViewInterface: class {
+protocol LoadingScreenViewInterface: ViewInterface {
     func updateView(with viewModel: LoadingViewModel)
 }
 
@@ -32,5 +32,5 @@ protocol LoadingScreenInteractorInterface: class {
 }
 
 protocol LoadingScreenPresenterInterface: class {
-    func postalCodeFetchFailed()
+    func postalCodeFetchFailed(_ error: Error)
 }

@@ -174,16 +174,77 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 2 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 6 localization keys.
     struct localizable {
+      /// en translation: Alert
+      ///
+      /// Locales: en
+      static let alert = Rswift.StringResource(key: "Alert", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: An error occured while trying to fetch postal codes.
+      ///
+      /// Locales: en
+      static let postalCodesDownloadError = Rswift.StringResource(key: "PostalCodesDownloadError", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en
+      static let cancel = Rswift.StringResource(key: "Cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Downloading postal codes
       ///
       /// Locales: en
       static let downloadingLabel = Rswift.StringResource(key: "DownloadingLabel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Ok
+      ///
+      /// Locales: en
+      static let ok = Rswift.StringResource(key: "Ok", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: WTTest for VIPER
       ///
       /// Locales: en
       static let appTitle = Rswift.StringResource(key: "App Title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+
+      /// en translation: Alert
+      ///
+      /// Locales: en
+      static func alert(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Alert", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Alert"
+        }
+
+        return NSLocalizedString("Alert", bundle: bundle, comment: "")
+      }
+
+      /// en translation: An error occured while trying to fetch postal codes.
+      ///
+      /// Locales: en
+      static func postalCodesDownloadError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("PostalCodesDownloadError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "PostalCodesDownloadError"
+        }
+
+        return NSLocalizedString("PostalCodesDownloadError", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en
+      static func cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Cancel"
+        }
+
+        return NSLocalizedString("Cancel", bundle: bundle, comment: "")
+      }
 
       /// en translation: Downloading postal codes
       ///
@@ -198,6 +259,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("DownloadingLabel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Ok
+      ///
+      /// Locales: en
+      static func ok(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Ok", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Ok"
+        }
+
+        return NSLocalizedString("Ok", bundle: bundle, comment: "")
       }
 
       /// en translation: WTTest for VIPER

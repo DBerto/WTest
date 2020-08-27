@@ -53,5 +53,4 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
     func updateView(with viewModel: LoadingViewModel) {
         loadingView.viewModel = viewModel
     }
-    
 }

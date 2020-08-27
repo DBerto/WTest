@@ -8,3 +8,7 @@
 
 "App Title" = "WTTest for VIPER";
 "DownloadingLabel" = "Downloading postal codes";
+"Ok" = "Ok";
+"Cancel" = "Cancel";
+"Alert" = "Alert";
+"PostalCodesDownloadError" = "An error occured while trying to fetch postal codes.";

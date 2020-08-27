@@ -31,8 +31,7 @@ class LoadingScreenPresenter: LoadingScreenEventHandler, LoadingScreenPresenterI
     
     // MARK: - LoadingScreenInteractorInterface
     
-    func postalCodeFetchFailed() {
-        
+    func postalCodeFetchFailed(_ error: Error) {
+        view.showError(error)
     }
-    
 }

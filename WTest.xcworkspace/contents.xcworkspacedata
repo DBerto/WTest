@@ -5,6 +5,9 @@
       location = "group:VIPER/VIPER.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Entities/Entities.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:WTest.xcodeproj">
    </FileRef>
 </Workspace>

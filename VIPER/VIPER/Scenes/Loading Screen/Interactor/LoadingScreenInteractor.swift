@@ -7,6 +7,18 @@
 //
 
 import Foundation
+import Entities
+
+enum LoadingScreenInteractorError: LocalizedError {
+    case downloadError
+    
+    public var errorDescription: String? {
+        switch self {
+        case .downloadError:
+            return R.string.localizable.postalCodesDownloadError()
+        }
+    }
+}
 
 class LoadingScreenInteractor: LoadingScreenInteractorInterface {
     
@@ -39,9 +51,12 @@ class LoadingScreenInteractor: LoadingScreenInteractorInterface {
                 //            savePostalCodeDb(postalCodeArray: _PostalCodeList)
                 UserDefaults.standard.set(true, forKey: "isAppAlreadyLaunched")
             } catch {
-                self.presenter?.postalCodeFetchFailed()
+                self.presenter?.postalCodeFetchFailed(LoadingScreenInteractorError.downloadError)
             }
         }
+    }
+    
+    private func savePostalCodesToDB(_ postalCode: [PostalCode]) {
         
     }
 }
