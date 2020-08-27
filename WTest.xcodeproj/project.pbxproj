@@ -88,7 +88,6 @@
 		96A61CD9238EAB6A00EF0439 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CD8238EAB6A00EF0439 /* Entity.swift */; };
 		96A61CDF238EABDF00EF0439 /* StorablePostalCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CDE238EABDF00EF0439 /* StorablePostalCode.swift */; };
 		96A61CE1238EC61100EF0439 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CE0238EC61100EF0439 /* Repository.swift */; };
-		96A61CE4238EC73300EF0439 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 96A61CE3238EC73300EF0439 /* RealmSwift */; };
 		96A61CE8238EC92000EF0439 /* IPostalCodeDal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CE7238EC92000EF0439 /* IPostalCodeDal.swift */; };
 		96A61CEA238ECA2F00EF0439 /* PostalCodeDal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CE9238ECA2F00EF0439 /* PostalCodeDal.swift */; };
 		96A61CEC238EFD5100EF0439 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A61CEB238EFD5100EF0439 /* BaseViewController.swift */; };
@@ -166,7 +165,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96A61CE4238EC73300EF0439 /* RealmSwift in Frameworks */,
 				96A61CBA238E75B400EF0439 /* Swinject in Frameworks */,
 				96A61CD1238EA39800EF0439 /* CSVImporter in Frameworks */,
 			);
@@ -461,7 +459,6 @@
 			packageProductDependencies = (
 				96A61CB9238E75B400EF0439 /* Swinject */,
 				96A61CD0238EA39800EF0439 /* CSVImporter */,
-				96A61CE3238EC73300EF0439 /* RealmSwift */,
 			);
 			productName = WTest;
 			productReference = 96A61C99238E70BC00EF0439 /* WTest.app */;
@@ -494,7 +491,6 @@
 			packageReferences = (
 				96A61CB8238E75B400EF0439 /* XCRemoteSwiftPackageReference "Swinject" */,
 				96A61CCF238EA39800EF0439 /* XCRemoteSwiftPackageReference "CSVImporter" */,
-				96A61CE2238EC73300EF0439 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 96A61C9A238E70BC00EF0439 /* Products */;
 			projectDirPath = "";
@@ -906,14 +902,6 @@
 				minimumVersion = 1.9.1;
 			};
 		};
-		96A61CE2238EC73300EF0439 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -941,11 +929,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 96A61CCF238EA39800EF0439 /* XCRemoteSwiftPackageReference "CSVImporter" */;
 			productName = CSVImporter;
-		};
-		96A61CE3238EC73300EF0439 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 96A61CE2238EC73300EF0439 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

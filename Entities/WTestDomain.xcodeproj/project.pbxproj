@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96B3434E24F7F01200372F70 /* Entities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B3434424F7F01200372F70 /* Entities.framework */; };
-		96B3435324F7F01200372F70 /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3435224F7F01200372F70 /* EntitiesTests.swift */; };
-		96B3435524F7F01200372F70 /* Entities.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B3434724F7F01200372F70 /* Entities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96B3434E24F7F01200372F70 /* WTestDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B3434424F7F01200372F70 /* WTestDomain.framework */; };
+		96B3435324F7F01200372F70 /* WTestDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3435224F7F01200372F70 /* WTestDomainTests.swift */; };
+		96B3435524F7F01200372F70 /* WTestDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B3434724F7F01200372F70 /* WTestDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96B3436024F7F03300372F70 /* PostalCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3435F24F7F03300372F70 /* PostalCode.swift */; };
+		96B343B324F7FAFC00372F70 /* PostalCodesStorageRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343B224F7FAFC00372F70 /* PostalCodesStorageRepositoryInterface.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,13 +25,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		96B3434424F7F01200372F70 /* Entities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Entities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96B3434724F7F01200372F70 /* Entities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entities.h; sourceTree = "<group>"; };
+		96B3434424F7F01200372F70 /* WTestDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WTestDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96B3434724F7F01200372F70 /* WTestDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTestDomain.h; sourceTree = "<group>"; };
 		96B3434824F7F01200372F70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96B3434D24F7F01200372F70 /* EntitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EntitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		96B3435224F7F01200372F70 /* EntitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
+		96B3434D24F7F01200372F70 /* WTestDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTestDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96B3435224F7F01200372F70 /* WTestDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTestDomainTests.swift; sourceTree = "<group>"; };
 		96B3435424F7F01200372F70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B3435F24F7F03300372F70 /* PostalCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCode.swift; sourceTree = "<group>"; };
+		96B343B224F7FAFC00372F70 /* PostalCodesStorageRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesStorageRepositoryInterface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96B3434E24F7F01200372F70 /* Entities.framework in Frameworks */,
+				96B3434E24F7F01200372F70 /* WTestDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,9 +57,8 @@
 		96B3433A24F7F01200372F70 = {
 			isa = PBXGroup;
 			children = (
-				96B3435E24F7F02500372F70 /* Models */,
-				96B3434624F7F01200372F70 /* Entities */,
-				96B3435124F7F01200372F70 /* EntitiesTests */,
+				96B3434624F7F01200372F70 /* WTestDomain */,
+				96B3435124F7F01200372F70 /* WTestDomainTests */,
 				96B3434524F7F01200372F70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,28 +66,30 @@
 		96B3434524F7F01200372F70 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				96B3434424F7F01200372F70 /* Entities.framework */,
-				96B3434D24F7F01200372F70 /* EntitiesTests.xctest */,
+				96B3434424F7F01200372F70 /* WTestDomain.framework */,
+				96B3434D24F7F01200372F70 /* WTestDomainTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		96B3434624F7F01200372F70 /* Entities */ = {
+		96B3434624F7F01200372F70 /* WTestDomain */ = {
 			isa = PBXGroup;
 			children = (
-				96B3434724F7F01200372F70 /* Entities.h */,
+				96B343B024F7FADD00372F70 /* Repositories */,
+				96B3435E24F7F02500372F70 /* Models */,
+				96B3434724F7F01200372F70 /* WTestDomain.h */,
 				96B3434824F7F01200372F70 /* Info.plist */,
 			);
-			path = Entities;
+			path = WTestDomain;
 			sourceTree = "<group>";
 		};
-		96B3435124F7F01200372F70 /* EntitiesTests */ = {
+		96B3435124F7F01200372F70 /* WTestDomainTests */ = {
 			isa = PBXGroup;
 			children = (
-				96B3435224F7F01200372F70 /* EntitiesTests.swift */,
+				96B3435224F7F01200372F70 /* WTestDomainTests.swift */,
 				96B3435424F7F01200372F70 /* Info.plist */,
 			);
-			path = EntitiesTests;
+			path = WTestDomainTests;
 			sourceTree = "<group>";
 		};
 		96B3435E24F7F02500372F70 /* Models */ = {
@@ -97,6 +100,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		96B343B024F7FADD00372F70 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				96B343B124F7FAEB00372F70 /* Postal Codes */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		96B343B124F7FAEB00372F70 /* Postal Codes */ = {
+			isa = PBXGroup;
+			children = (
+				96B343B224F7FAFC00372F70 /* PostalCodesStorageRepositoryInterface.swift */,
+			);
+			path = "Postal Codes";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -104,16 +123,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96B3435524F7F01200372F70 /* Entities.h in Headers */,
+				96B3435524F7F01200372F70 /* WTestDomain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		96B3434324F7F01200372F70 /* Entities */ = {
+		96B3434324F7F01200372F70 /* WTestDomain */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96B3435824F7F01200372F70 /* Build configuration list for PBXNativeTarget "Entities" */;
+			buildConfigurationList = 96B3435824F7F01200372F70 /* Build configuration list for PBXNativeTarget "WTestDomain" */;
 			buildPhases = (
 				96B3433F24F7F01200372F70 /* Headers */,
 				96B3434024F7F01200372F70 /* Sources */,
@@ -124,14 +143,14 @@
 			);
 			dependencies = (
 			);
-			name = Entities;
+			name = WTestDomain;
 			productName = Entities;
-			productReference = 96B3434424F7F01200372F70 /* Entities.framework */;
+			productReference = 96B3434424F7F01200372F70 /* WTestDomain.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		96B3434C24F7F01200372F70 /* EntitiesTests */ = {
+		96B3434C24F7F01200372F70 /* WTestDomainTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96B3435B24F7F01200372F70 /* Build configuration list for PBXNativeTarget "EntitiesTests" */;
+			buildConfigurationList = 96B3435B24F7F01200372F70 /* Build configuration list for PBXNativeTarget "WTestDomainTests" */;
 			buildPhases = (
 				96B3434924F7F01200372F70 /* Sources */,
 				96B3434A24F7F01200372F70 /* Frameworks */,
@@ -142,9 +161,9 @@
 			dependencies = (
 				96B3435024F7F01200372F70 /* PBXTargetDependency */,
 			);
-			name = EntitiesTests;
+			name = WTestDomainTests;
 			productName = EntitiesTests;
-			productReference = 96B3434D24F7F01200372F70 /* EntitiesTests.xctest */;
+			productReference = 96B3434D24F7F01200372F70 /* WTestDomainTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -166,7 +185,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 96B3433E24F7F01200372F70 /* Build configuration list for PBXProject "Entities" */;
+			buildConfigurationList = 96B3433E24F7F01200372F70 /* Build configuration list for PBXProject "WTestDomain" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -179,8 +198,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				96B3434324F7F01200372F70 /* Entities */,
-				96B3434C24F7F01200372F70 /* EntitiesTests */,
+				96B3434324F7F01200372F70 /* WTestDomain */,
+				96B3434C24F7F01200372F70 /* WTestDomainTests */,
 			);
 		};
 /* End PBXProject section */
@@ -208,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B3436024F7F03300372F70 /* PostalCode.swift in Sources */,
+				96B343B324F7FAFC00372F70 /* PostalCodesStorageRepositoryInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96B3435324F7F01200372F70 /* EntitiesTests.swift in Sources */,
+				96B3435324F7F01200372F70 /* WTestDomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +244,7 @@
 /* Begin PBXTargetDependency section */
 		96B3435024F7F01200372F70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 96B3434324F7F01200372F70 /* Entities */;
+			target = 96B3434324F7F01200372F70 /* WTestDomain */;
 			targetProxy = 96B3434F24F7F01200372F70 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -281,7 +301,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -338,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -359,7 +379,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Entities/Info.plist;
+				INFOPLIST_FILE = WTestDomain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -367,7 +387,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = DBerto.Entities;
+				PRODUCT_BUNDLE_IDENTIFIER = DBerto.WTestDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -385,7 +405,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Entities/Info.plist;
+				INFOPLIST_FILE = WTestDomain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -393,7 +413,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = DBerto.Entities;
+				PRODUCT_BUNDLE_IDENTIFIER = DBerto.WTestDomain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -440,7 +460,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		96B3433E24F7F01200372F70 /* Build configuration list for PBXProject "Entities" */ = {
+		96B3433E24F7F01200372F70 /* Build configuration list for PBXProject "WTestDomain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96B3435624F7F01200372F70 /* Debug */,
@@ -449,7 +469,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96B3435824F7F01200372F70 /* Build configuration list for PBXNativeTarget "Entities" */ = {
+		96B3435824F7F01200372F70 /* Build configuration list for PBXNativeTarget "WTestDomain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96B3435924F7F01200372F70 /* Debug */,
@@ -458,7 +478,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96B3435B24F7F01200372F70 /* Build configuration list for PBXNativeTarget "EntitiesTests" */ = {
+		96B3435B24F7F01200372F70 /* Build configuration list for PBXNativeTarget "WTestDomainTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96B3435C24F7F01200372F70 /* Debug */,

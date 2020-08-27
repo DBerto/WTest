@@ -1,15 +1,15 @@
 //
-//  EntitiesTests.swift
-//  EntitiesTests
+//  RealmTests.swift
+//  RealmTests
 //
 //  Created by David Manuel da Costa Berto on 27/08/2020.
 //  Copyright © 2020 David Manuel da Costa Berto. All rights reserved.
 //
 
 import XCTest
-@testable import Entities
+@testable import WTestRealm
 
-class EntitiesTests: XCTestCase {
+class RealmTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

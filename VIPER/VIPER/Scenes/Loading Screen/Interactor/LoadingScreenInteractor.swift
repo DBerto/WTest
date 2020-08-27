@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Entities
+import WTestDomain
 
 enum LoadingScreenInteractorError: LocalizedError {
     case downloadError
