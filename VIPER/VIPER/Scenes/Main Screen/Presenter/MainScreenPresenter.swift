@@ -17,5 +17,9 @@ class MainScreenPresenter: MainScreenEventHandler, MainScreenPresenterInterface 
     var interactor: MainScreenInteractorInterface!
     
     // MARK: - MainScreenEventHandler
-
+    
+    func postalCodesButtonPressed() {
+        wireframe.openPostalCodes()
+    }
+    
 }

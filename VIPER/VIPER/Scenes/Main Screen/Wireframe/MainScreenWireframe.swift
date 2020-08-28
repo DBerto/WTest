@@ -22,4 +22,10 @@ class  MainScreenWireframe: BaseWireframe,  MainScreenWireframeInterface {
         self.presenter = presenter
         super.init(viewController: view)
     }
+    
+    func openPostalCodes() {
+        let postalCodesWireframe = PostalCodesBuilder().makeModule()
+        self.navigationController?.pushWireframe(postalCodesWireframe)
+    }
 }
+

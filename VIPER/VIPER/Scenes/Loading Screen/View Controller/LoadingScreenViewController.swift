@@ -16,7 +16,7 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
     var eventHandler: LoadingScreenEventHandler!
     
     lazy var loadingView: LoadingView = {
-        let view = LoadingView()
+        let view = LoadingView() 
         return view
     }()
     
@@ -42,7 +42,7 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
     }
     
     private func setupNavBar() {
-        navigationController?.isToolbarHidden = true
+        navigationController?.setToolbarHidden(true, animated: false)
     }
     
     private func setupConstraints() {

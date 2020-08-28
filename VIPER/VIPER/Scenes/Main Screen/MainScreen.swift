@@ -12,17 +12,17 @@ import WTestDomain
 // MARK: Navigation Layer
 
 protocol MainScreenWireframeInterface: WireframeInterface {
-
+    func openPostalCodes()
 }
 
 // MARK: User Interface Layer
 
 protocol MainScreenViewInterface: ViewInterface {
-
+    
 }
 
 protocol MainScreenEventHandler: class {
-
+    func postalCodesButtonPressed()
 }
 
 // MARK: Business Layer

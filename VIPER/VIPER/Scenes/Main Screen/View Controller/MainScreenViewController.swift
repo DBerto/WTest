@@ -26,12 +26,8 @@ class MainScreenViewController: BaseViewController, MainScreenViewInterface {
         let button = UIButton()
         button.setTitle(R.string.localizable.postalCodes(), for: .normal)
         button.backgroundColor = .systemBlue
+        button.addTarget(self, action: #selector(postalCodesButtonAction), for: .touchDown)
         return button
-    }()
-    
-    lazy var loadingView: LoadingView = {
-        let view = LoadingView()
-        return view
     }()
     
     // MARK: - View Cycle
@@ -64,5 +60,11 @@ class MainScreenViewController: BaseViewController, MainScreenViewInterface {
         postalCodesButton.snp.makeConstraints { (make) in
             make.height.equalTo(60)
         }
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func postalCodesButtonAction() {
+        eventHandler.postalCodesButtonPressed()
     }
 }
