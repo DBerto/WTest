@@ -11,12 +11,14 @@
 		96B3438824F7F39B00372F70 /* WTestRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3438724F7F39B00372F70 /* WTestRealmTests.swift */; };
 		96B3438A24F7F39B00372F70 /* WTestRealm.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B3437C24F7F39B00372F70 /* WTestRealm.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96B3439524F7F40800372F70 /* BaseStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3439424F7F40800372F70 /* BaseStorageRepository.swift */; };
-		96B3439824F7F63200372F70 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 96B3439724F7F63200372F70 /* RealmSwift */; };
 		96B343A424F7F85900372F70 /* Object+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343A324F7F85900372F70 /* Object+Creation.swift */; };
 		96B343A624F7F87200372F70 /* Realm+CascadeDeletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343A524F7F87200372F70 /* Realm+CascadeDeletion.swift */; };
 		96B343AF24F7FA4800372F70 /* PostalCodesStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343A924F7F91400372F70 /* PostalCodesStorageRepository.swift */; };
 		96B343B624F7FBAF00372F70 /* WTestDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B343B524F7FBAF00372F70 /* WTestDomain.framework */; };
 		96B343B724F7FBAF00372F70 /* WTestDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96B343B524F7FBAF00372F70 /* WTestDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		96B343BB24F8FCCB00372F70 /* PostalCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343BA24F8FCCB00372F70 /* PostalCodeModel.swift */; };
+		96B343BE24F8FDDA00372F70 /* PostalCode+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343BD24F8FDDA00372F70 /* PostalCode+Transform.swift */; };
+		96B343C024F9021300372F70 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 96B343BF24F9021300372F70 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		96B343A524F7F87200372F70 /* Realm+CascadeDeletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+CascadeDeletion.swift"; sourceTree = "<group>"; };
 		96B343A924F7F91400372F70 /* PostalCodesStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesStorageRepository.swift; sourceTree = "<group>"; };
 		96B343B524F7FBAF00372F70 /* WTestDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96B343BA24F8FCCB00372F70 /* PostalCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeModel.swift; sourceTree = "<group>"; };
+		96B343BD24F8FDDA00372F70 /* PostalCode+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostalCode+Transform.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B343C024F9021300372F70 /* RealmSwift in Frameworks */,
 				96B343B624F7FBAF00372F70 /* WTestDomain.framework in Frameworks */,
-				96B3439824F7F63200372F70 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +106,8 @@
 			children = (
 				96B343A224F7F84700372F70 /* Extensions */,
 				96B3439324F7F3DD00372F70 /* Commom */,
+				96B343BC24F8FDB700372F70 /* Transforms */,
+				96B343B924F8FCBF00372F70 /* Models */,
 				96B343A724F7F8DD00372F70 /* Repositories */,
 				96B3437C24F7F39B00372F70 /* WTestRealm.h */,
 				96B3437D24F7F39B00372F70 /* Info.plist */,
@@ -159,6 +165,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		96B343B924F8FCBF00372F70 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96B343BA24F8FCCB00372F70 /* PostalCodeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		96B343BC24F8FDB700372F70 /* Transforms */ = {
+			isa = PBXGroup;
+			children = (
+				96B343BD24F8FDDA00372F70 /* PostalCode+Transform.swift */,
+			);
+			path = Transforms;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -189,7 +211,7 @@
 			);
 			name = WTestRealm;
 			packageProductDependencies = (
-				96B3439724F7F63200372F70 /* RealmSwift */,
+				96B343BF24F9021300372F70 /* RealmSwift */,
 			);
 			productName = Realm;
 			productReference = 96B3437924F7F39B00372F70 /* WTestRealm.framework */;
@@ -277,8 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B3439524F7F40800372F70 /* BaseStorageRepository.swift in Sources */,
+				96B343BB24F8FCCB00372F70 /* PostalCodeModel.swift in Sources */,
 				96B343A424F7F85900372F70 /* Object+Creation.swift in Sources */,
 				96B343A624F7F87200372F70 /* Realm+CascadeDeletion.swift in Sources */,
+				96B343BE24F8FDDA00372F70 /* PostalCode+Transform.swift in Sources */,
 				96B343AF24F7FA4800372F70 /* PostalCodesStorageRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +457,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WTestRealm/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -441,6 +466,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DBerto.Realm;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -458,6 +484,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WTestRealm/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +493,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DBerto.Realm;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -551,7 +579,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		96B3439724F7F63200372F70 /* RealmSwift */ = {
+		96B343BF24F9021300372F70 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 96B3439624F7F63200372F70 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;

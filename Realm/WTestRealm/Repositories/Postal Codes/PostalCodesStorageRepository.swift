@@ -12,30 +12,37 @@ import WTestDomain
 
 public final class PostalCodesStorageRepository: BaseStorageRepository, PostalCodesStorageRepositoryInterface {
     
-    public func createPostalCode(_ postalCode: PostalCode, completion: @escaping (Result<Void, Error>) -> Void) {
+    public func savePostalCodes(_ postalCode: [PostalCode], completion: @escaping (Result<Void, Error>) -> Void) {
         let realm = self.realm
-        
-        //        do {
-        //            try realm.write {
-        //                let profile = realm.object(ofType: ProfileModel.self,
-        //                                           forPrimaryKey: userId) ?? ProfileModel(userId: userId)
-        //                realm.add(profile, update: .all)
-        //                completion(.success(()))
-        //            }
-        //        } catch {
-        //            completion(.failure(error))
-        //        }
+        do {
+            try realm.write {
+                let objects = postalCode.map({ $0.asPostalCodeModel() })
+                realm.add(objects)
+                completion(.success(()))
+            }
+        } catch {
+            completion(.failure(error))
+        }
     }
     
-    // MARK: - Services
+    public func savePostalCode(_ postalCode: PostalCode, completion: @escaping (Result<Void, Error>) -> Void) {
+        let realm = self.realm
+        do {
+            try realm.write {
+                let model = postalCode.asPostalCodeModel()
+                realm.add(model)
+                completion(.success(()))
+            }
+        } catch {
+            completion(.failure(error))
+        }
+    }
     
     public func fetchPostalCodes(completion: @escaping (Result<[PostalCode], Error>) -> Void) {
-        //        do {
-        //            let profile = try fetchProfile(for: userId)
-        //            let favoriteServices = Array(profile.favoriteServices.map { $0.asService() })
-        //            completion(.success(favoriteServices))
-        //        } catch {
-        //            completion(.failure(error))
-        //        }
+        let realm = self.realm
+        let objects = realm.objects(PostalCodeModel.self)
+        let postalCodes = Array(objects.map { $0.asPostalCode() })
+        completion(.success(postalCodes))
     }
+    
 }

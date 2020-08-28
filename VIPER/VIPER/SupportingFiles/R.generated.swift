@@ -174,7 +174,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 6 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 7 localization keys.
     struct localizable {
       /// en translation: Alert
       ///
@@ -196,6 +196,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let ok = Rswift.StringResource(key: "Ok", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Saving postal codes
+      ///
+      /// Locales: en
+      static let savingLabel = Rswift.StringResource(key: "SavingLabel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: WTTest for VIPER
       ///
       /// Locales: en
@@ -274,6 +278,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Ok", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Saving postal codes
+      ///
+      /// Locales: en
+      static func savingLabel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("SavingLabel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "SavingLabel"
+        }
+
+        return NSLocalizedString("SavingLabel", bundle: bundle, comment: "")
       }
 
       /// en translation: WTTest for VIPER

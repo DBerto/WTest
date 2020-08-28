@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WTestDomain
 
 // MARK: Navigation Layer
 
@@ -29,8 +30,12 @@ protocol LoadingScreenEventHandler: class {
 
 protocol LoadingScreenInteractorInterface: class {
     func fetchPostalCodes()
+    func savePostalCodes(_ postalCodes: [PostalCode])
 }
 
 protocol LoadingScreenPresenterInterface: class {
+    func postalCodeFetchSucceed(_ postalCodes: [PostalCode])
     func postalCodeFetchFailed(_ error: Error)
+    func postalCodeSaveSucceed()
+    func postalCodeSaveFailed(_ error: Error)
 }

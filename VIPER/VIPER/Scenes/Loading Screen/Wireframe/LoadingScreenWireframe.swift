@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 
 class LoadingScreenWireframe: BaseWireframe, LoadingScreenWireframeInterface {
-
+    
     private let view: LoadingScreenViewController
     private let interactor: LoadingScreenInteractorInterface
     private let presenter: LoadingScreenPresenterInterface
-
-    init(view: LoadingScreenViewController, interactor: LoadingScreenInteractorInterface, presenter: LoadingScreenPresenterInterface) {
+    
+    init(view: LoadingScreenViewController, interactor: LoadingScreenInteractorInterface,
+         presenter: LoadingScreenPresenterInterface) {
         self.view = view
         self.interactor = interactor
         self.presenter = presenter

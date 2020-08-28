@@ -31,10 +31,10 @@
 		96B3432B24F69EA800372F70 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96B3432D24F69EA800372F70 /* Localizable.strings */; };
 		96B3433124F6A38900372F70 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3433024F6A38900372F70 /* R.generated.swift */; };
 		96B3433724F6A43000372F70 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 96B3433624F6A43000372F70 /* Rswift */; };
-		96B3439E24F7F75400372F70 /* WTestRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B3439D24F7F75400372F70 /* WTestRealm.framework */; };
-		96B3439F24F7F75400372F70 /* WTestRealm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96B3439D24F7F75400372F70 /* WTestRealm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96B343AC24F7FA0F00372F70 /* WTestDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B343AB24F7FA0F00372F70 /* WTestDomain.framework */; };
 		96B343AD24F7FA0F00372F70 /* WTestDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96B343AB24F7FA0F00372F70 /* WTestDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		96B343C724F9051700372F70 /* WTestRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B3439D24F7F75400372F70 /* WTestRealm.framework */; };
+		96B343C824F9051700372F70 /* WTestRealm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96B3439D24F7F75400372F70 /* WTestRealm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				96B343C824F9051700372F70 /* WTestRealm.framework in Embed Frameworks */,
 				96B343AD24F7FA0F00372F70 /* WTestDomain.framework in Embed Frameworks */,
-				96B3439F24F7F75400372F70 /* WTestRealm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,9 +88,6 @@
 		96B3432524F6682200372F70 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		96B3432C24F69EA800372F70 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		96B3433024F6A38900372F70 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
-		96B3436124F7F0BA00372F70 /* Entities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Entities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96B3436B24F7F16A00372F70 /* Entities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Entities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96B3439924F7F75000372F70 /* WTestEntities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestEntities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B3439D24F7F75400372F70 /* WTestRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B343AB24F7FA0F00372F70 /* WTestDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,8 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B343C724F9051700372F70 /* WTestRealm.framework in Frameworks */,
 				96B343AC24F7FA0F00372F70 /* WTestDomain.framework in Frameworks */,
-				96B3439E24F7F75400372F70 /* WTestRealm.framework in Frameworks */,
 				963B2C9C24F558B50045D3A0 /* SnapKit in Frameworks */,
 				96B3433724F6A43000372F70 /* Rswift in Frameworks */,
 			);
@@ -298,9 +295,6 @@
 			children = (
 				96B343AB24F7FA0F00372F70 /* WTestDomain.framework */,
 				96B3439D24F7F75400372F70 /* WTestRealm.framework */,
-				96B3439924F7F75000372F70 /* WTestEntities.framework */,
-				96B3436B24F7F16A00372F70 /* Entities.framework */,
-				96B3436124F7F0BA00372F70 /* Entities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

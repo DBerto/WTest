@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WTestRealm
 
 class LoadingScreenBuilder {
 
@@ -27,7 +28,7 @@ class LoadingScreenBuilder {
     }
 
     private func makeInteractor() -> LoadingScreenInteractor {
-        LoadingScreenInteractor()
+        LoadingScreenInteractor(databaseRepository: PostalCodesStorageRepository())
     }
 
     private func makePresenter() -> LoadingScreenPresenter {

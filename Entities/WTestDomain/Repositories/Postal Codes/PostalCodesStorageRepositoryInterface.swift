@@ -9,5 +9,7 @@
 import Foundation
 
 public protocol PostalCodesStorageRepositoryInterface {
-    
+    func savePostalCode(_ postalCode: PostalCode, completion: @escaping (Result<Void, Error>) -> Void)
+    func savePostalCodes(_ postalCode: [PostalCode], completion: @escaping (Result<Void, Error>) -> Void)
+    func fetchPostalCodes(completion: @escaping (Result<[PostalCode], Error>) -> Void)
 }

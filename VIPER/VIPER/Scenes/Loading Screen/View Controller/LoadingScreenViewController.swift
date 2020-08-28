@@ -13,7 +13,7 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
     
     // MARK: - Properties
     
-    weak var eventHandler: LoadingScreenEventHandler!
+    var eventHandler: LoadingScreenEventHandler!
     
     lazy var loadingView: LoadingView = {
         let view = LoadingView()
@@ -28,8 +28,8 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
         eventHandler.viewIsLoaded()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         eventHandler.viewAppeared()
     }
     
@@ -52,5 +52,6 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
     
     func updateView(with viewModel: LoadingViewModel) {
         loadingView.viewModel = viewModel
+        view.setNeedsDisplay()
     }
 }

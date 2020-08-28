@@ -9,6 +9,11 @@
 import Foundation
 
 public struct PostalCode {
-    let local: String
-    let number: String
+    public let local: String
+    public let number: String
+    
+    public init(local: String, number: String) {
+        self.local = local
+        self.number = number
+    }
 }

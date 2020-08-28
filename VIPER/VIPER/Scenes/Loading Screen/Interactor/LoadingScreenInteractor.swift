@@ -22,41 +22,55 @@ enum LoadingScreenInteractorError: LocalizedError {
 
 class LoadingScreenInteractor: LoadingScreenInteractorInterface {
     
-    weak var presenter: LoadingScreenPresenterInterface!
+    var presenter: LoadingScreenPresenterInterface!
+    let databaseRepository: PostalCodesStorageRepositoryInterface!
+    
+    init(databaseRepository: PostalCodesStorageRepositoryInterface) {
+        self.databaseRepository = databaseRepository
+    }
     
     private var isAppAlreadyLaunched: Bool = {
         return UserDefaults.standard.bool(forKey: "isAppAlreadyLaunched")
     }()
     
-    init() {
-        
-    }
-    
     func fetchPostalCodes() {
         guard let postalCodeUrl = URL(string: Configuration.postalCodeURL), !isAppAlreadyLaunched else { return }
+        var errors: [Error] = []
+        var postalCodes: [PostalCode] = []
         
-        DispatchQueue.main.async {
-            do {
-                let contents = try String(contentsOf: postalCodeUrl)
-                var postalCodeStringList = contents.components(separatedBy: .newlines)
-                postalCodeStringList.remove(at: 0)
-                postalCodeStringList.remove(at: postalCodeStringList.count - 1)
-                for postalCodeContent in postalCodeStringList {
-                    let elements = postalCodeContent.components(separatedBy: ",")
-                    let postalCode =  (elements[elements.endIndex - 3]) + "-" + (elements[elements.endIndex - 2])
-                    let local = (elements[elements.endIndex - 1])
-                    //                let postalCodeModel = PostalCodeModel(name: local, number: number)
-                    //                _PostalCodeList.append(postalCodeModel)
-                }
-                //            savePostalCodeDb(postalCodeArray: _PostalCodeList)
-                UserDefaults.standard.set(true, forKey: "isAppAlreadyLaunched")
-            } catch {
-                self.presenter?.postalCodeFetchFailed(LoadingScreenInteractorError.downloadError)
+        do {
+            let contents = try String(contentsOf: postalCodeUrl)
+            var postalCodeStringList = contents.components(separatedBy: .newlines)
+            postalCodeStringList.remove(at: 0)
+            postalCodeStringList.remove(at: postalCodeStringList.count - 1)
+            
+            for postalCodeContent in postalCodeStringList {
+                let elements = postalCodeContent.components(separatedBy: ",")
+                let number =  (elements[elements.endIndex - 3]) + "-" + (elements[elements.endIndex - 2])
+                let local = (elements[elements.endIndex - 1])
+                let postalCode = PostalCode(local: local, number: number)
+                postalCodes.append(postalCode)
             }
+        } catch {
+            errors.append(LoadingScreenInteractorError.downloadError)
+        }
+        
+        if errors.isEmpty {
+            self.presenter.postalCodeFetchSucceed(postalCodes)
+        } else {
+            self.presenter.postalCodeFetchFailed(LoadingScreenInteractorError.downloadError)
         }
     }
     
-    private func savePostalCodesToDB(_ postalCode: [PostalCode]) {
-        
+    func savePostalCodes(_ postalCodes: [PostalCode]) {
+        databaseRepository.savePostalCodes(postalCodes) { [weak self] (result) in
+            switch result {
+            case .success:
+                UserDefaults.standard.set(true, forKey: "isAppAlreadyLaunched")
+                self?.presenter.postalCodeSaveSucceed()
+            case .failure(let error):
+                self?.presenter.postalCodeSaveFailed(error)
+            }
+        }
     }
 }
