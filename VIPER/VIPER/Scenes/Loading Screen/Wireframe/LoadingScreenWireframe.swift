@@ -22,4 +22,13 @@ class LoadingScreenWireframe: BaseWireframe, LoadingScreenWireframeInterface {
         self.presenter = presenter
         super.init(viewController: view)
     }
+    
+    // MARK: - LoadingScreenWireframeInterface
+    
+    func openMainMenu() {
+        let mainMenuWirefranme = MainScreenBuilder().makeModule()
+        mainMenuWirefranme.viewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.setRootWireframe(mainMenuWirefranme)
+    }
+    
 }

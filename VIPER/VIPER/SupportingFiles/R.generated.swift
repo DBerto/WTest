@@ -174,7 +174,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 7 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 9 localization keys.
     struct localizable {
       /// en translation: Alert
       ///
@@ -192,10 +192,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let downloadingLabel = Rswift.StringResource(key: "DownloadingLabel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Main Menu
+      ///
+      /// Locales: en
+      static let mainScreenTitle = Rswift.StringResource(key: "MainScreenTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Ok
       ///
       /// Locales: en
       static let ok = Rswift.StringResource(key: "Ok", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Postal Codes
+      ///
+      /// Locales: en
+      static let postalCodes = Rswift.StringResource(key: "PostalCodes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Saving postal codes
       ///
       /// Locales: en
@@ -265,6 +273,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("DownloadingLabel", bundle: bundle, comment: "")
       }
 
+      /// en translation: Main Menu
+      ///
+      /// Locales: en
+      static func mainScreenTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("MainScreenTitle", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "MainScreenTitle"
+        }
+
+        return NSLocalizedString("MainScreenTitle", bundle: bundle, comment: "")
+      }
+
       /// en translation: Ok
       ///
       /// Locales: en
@@ -278,6 +301,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Ok", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Postal Codes
+      ///
+      /// Locales: en
+      static func postalCodes(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("PostalCodes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "PostalCodes"
+        }
+
+        return NSLocalizedString("PostalCodes", bundle: bundle, comment: "")
       }
 
       /// en translation: Saving postal codes

@@ -25,6 +25,7 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupNavBar()
         eventHandler.viewIsLoaded()
     }
     
@@ -38,6 +39,10 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
     private func setupView() {
         view.addSubview(loadingView)
         setupConstraints()
+    }
+    
+    private func setupNavBar() {
+        navigationController?.isToolbarHidden = true
     }
     
     private func setupConstraints() {

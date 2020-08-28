@@ -12,6 +12,9 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+    private var isAppAlreadyLaunched: Bool = {
+        return UserDefaults.standard.bool(forKey: "isAppAlreadyLaunched")
+    }()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,11 +24,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
                 
-        let mainWirefranme = LoadingScreenBuilder().makeModule()
+        let mainWirefranme = isAppAlreadyLaunched ? MainScreenBuilder().makeModule() : LoadingScreenBuilder().makeModule()
+        let navController = UINavigationController()
+        navController.setRootWireframe(mainWirefranme)
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = mainWirefranme.viewController
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
 

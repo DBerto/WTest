@@ -13,3 +13,5 @@
 "Cancel" = "Cancel";
 "Alert" = "Alert";
 "PostalCodesDownloadError" = "An error occured while trying to fetch postal codes.";
+"MainScreenTitle" = "Main Menu";
+"PostalCodes" = "Postal Codes";

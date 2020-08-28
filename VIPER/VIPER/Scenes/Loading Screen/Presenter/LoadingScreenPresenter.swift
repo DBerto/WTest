@@ -13,8 +13,8 @@ class LoadingScreenPresenter: LoadingScreenEventHandler, LoadingScreenPresenterI
     
     // MARK: - Properties
     
+    weak var view: LoadingScreenViewInterface!
     var wireframe: LoadingScreenWireframeInterface!
-    var view: LoadingScreenViewInterface!
     var interactor: LoadingScreenInteractorInterface!
     
     lazy var viewModel: LoadingViewModel = {
@@ -48,7 +48,7 @@ class LoadingScreenPresenter: LoadingScreenEventHandler, LoadingScreenPresenterI
     }
     
     func postalCodeSaveSucceed() {
-        
+        wireframe.openMainMenu()
     }
     
     func postalCodeSaveFailed(_ error: Error) {

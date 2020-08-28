@@ -35,6 +35,12 @@
 		96B343AD24F7FA0F00372F70 /* WTestDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96B343AB24F7FA0F00372F70 /* WTestDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96B343C724F9051700372F70 /* WTestRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B3439D24F7F75400372F70 /* WTestRealm.framework */; };
 		96B343C824F9051700372F70 /* WTestRealm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96B3439D24F7F75400372F70 /* WTestRealm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		96B343CB24F91EF700372F70 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343CA24F91EF700372F70 /* MainScreen.swift */; };
+		96B343D224F91F6600372F70 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343D124F91F6600372F70 /* MainScreenViewController.swift */; };
+		96B343D424F91F6F00372F70 /* MainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343D324F91F6F00372F70 /* MainScreenPresenter.swift */; };
+		96B343D624F91F7B00372F70 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343D524F91F7B00372F70 /* MainScreenInteractor.swift */; };
+		96B343D824F91F8400372F70 /* MainScreenWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343D724F91F8400372F70 /* MainScreenWireframe.swift */; };
+		96B343DA24F91F8D00372F70 /* MainScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343D924F91F8D00372F70 /* MainScreenBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +96,12 @@
 		96B3433024F6A38900372F70 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		96B3439D24F7F75400372F70 /* WTestRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B343AB24F7FA0F00372F70 /* WTestDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96B343CA24F91EF700372F70 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		96B343D124F91F6600372F70 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		96B343D324F91F6F00372F70 /* MainScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPresenter.swift; sourceTree = "<group>"; };
+		96B343D524F91F7B00372F70 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
+		96B343D724F91F8400372F70 /* MainScreenWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenWireframe.swift; sourceTree = "<group>"; };
+		96B343D924F91F8D00372F70 /* MainScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				963B2C9D24F55B790045D3A0 /* Loading Screen */,
+				96B343C924F91D1100372F70 /* Main Screen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -204,17 +217,9 @@
 				963B2CA424F5602C0045D3A0 /* Interactor */,
 				963B2CA324F560240045D3A0 /* Presenter */,
 				963B2CA224F560060045D3A0 /* View Controller */,
-				963B2CA124F55FF50045D3A0 /* Data Source */,
 				963B2CA724F5605F0045D3A0 /* LoadingScreen.swift */,
 			);
 			path = "Loading Screen";
-			sourceTree = "<group>";
-		};
-		963B2CA124F55FF50045D3A0 /* Data Source */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Data Source";
 			sourceTree = "<group>";
 		};
 		963B2CA224F560060045D3A0 /* View Controller */ = {
@@ -297,6 +302,59 @@
 				96B3439D24F7F75400372F70 /* WTestRealm.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96B343C924F91D1100372F70 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				96B343D024F91F2700372F70 /* Builder */,
+				96B343CF24F91F1D00372F70 /* Wireframe */,
+				96B343CE24F91F1700372F70 /* Interactor */,
+				96B343CD24F91F1200372F70 /* Presenter */,
+				96B343CC24F91EFA00372F70 /* View Controller */,
+				96B343CA24F91EF700372F70 /* MainScreen.swift */,
+			);
+			path = "Main Screen";
+			sourceTree = "<group>";
+		};
+		96B343CC24F91EFA00372F70 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96B343D124F91F6600372F70 /* MainScreenViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		96B343CD24F91F1200372F70 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				96B343D324F91F6F00372F70 /* MainScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		96B343CE24F91F1700372F70 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				96B343D524F91F7B00372F70 /* MainScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		96B343CF24F91F1D00372F70 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				96B343D724F91F8400372F70 /* MainScreenWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		96B343D024F91F2700372F70 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				96B343D924F91F8D00372F70 /* MainScreenBuilder.swift */,
+			);
+			path = Builder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,20 +513,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B343CB24F91EF700372F70 /* MainScreen.swift in Sources */,
+				96B343D224F91F6600372F70 /* MainScreenViewController.swift in Sources */,
 				963B2CAA24F5632C0045D3A0 /* LoadingScreenBuilder.swift in Sources */,
+				96B343D824F91F8400372F70 /* MainScreenWireframe.swift in Sources */,
 				963B2CAE24F567620045D3A0 /* LoadingScreenInteractor.swift in Sources */,
 				963B2CB424F5954C0045D3A0 /* BaseViewController.swift in Sources */,
 				963B2CBE24F59A6C0045D3A0 /* LoadingViewModel.swift in Sources */,
 				96B3432424F6657000372F70 /* Configuration.swift in Sources */,
 				963B2CA824F5605F0045D3A0 /* LoadingScreen.swift in Sources */,
 				963B2C7124F54C910045D3A0 /* AppDelegate.swift in Sources */,
+				96B343DA24F91F8D00372F70 /* MainScreenBuilder.swift in Sources */,
 				963B2C7324F54C910045D3A0 /* SceneDelegate.swift in Sources */,
 				963B2C7524F54C910045D3A0 /* ContentView.swift in Sources */,
+				96B343D424F91F6F00372F70 /* MainScreenPresenter.swift in Sources */,
 				963B2CA024F55F1B0045D3A0 /* BaseWireframe.swift in Sources */,
 				96B3433124F6A38900372F70 /* R.generated.swift in Sources */,
 				963B2CB224F5684C0045D3A0 /* LoadingScreenViewController.swift in Sources */,
 				963B2CAC24F565600045D3A0 /* LoadingScreenWireframe.swift in Sources */,
 				963B2CBA24F596850045D3A0 /* LoadingView.swift in Sources */,
+				96B343D624F91F7B00372F70 /* MainScreenInteractor.swift in Sources */,
 				963B2CB024F567AD0045D3A0 /* LoadingScreenPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

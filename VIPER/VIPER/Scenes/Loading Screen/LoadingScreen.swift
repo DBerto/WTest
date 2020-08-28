@@ -12,7 +12,7 @@ import WTestDomain
 // MARK: Navigation Layer
 
 protocol LoadingScreenWireframeInterface: WireframeInterface {
-
+    func openMainMenu()
 }
 
 // MARK: User Interface Layer
