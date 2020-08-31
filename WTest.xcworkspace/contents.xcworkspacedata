@@ -5,10 +5,10 @@
       location = "group:VIPER/VIPER.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/dberto/iOS_Projects/WTest/Entities/WTestDomain.xcodeproj">
+      location = "group:Entities/WTestDomain.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/dberto/iOS_Projects/WTest/Realm/WTestRealm.xcodeproj">
+      location = "group:Realm/WTestRealm.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:WTest.xcodeproj">
