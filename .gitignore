@@ -1,1 +1,4 @@
 .DS_Store
+*.xcbkptlist
+WTest.xcworkspace/xcuserdata/dberto.xcuserdatad/xcschemes/xcschememanagement.plist
+WTest.xcworkspace/xcuserdata/dberto.xcuserdatad/UserInterfaceState.xcuserstate

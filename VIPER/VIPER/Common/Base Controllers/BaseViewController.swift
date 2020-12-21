@@ -23,18 +23,14 @@ class BaseViewController: UIViewController {
     }
     
     func showAlert(with title: String? = nil, message: String? = nil) {
-        DispatchQueue.main.async {
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            self.present(alertController, animated: true, completion: nil)
-        }
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func showError(_ error: Error) {
-        DispatchQueue.main.async {
-            let alertController = UIAlertController(title: R.string.localizable.alert(),
-                                                    message: error.localizedDescription.description,
-                                                    preferredStyle: .alert)
-            self.present(alertController, animated: true, completion: nil)
-        }
+        let alertController = UIAlertController(title: R.string.localizable.alert(),
+                                                message: error.localizedDescription.description,
+                                                preferredStyle: .alert)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

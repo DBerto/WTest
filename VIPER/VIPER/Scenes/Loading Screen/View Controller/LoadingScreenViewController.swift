@@ -52,7 +52,7 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
             make.leading.equalToSuperview().offset(10)
         }
     }
-    
+        
     // MARK: - LoadingScreenEventHandler
     
     func updateView(with viewModel: LoadingViewModel) {

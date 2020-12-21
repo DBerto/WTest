@@ -78,7 +78,7 @@ final class ArticleViewController: GenericTableViewController<Item,ArticleTableV
                     self.articleItensList.append(contentsOf: resultValue ?? [])
                     self.configureTable()
                     self.loadIndicator.stopAnimating()
-                    self.articleTableView.reloadData()
+                    self.articleTableView.configureDataProvider()
                 case .failure(let error):
                     self.loadIndicator.stopAnimating()
                     self.showAlertBar(title: "Error", message: error.customDescription)

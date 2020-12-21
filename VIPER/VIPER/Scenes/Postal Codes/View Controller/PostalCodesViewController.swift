@@ -22,7 +22,6 @@ class PostalCodesViewController: TableViewController, PostalCodesViewInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
-        setupDataProvider()
         eventHandler.viewIsLoaded()
     }
     
@@ -32,16 +31,17 @@ class PostalCodesViewController: TableViewController, PostalCodesViewInterface {
         navigationItem.title = R.string.localizable.postalCodes()
     }
     
-    private func setupDataProvider() {
+    override func configureDataProvider() {
         dataProvider = PostalCodesDataProvider(dataSource: dataSource)
         dataProvider.tableView = tableView
+        tableView.reloadData()
     }
     
     // MARK: - PostalCodesViewInterface
     
     func updateView(with viewModel: PostalCodesViewModel) {
         dataProvider.viewModel = viewModel
-        reloadData()
+        configureDataProvider()
     }
     
 }

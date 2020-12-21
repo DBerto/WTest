@@ -14,7 +14,7 @@ class TableViewController: BaseViewController {
     // MARK: - Properties
     
     var tableView: UITableView!
-    var tableViewStyle: UITableView.Style! = .grouped{
+    var tableViewStyle: UITableView.Style! = .grouped {
         didSet {
             setupTableView()
         }
@@ -38,7 +38,7 @@ class TableViewController: BaseViewController {
         tableView = UITableView(frame: .zero, style: tableViewStyle)
         view.addSubview(tableView)
         addTableViewConstraints()
-        reloadData()
+        configureDataProvider()
     }
     
     func addTableViewConstraints() {
@@ -51,8 +51,8 @@ class TableViewController: BaseViewController {
         ])
     }
     
-    func reloadData() {
-        tableView.reloadData()
+    func configureDataProvider() {
+        assertionFailure("Should be implemented by is subclasses")
     }
     
     private func setupView() {

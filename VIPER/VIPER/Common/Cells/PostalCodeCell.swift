@@ -28,6 +28,7 @@ class PostalCodeCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 10
+        stackView.distribution = .fill
         return stackView
     }()
     
@@ -40,6 +41,9 @@ class PostalCodeCell: UITableViewCell {
     lazy var localLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .regular)
+        label.textAlignment = .right
+        label.numberOfLines = 0
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
     
@@ -56,7 +60,7 @@ class PostalCodeCell: UITableViewCell {
     }
     
     private func commonInit() {
-        addSubview(stackView)
+        contentView.addSubview(stackView)
         stackView.addArrangedSubview(numberLabel)
         stackView.addArrangedSubview(localLabel)
         setupConstraints()
@@ -66,9 +70,11 @@ class PostalCodeCell: UITableViewCell {
     
     private func setupConstraints() {
         stackView.snp.makeConstraints { (make) in
-            make.width.equalTo(bounds.width)
-            make.edges.equalToSuperview()
+            make.bottomMargin.topMargin.rightMargin.leadingMargin.equalToSuperview()
         }
+        
+        numberLabel.setContentHuggingPriority(.required, for: .horizontal)
+        numberLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
     
     // MARK: - Bindings
