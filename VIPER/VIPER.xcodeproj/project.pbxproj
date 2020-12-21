@@ -58,6 +58,7 @@
 		96B3440524F94F9900372F70 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3440424F94F9900372F70 /* TableViewController.swift */; };
 		96B933EC2590A8C300212866 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B933EB2590A8C300212866 /* TableDataProvider.swift */; };
 		96B933F02590A9DD00212866 /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B933EF2590A9DD00212866 /* UITableView+Register.swift */; };
+		96D437352590B3B700687F50 /* ThreadHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D437342590B3B700687F50 /* ThreadHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		96B3440424F94F9900372F70 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		96B933EB2590A8C300212866 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		96B933EF2590A9DD00212866 /* UITableView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
+		96D437342590B3B700687F50 /* ThreadHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 		963B2C6F24F54C910045D3A0 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				96D437332590B3A300687F50 /* Utilities */,
 				96B3440124F94B1400372F70 /* Extensions */,
 				963B2C9424F550850045D3A0 /* Common */,
 				963B2C9324F5507D0045D3A0 /* Scenes */,
@@ -508,6 +511,14 @@
 			path = "Data Source";
 			sourceTree = "<group>";
 		};
+		96D437332590B3A300687F50 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				96D437342590B3B700687F50 /* ThreadHandler.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -670,6 +681,7 @@
 				96B343F524F9449600372F70 /* PostalCodesDataSource.swift in Sources */,
 				96B343F324F9440A00372F70 /* TableDataSource.swift in Sources */,
 				963B2CAA24F5632C0045D3A0 /* LoadingScreenBuilder.swift in Sources */,
+				96D437352590B3B700687F50 /* ThreadHandler.swift in Sources */,
 				96B343D824F91F8400372F70 /* MainScreenWireframe.swift in Sources */,
 				96B3440524F94F9900372F70 /* TableViewController.swift in Sources */,
 				963B2CAE24F567620045D3A0 /* LoadingScreenInteractor.swift in Sources */,

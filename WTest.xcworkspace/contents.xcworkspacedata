@@ -10,7 +10,4 @@
    <FileRef
       location = "group:Realm/WTestRealm.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:WTest.xcodeproj">
-   </FileRef>
 </Workspace>

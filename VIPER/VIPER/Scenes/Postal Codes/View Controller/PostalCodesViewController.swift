@@ -32,6 +32,7 @@ class PostalCodesViewController: TableViewController, PostalCodesViewInterface {
     }
     
     override func configureDataProvider() {
+        hasRefreshControl = true
         dataProvider = PostalCodesDataProvider(dataSource: dataSource)
         dataProvider.tableView = tableView
         tableView.reloadData()
@@ -44,4 +45,15 @@ class PostalCodesViewController: TableViewController, PostalCodesViewInterface {
         configureDataProvider()
     }
     
+    func updateLoadingIndicator(_ value: Bool) {
+        if value {
+            tableView.refreshControl?.beginRefreshing()
+        } else {
+            tableView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    @objc override func refresHandler(_ refreshControl: UIRefreshControl) {
+        refreshControl.endRefreshing()
+    }
 }

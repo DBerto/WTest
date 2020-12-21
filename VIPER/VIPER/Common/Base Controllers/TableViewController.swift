@@ -19,7 +19,11 @@ class TableViewController: BaseViewController {
             setupTableView()
         }
     }
-    
+    var hasRefreshControl: Bool = false {
+        didSet {
+            configureRefreshControl(value: hasRefreshControl)
+        }
+    }
     // MARK: - Override
     
     override func viewDidLoad() {
@@ -57,5 +61,24 @@ class TableViewController: BaseViewController {
     
     private func setupView() {
         view.backgroundColor = tableView.backgroundColor
+    }
+}
+
+// MARK: - UIRefreshControl
+
+extension TableViewController {
+    private func configureRefreshControl(value: Bool) {
+        if value && tableView.refreshControl == nil {
+            let refreshControl = UIRefreshControl()
+            refreshControl.addTarget(self, action: #selector(refresHandler(_:)), for: .valueChanged)
+            tableView.refreshControl = refreshControl
+        } else if !value && tableView.refreshControl != nil {
+            tableView.refreshControl = nil
+        }
+    }
+    
+    @objc func refresHandler(_ refreshControl: UIRefreshControl) {
+        // Do your job, when done:
+        assertionFailure("Should be implemented by is subclasses")
     }
 }

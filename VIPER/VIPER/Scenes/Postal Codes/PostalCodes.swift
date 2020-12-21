@@ -19,6 +19,7 @@ protocol PostalCodesWireframeInterface: WireframeInterface {
 
 protocol PostalCodesViewInterface: ViewInterface {
     func updateView(with viewModel: PostalCodesViewModel)
+    func updateLoadingIndicator(_ value: Bool)
 }
 
 protocol PostalCodesEventHandler: class {

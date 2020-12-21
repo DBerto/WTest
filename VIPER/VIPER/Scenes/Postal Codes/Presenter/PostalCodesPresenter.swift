@@ -20,7 +20,8 @@ class PostalCodesPresenter: PostalCodesEventHandler, PostalCodesPresenterInterfa
     // MARK: - PostalCodesEventHandler
     
     func viewIsLoaded() {
-        DispatchQueue.main.async { [weak self] in
+        view.updateLoadingIndicator(true)
+        executeInMainThread { [weak self] in
             self?.interactor.fetchPostalCodes()
         }
     }
@@ -34,6 +35,7 @@ class PostalCodesPresenter: PostalCodesEventHandler, PostalCodesPresenterInterfa
     func fetchPostalCodesSucceed(_ postalCodes: [PostalCode]) {
         let postalCodes = postalCodes.map { PostalCodeViewModel(local: $0.local, number: $0.number) }
         view.updateView(with: PostalCodesViewModel(postalCodes: postalCodes))
+        view.updateLoadingIndicator(false)
     }
     
 }
