@@ -24,12 +24,14 @@ protocol PostalCodesViewInterface: ViewInterface {
 
 protocol PostalCodesEventHandler: class {
     func viewIsLoaded()
+    func searchRequest(withText text: String)
 }
 
 // MARK: Business Layer
 
 protocol PostalCodesInteractorInterface: class {
     func fetchPostalCodes()
+    func searchPotalCodes(withText text: String)
 }
 
 protocol PostalCodesPresenterInterface: class {

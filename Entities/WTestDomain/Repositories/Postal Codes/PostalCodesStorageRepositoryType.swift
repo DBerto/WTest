@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol PostalCodesStorageRepositoryInterface {
+public protocol PostalCodesStorageRepositoryType {
     func savePostalCode(_ postalCode: PostalCode, completion: @escaping (Result<Void, Error>) -> Void)
     func savePostalCodes(_ postalCode: [PostalCode], completion: @escaping (Result<Void, Error>) -> Void)
-    func fetchPostalCodes(completion: @escaping (Result<[PostalCode], Error>) -> Void)
+    func fetchPostalCodes(withPredicate predicate: NSPredicate?, completion: @escaping (Result<[PostalCode], Error>) -> Void)
 }

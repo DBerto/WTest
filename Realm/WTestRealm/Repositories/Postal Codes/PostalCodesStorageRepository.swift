@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 import WTestDomain
 
-public final class PostalCodesStorageRepository: BaseStorageRepository, PostalCodesStorageRepositoryInterface {
+public final class PostalCodesStorageRepository: BaseStorageRepository, PostalCodesStorageRepositoryType {
     
     public func savePostalCodes(_ postalCode: [PostalCode], completion: @escaping (Result<Void, Error>) -> Void) {
         let realm = self.realm
@@ -38,9 +38,14 @@ public final class PostalCodesStorageRepository: BaseStorageRepository, PostalCo
         }
     }
     
-    public func fetchPostalCodes(completion: @escaping (Result<[PostalCode], Error>) -> Void) {
+    public func fetchPostalCodes(withPredicate predicate: NSPredicate?, completion: @escaping (Result<[PostalCode], Error>) -> Void) {
         let realm = self.realm
-        let objects = realm.objects(PostalCodeModel.self)
+        var objects = realm.objects(PostalCodeModel.self)
+        
+        if let predicate = predicate {
+            objects = objects.filter(predicate)
+        }
+        
         let postalCodes = Array(objects.map { $0.asPostalCode() })
         completion(.success(postalCodes))
     }

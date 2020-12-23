@@ -14,6 +14,7 @@ class TableViewController: BaseViewController {
     // MARK: - Properties
     
     var tableView: UITableView!
+    var searchController: UISearchController?
     var tableViewStyle: UITableView.Style! = .grouped {
         didSet {
             setupTableView()
@@ -22,6 +23,11 @@ class TableViewController: BaseViewController {
     var hasRefreshControl: Bool = false {
         didSet {
             configureRefreshControl(value: hasRefreshControl)
+        }
+    }
+    var hasSearchBar: Bool = false {
+        didSet {
+            setupSearchController(hasSearchBar: hasSearchBar)
         }
     }
     // MARK: - Override
@@ -48,9 +54,9 @@ class TableViewController: BaseViewController {
     func addTableViewConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
@@ -82,3 +88,39 @@ extension TableViewController {
         assertionFailure("Should be implemented by is subclasses")
     }
 }
+
+// MARK: - UISearchBarDelegate
+
+extension TableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        assertionFailure("Should be implemented by is subclasses")
+    }
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension TableViewController: UISearchResultsUpdating {
+    func setupSearchController(hasSearchBar: Bool) {
+        if !hasSearchBar {
+            navigationItem.searchController = nil
+        } else if searchController?.searchBar.superview == nil {
+            searchController = UISearchController(searchResultsController: nil)
+            searchController!.searchResultsUpdater = self
+            searchController!.obscuresBackgroundDuringPresentation = false
+            searchController!.searchBar.placeholder = " Search Here"
+            searchController!.searchBar.delegate = self
+            navigationItem.searchController = searchController
+            navigationItem.hidesSearchBarWhenScrolling = false
+            definesPresentationContext = true
+        }
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        assertionFailure("Should be implemented by is subclasses")
+    }
+}
+

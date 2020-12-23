@@ -11,7 +11,7 @@
 		96B3435324F7F01200372F70 /* WTestDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3435224F7F01200372F70 /* WTestDomainTests.swift */; };
 		96B3435524F7F01200372F70 /* WTestDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B3434724F7F01200372F70 /* WTestDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96B3436024F7F03300372F70 /* PostalCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3435F24F7F03300372F70 /* PostalCode.swift */; };
-		96B343B324F7FAFC00372F70 /* PostalCodesStorageRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343B224F7FAFC00372F70 /* PostalCodesStorageRepositoryInterface.swift */; };
+		96B343B324F7FAFC00372F70 /* PostalCodesStorageRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343B224F7FAFC00372F70 /* PostalCodesStorageRepositoryType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +32,7 @@
 		96B3435224F7F01200372F70 /* WTestDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTestDomainTests.swift; sourceTree = "<group>"; };
 		96B3435424F7F01200372F70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B3435F24F7F03300372F70 /* PostalCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCode.swift; sourceTree = "<group>"; };
-		96B343B224F7FAFC00372F70 /* PostalCodesStorageRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesStorageRepositoryInterface.swift; sourceTree = "<group>"; };
+		96B343B224F7FAFC00372F70 /* PostalCodesStorageRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesStorageRepositoryType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 		96B343B124F7FAEB00372F70 /* Postal Codes */ = {
 			isa = PBXGroup;
 			children = (
-				96B343B224F7FAFC00372F70 /* PostalCodesStorageRepositoryInterface.swift */,
+				96B343B224F7FAFC00372F70 /* PostalCodesStorageRepositoryType.swift */,
 			);
 			path = "Postal Codes";
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B3436024F7F03300372F70 /* PostalCode.swift in Sources */,
-				96B343B324F7FAFC00372F70 /* PostalCodesStorageRepositoryInterface.swift in Sources */,
+				96B343B324F7FAFC00372F70 /* PostalCodesStorageRepositoryType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

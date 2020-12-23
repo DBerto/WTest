@@ -21,8 +21,16 @@ class PostalCodesPresenter: PostalCodesEventHandler, PostalCodesPresenterInterfa
     
     func viewIsLoaded() {
         view.updateLoadingIndicator(true)
-        executeInMainThread { [weak self] in
+        executeInBackgroundThread { [weak self] in
             self?.interactor.fetchPostalCodes()
+        }
+    }
+    
+    func searchRequest(withText text: String) {
+        view.updateLoadingIndicator(true)
+        view.updateView(with: PostalCodesViewModel(postalCodes: []))
+        executeInBackgroundThread { [weak self] in
+            self?.interactor.searchPotalCodes(withText: text)
         }
     }
     

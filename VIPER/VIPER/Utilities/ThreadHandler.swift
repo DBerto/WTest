@@ -15,3 +15,9 @@ func executeInMainThread(_ execution : @escaping MethodHandler, after: Double = 
         execution()
     }
 }
+
+func executeInBackgroundThread(_ execution : @escaping MethodHandler, after: Double = 0.0) {
+    DispatchQueue.global().asyncAfter(deadline: .now() + after) {
+        execution()
+    }
+}

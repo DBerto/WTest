@@ -23,9 +23,9 @@ enum LoadingScreenInteractorError: LocalizedError {
 class LoadingScreenInteractor: LoadingScreenInteractorInterface {
     
     weak var presenter: LoadingScreenPresenterInterface!
-    let databaseRepository: PostalCodesStorageRepositoryInterface!
+    let databaseRepository: PostalCodesStorageRepositoryType!
     
-    init(databaseRepository: PostalCodesStorageRepositoryInterface) {
+    init(databaseRepository: PostalCodesStorageRepositoryType) {
         self.databaseRepository = databaseRepository
     }
     
