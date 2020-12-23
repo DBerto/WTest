@@ -11,6 +11,9 @@
 		96D4B74F2593B3E800C035F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B74E2593B3E800C035F7 /* SceneDelegate.swift */; };
 		96D4B7562593B3EF00C035F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D4B7552593B3EF00C035F7 /* Assets.xcassets */; };
 		96D4B7592593B3EF00C035F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D4B7572593B3EF00C035F7 /* LaunchScreen.storyboard */; };
+		96D4B7D62593C23D00C035F7 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B7D52593C23D00C035F7 /* ViewModelType.swift */; };
+		96D4B7DA2593C26900C035F7 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B7D92593C26900C035F7 /* View.swift */; };
+		96D4B7DD2593C3BF00C035F7 /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B7DC2593C3BF00C035F7 /* Variable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		96D4B7552593B3EF00C035F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96D4B7582593B3EF00C035F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96D4B75A2593B3EF00C035F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96D4B7D52593C23D00C035F7 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		96D4B7D92593C26900C035F7 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		96D4B7DC2593C3BF00C035F7 /* Variable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,7 @@
 		96D4B74B2593B3E800C035F7 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				96D4B7D42593C22F00C035F7 /* Common */,
 				96D4B7612593B47D00C035F7 /* Application */,
 				96D4B7552593B3EF00C035F7 /* Assets.xcassets */,
 				96D4B75A2593B3EF00C035F7 /* Info.plist */,
@@ -67,6 +74,16 @@
 				96D4B7572593B3EF00C035F7 /* LaunchScreen.storyboard */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		96D4B7D42593C22F00C035F7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				96D4B7D52593C23D00C035F7 /* ViewModelType.swift */,
+				96D4B7D92593C26900C035F7 /* View.swift */,
+				96D4B7DC2593C3BF00C035F7 /* Variable.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D4B7DA2593C26900C035F7 /* View.swift in Sources */,
 				96D4B74D2593B3E800C035F7 /* AppDelegate.swift in Sources */,
 				96D4B74F2593B3E800C035F7 /* SceneDelegate.swift in Sources */,
+				96D4B7D62593C23D00C035F7 /* ViewModelType.swift in Sources */,
+				96D4B7DD2593C3BF00C035F7 /* Variable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
