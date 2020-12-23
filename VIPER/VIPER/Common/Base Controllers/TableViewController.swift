@@ -95,10 +95,6 @@ extension TableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        assertionFailure("Should be implemented by is subclasses")
-    }
 }
 
 // MARK: - UISearchResultsUpdating

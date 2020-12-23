@@ -18,7 +18,8 @@ class PostalCodesViewController: TableViewController, PostalCodesViewInterface {
     var dataProvider: PostalCodesDataProvider!
     
     private var typingTimer: Timer?
-    
+    private var oldTextSearch: String?
+        
     // MARK: - View Cycle
     
     override func viewDidLoad() {
@@ -68,8 +69,15 @@ class PostalCodesViewController: TableViewController, PostalCodesViewInterface {
     
     // MARK: - UISearchResultsUpdating
     
-    override func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) { }
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        if oldTextSearch?.isEmpty == true {
+            oldTextSearch = nil
+        }
+    }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        oldTextSearch = nil
+    }
     // MARK: - UISearchResultsUpdating
     
     override func updateSearchResults(for searchController: UISearchController) {
@@ -79,8 +87,12 @@ class PostalCodesViewController: TableViewController, PostalCodesViewInterface {
         
     private func startTypingTimerFor(_ searchController: UISearchController) {
         typingTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
+            let text = searchController.searchBar.text
             self?.typingTimer?.invalidate()
-            self?.eventHandler.searchRequest(withText: searchController.searchBar.text ?? "")
+            if self?.oldTextSearch != nil {
+                self?.eventHandler.searchRequest(withText: text ?? "")
+            }
+            self?.oldTextSearch = text
         }
     }
 }
