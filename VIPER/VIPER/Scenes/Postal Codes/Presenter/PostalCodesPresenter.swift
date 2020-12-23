@@ -8,6 +8,7 @@
 
 import Foundation
 import WTestDomain
+import WTestCommom
 
 class PostalCodesPresenter: PostalCodesEventHandler, PostalCodesPresenterInterface {
     

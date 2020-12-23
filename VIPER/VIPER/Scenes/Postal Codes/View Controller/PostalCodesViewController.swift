@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import WTestCommom
 
 class PostalCodesViewController: TableViewController, PostalCodesViewInterface {
     

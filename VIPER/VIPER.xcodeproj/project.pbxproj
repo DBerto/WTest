@@ -54,11 +54,9 @@
 		96B343FA24F9460800372F70 /* PostalCodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343F924F9460800372F70 /* PostalCodesViewModel.swift */; };
 		96B343FE24F948FA00372F70 /* PostalCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343FD24F948FA00372F70 /* PostalCodeCell.swift */; };
 		96B3440024F9494E00372F70 /* PostalCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343FF24F9494E00372F70 /* PostalCodeViewModel.swift */; };
-		96B3440324F94B2600372F70 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3440224F94B2600372F70 /* NSObject+ClassName.swift */; };
 		96B3440524F94F9900372F70 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3440424F94F9900372F70 /* TableViewController.swift */; };
 		96B933EC2590A8C300212866 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B933EB2590A8C300212866 /* TableDataProvider.swift */; };
-		96B933F02590A9DD00212866 /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B933EF2590A9DD00212866 /* UITableView+Register.swift */; };
-		96D437352590B3B700687F50 /* ThreadHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D437342590B3B700687F50 /* ThreadHandler.swift */; };
+		96D4B7B22593B8E500C035F7 /* WTestCommom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D4B7B12593B8E500C035F7 /* WTestCommom.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,11 +133,10 @@
 		96B343F924F9460800372F70 /* PostalCodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesViewModel.swift; sourceTree = "<group>"; };
 		96B343FD24F948FA00372F70 /* PostalCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeCell.swift; sourceTree = "<group>"; };
 		96B343FF24F9494E00372F70 /* PostalCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeViewModel.swift; sourceTree = "<group>"; };
-		96B3440224F94B2600372F70 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		96B3440424F94F9900372F70 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		96B933EB2590A8C300212866 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
-		96B933EF2590A9DD00212866 /* UITableView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
-		96D437342590B3B700687F50 /* ThreadHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHandler.swift; sourceTree = "<group>"; };
+		96D4B7932593B75100C035F7 /* WTestCommum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestCommum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96D4B7B12593B8E500C035F7 /* WTestCommom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestCommom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D4B7B22593B8E500C035F7 /* WTestCommom.framework in Frameworks */,
 				3A30974E24FD54AE0080814F /* WTestRealm.framework in Frameworks */,
 				963B2C9C24F558B50045D3A0 /* SnapKit in Frameworks */,
 				3A30974A24FD54AB0080814F /* WTestDomain.framework in Frameworks */,
@@ -187,8 +185,6 @@
 		963B2C6F24F54C910045D3A0 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				96D437332590B3A300687F50 /* Utilities */,
-				96B3440124F94B1400372F70 /* Extensions */,
 				963B2C9424F550850045D3A0 /* Common */,
 				963B2C9324F5507D0045D3A0 /* Scenes */,
 				963B2C9224F5505E0045D3A0 /* Resources */,
@@ -344,6 +340,8 @@
 		96B3433224F6A3E200372F70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96D4B7B12593B8E500C035F7 /* WTestCommom.framework */,
+				96D4B7932593B75100C035F7 /* WTestCommum.framework */,
 				3A30974D24FD54AE0080814F /* WTestRealm.framework */,
 				3A30974924FD54AB0080814F /* WTestDomain.framework */,
 				96B343AB24F7FA0F00372F70 /* WTestDomain.framework */,
@@ -494,29 +492,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		96B3440124F94B1400372F70 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				96B3440224F94B2600372F70 /* NSObject+ClassName.swift */,
-				96B933EF2590A9DD00212866 /* UITableView+Register.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		96B933EA2590A8A100212866 /* Data Source */ = {
 			isa = PBXGroup;
 			children = (
 				96B343F424F9449600372F70 /* PostalCodesDataSource.swift */,
 			);
 			path = "Data Source";
-			sourceTree = "<group>";
-		};
-		96D437332590B3A300687F50 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				96D437342590B3B700687F50 /* ThreadHandler.swift */,
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -681,7 +662,6 @@
 				96B343F524F9449600372F70 /* PostalCodesDataSource.swift in Sources */,
 				96B343F324F9440A00372F70 /* TableDataSource.swift in Sources */,
 				963B2CAA24F5632C0045D3A0 /* LoadingScreenBuilder.swift in Sources */,
-				96D437352590B3B700687F50 /* ThreadHandler.swift in Sources */,
 				96B343D824F91F8400372F70 /* MainScreenWireframe.swift in Sources */,
 				96B3440524F94F9900372F70 /* TableViewController.swift in Sources */,
 				963B2CAE24F567620045D3A0 /* LoadingScreenInteractor.swift in Sources */,
@@ -690,7 +670,6 @@
 				96B3432424F6657000372F70 /* Configuration.swift in Sources */,
 				963B2CA824F5605F0045D3A0 /* LoadingScreen.swift in Sources */,
 				96B343FE24F948FA00372F70 /* PostalCodeCell.swift in Sources */,
-				96B933F02590A9DD00212866 /* UITableView+Register.swift in Sources */,
 				963B2C7124F54C910045D3A0 /* AppDelegate.swift in Sources */,
 				96B343DA24F91F8D00372F70 /* MainScreenBuilder.swift in Sources */,
 				963B2C7324F54C910045D3A0 /* SceneDelegate.swift in Sources */,
@@ -706,7 +685,6 @@
 				963B2CBA24F596850045D3A0 /* LoadingView.swift in Sources */,
 				96B343DF24F93D4900372F70 /* PostalCodes.swift in Sources */,
 				96B343F724F9453F00372F70 /* PostalCodesDataProvider.swift in Sources */,
-				96B3440324F94B2600372F70 /* NSObject+ClassName.swift in Sources */,
 				96B343F024F9417100372F70 /* TableViewModelBase.swift in Sources */,
 				96B3440024F9494E00372F70 /* PostalCodeViewModel.swift in Sources */,
 				96B343EA24F93E5900372F70 /* PostalCodesInteractorInterface.swift in Sources */,

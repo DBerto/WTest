@@ -2,7 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/dberto/iOS_Projects/WTest/WTestCommum/WTestCommom.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:VIPER/VIPER.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MVVM/MVVM.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Entities/WTestDomain.xcodeproj">

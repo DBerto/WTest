@@ -8,15 +8,13 @@
 
 import Foundation
 
-typealias MethodHandler = () -> Void
-
-func executeInMainThread(_ execution : @escaping MethodHandler, after: Double = 0.0) {
+public func executeInMainThread(_ execution : @escaping () -> Void, after: Double = 0.0) {
     DispatchQueue.main.asyncAfter(deadline: .now() + after) {
         execution()
     }
 }
 
-func executeInBackgroundThread(_ execution : @escaping MethodHandler, after: Double = 0.0) {
+public func executeInBackgroundThread(_ execution : @escaping () -> Void, after: Double = 0.0) {
     DispatchQueue.global().asyncAfter(deadline: .now() + after) {
         execution()
     }
