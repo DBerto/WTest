@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96D4B7792593B64E00C035F7 /* WTestCommom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D4B76F2593B64E00C035F7 /* WTestCommom.framework */; };
+		96D4B7792593B64E00C035F7 /* WTestCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D4B76F2593B64E00C035F7 /* WTestCommon.framework */; };
 		96D4B77E2593B64E00C035F7 /* WTestCommomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B77D2593B64E00C035F7 /* WTestCommomTests.swift */; };
 		96D4B7802593B64E00C035F7 /* WTestCommom.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D4B7722593B64E00C035F7 /* WTestCommom.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		96D4B7982593B79500C035F7 /* ThreadHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B7972593B79500C035F7 /* ThreadHandler.swift */; };
@@ -26,10 +26,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		96D4B76F2593B64E00C035F7 /* WTestCommom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WTestCommom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96D4B76F2593B64E00C035F7 /* WTestCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WTestCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D4B7722593B64E00C035F7 /* WTestCommom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTestCommom.h; sourceTree = "<group>"; };
 		96D4B7732593B64E00C035F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96D4B7782593B64E00C035F7 /* WTestCommomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTestCommomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96D4B7782593B64E00C035F7 /* WTestCommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTestCommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D4B77D2593B64E00C035F7 /* WTestCommomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTestCommomTests.swift; sourceTree = "<group>"; };
 		96D4B77F2593B64E00C035F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96D4B7972593B79500C035F7 /* ThreadHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadHandler.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96D4B7792593B64E00C035F7 /* WTestCommom.framework in Frameworks */,
+				96D4B7792593B64E00C035F7 /* WTestCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,8 +68,8 @@
 		96D4B7702593B64E00C035F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				96D4B76F2593B64E00C035F7 /* WTestCommom.framework */,
-				96D4B7782593B64E00C035F7 /* WTestCommomTests.xctest */,
+				96D4B76F2593B64E00C035F7 /* WTestCommon.framework */,
+				96D4B7782593B64E00C035F7 /* WTestCommonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,9 +125,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		96D4B76E2593B64E00C035F7 /* WTestCommom */ = {
+		96D4B76E2593B64E00C035F7 /* WTestCommon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96D4B7832593B64E00C035F7 /* Build configuration list for PBXNativeTarget "WTestCommom" */;
+			buildConfigurationList = 96D4B7832593B64E00C035F7 /* Build configuration list for PBXNativeTarget "WTestCommon" */;
 			buildPhases = (
 				96D4B76A2593B64E00C035F7 /* Headers */,
 				96D4B76B2593B64E00C035F7 /* Sources */,
@@ -138,14 +138,14 @@
 			);
 			dependencies = (
 			);
-			name = WTestCommom;
+			name = WTestCommon;
 			productName = WTestCommom;
-			productReference = 96D4B76F2593B64E00C035F7 /* WTestCommom.framework */;
+			productReference = 96D4B76F2593B64E00C035F7 /* WTestCommon.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		96D4B7772593B64E00C035F7 /* WTestCommomTests */ = {
+		96D4B7772593B64E00C035F7 /* WTestCommonTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96D4B7862593B64E00C035F7 /* Build configuration list for PBXNativeTarget "WTestCommomTests" */;
+			buildConfigurationList = 96D4B7862593B64E00C035F7 /* Build configuration list for PBXNativeTarget "WTestCommonTests" */;
 			buildPhases = (
 				96D4B7742593B64E00C035F7 /* Sources */,
 				96D4B7752593B64E00C035F7 /* Frameworks */,
@@ -156,9 +156,9 @@
 			dependencies = (
 				96D4B77B2593B64E00C035F7 /* PBXTargetDependency */,
 			);
-			name = WTestCommomTests;
+			name = WTestCommonTests;
 			productName = WTestCommomTests;
-			productReference = 96D4B7782593B64E00C035F7 /* WTestCommomTests.xctest */;
+			productReference = 96D4B7782593B64E00C035F7 /* WTestCommonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -179,7 +179,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 96D4B7692593B64D00C035F7 /* Build configuration list for PBXProject "WTestCommom" */;
+			buildConfigurationList = 96D4B7692593B64D00C035F7 /* Build configuration list for PBXProject "WTestCommon" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -192,8 +192,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				96D4B76E2593B64E00C035F7 /* WTestCommom */,
-				96D4B7772593B64E00C035F7 /* WTestCommomTests */,
+				96D4B76E2593B64E00C035F7 /* WTestCommon */,
+				96D4B7772593B64E00C035F7 /* WTestCommonTests */,
 			);
 		};
 /* End PBXProject section */
@@ -239,7 +239,7 @@
 /* Begin PBXTargetDependency section */
 		96D4B77B2593B64E00C035F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 96D4B76E2593B64E00C035F7 /* WTestCommom */;
+			target = 96D4B76E2593B64E00C035F7 /* WTestCommon */;
 			targetProxy = 96D4B77A2593B64E00C035F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -455,7 +455,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		96D4B7692593B64D00C035F7 /* Build configuration list for PBXProject "WTestCommom" */ = {
+		96D4B7692593B64D00C035F7 /* Build configuration list for PBXProject "WTestCommon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96D4B7812593B64E00C035F7 /* Debug */,
@@ -464,7 +464,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96D4B7832593B64E00C035F7 /* Build configuration list for PBXNativeTarget "WTestCommom" */ = {
+		96D4B7832593B64E00C035F7 /* Build configuration list for PBXNativeTarget "WTestCommon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96D4B7842593B64E00C035F7 /* Debug */,
@@ -473,7 +473,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96D4B7862593B64E00C035F7 /* Build configuration list for PBXNativeTarget "WTestCommomTests" */ = {
+		96D4B7862593B64E00C035F7 /* Build configuration list for PBXNativeTarget "WTestCommonTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96D4B7872593B64E00C035F7 /* Debug */,

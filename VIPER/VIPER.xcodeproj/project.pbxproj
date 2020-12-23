@@ -56,7 +56,8 @@
 		96B3440024F9494E00372F70 /* PostalCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343FF24F9494E00372F70 /* PostalCodeViewModel.swift */; };
 		96B3440524F94F9900372F70 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3440424F94F9900372F70 /* TableViewController.swift */; };
 		96B933EC2590A8C300212866 /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B933EB2590A8C300212866 /* TableDataProvider.swift */; };
-		96D4B7B22593B8E500C035F7 /* WTestCommom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D4B7B12593B8E500C035F7 /* WTestCommom.framework */; };
+		96D4B7D12593BF3D00C035F7 /* WTestCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D4B7D02593BF3D00C035F7 /* WTestCommon.framework */; };
+		96D4B7D22593BF3D00C035F7 /* WTestCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96D4B7D02593BF3D00C035F7 /* WTestCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 			files = (
 				3A30974F24FD54AE0080814F /* WTestRealm.framework in Embed Frameworks */,
 				3A30974B24FD54AB0080814F /* WTestDomain.framework in Embed Frameworks */,
+				96D4B7D22593BF3D00C035F7 /* WTestCommon.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +139,7 @@
 		96B933EB2590A8C300212866 /* TableDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		96D4B7932593B75100C035F7 /* WTestCommum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestCommum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D4B7B12593B8E500C035F7 /* WTestCommom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestCommom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96D4B7D02593BF3D00C035F7 /* WTestCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96D4B7B22593B8E500C035F7 /* WTestCommom.framework in Frameworks */,
+				96D4B7D12593BF3D00C035F7 /* WTestCommon.framework in Frameworks */,
 				3A30974E24FD54AE0080814F /* WTestRealm.framework in Frameworks */,
 				963B2C9C24F558B50045D3A0 /* SnapKit in Frameworks */,
 				3A30974A24FD54AB0080814F /* WTestDomain.framework in Frameworks */,
@@ -340,6 +343,7 @@
 		96B3433224F6A3E200372F70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96D4B7D02593BF3D00C035F7 /* WTestCommon.framework */,
 				96D4B7B12593B8E500C035F7 /* WTestCommom.framework */,
 				96D4B7932593B75100C035F7 /* WTestCommum.framework */,
 				3A30974D24FD54AE0080814F /* WTestRealm.framework */,
