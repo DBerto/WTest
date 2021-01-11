@@ -8,40 +8,43 @@
 
 import Foundation
 
-class TableViewModelBase {
-    var sections: [ViewModelSection]!
+open class TableViewModelBase {
+
+    public init() { }
     
-    func numberOfSections() -> Int {
+    public var sections: [ViewModelSection]!
+    
+    public func numberOfSections() -> Int {
         return sections.count
     }
     
-    func numberOfRows(in section: Int) -> Int {
+    public func numberOfRows(in section: Int) -> Int {
         return sections[section].numberOfItems()
     }
     
-    func item(for indexPath: IndexPath) -> Field {
+    public func item(for indexPath: IndexPath) -> Field {
         return sections[indexPath.section].item(for: indexPath.row)
     }
 }
 
-class ViewModelSection {
-    var fields: [Field]
-    var title: String
+public class ViewModelSection {
+    public var fields: [Field]
+    public var title: String
     
-    init(fields: [Field], title: String = "") {
+    public init(fields: [Field], title: String = "") {
         self.fields = fields
         self.title = title
     }
     
-    func numberOfItems() -> Int {
+    public func numberOfItems() -> Int {
         return fields.count
     }
     
-    func item(for rowId: Int) -> Field {
+    public func item(for rowId: Int) -> Field {
         return fields[rowId]
     }
 }
 
-protocol Field {
+public protocol Field {
     
 }

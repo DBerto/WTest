@@ -1,38 +1,44 @@
 //
 //  LoadingScreenViewController.swift
-//  VIPER
+//  MVVM
 //
-//  Created by David Manuel da Costa Berto on 25/08/2020.
-//  Copyright © 2020 David Manuel da Costa Berto. All rights reserved.
+//  Created by David Manuel da Costa Berto on 08/01/2021.
 //
 
 import Foundation
 import UIKit
 import WTestCommon
 
-class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterface {
+protocol LoadingScreenViewControllerrType: class {
+    var viewDidLoadTrigger: Variable<Void?> { get set }
+    var viewWillAppearTrigger: Variable<Void?> { get set }
+}
+
+class LoadingScreenViewController: BaseViewController, View {
     
     // MARK: - Properties
     
-    var eventHandler: LoadingScreenEventHandler!
+    var viewModel: LoadingScreenViewModel!
     
     lazy var loadingView: LoadingView = {
-        let view = LoadingView() 
+        let view = LoadingView()
         return view
     }()
     
+    var viewDidLoadTrigger: Variable<Void?> = .init(nil)
+    var viewWillAppearTrigger: Variable<Void?> = .init(nil)
+
     // MARK: - View Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupNavBar()
-        eventHandler.viewIsLoaded()
+        bindViewModel()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        eventHandler.viewAppeared()
     }
     
     // MARK: - Setup
@@ -53,11 +59,13 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
             make.leading.equalToSuperview().offset(10)
         }
     }
-        
-    // MARK: - LoadingScreenEventHandler
     
-    func updateView(with viewModel: LoadingViewModel) {
-        loadingView.viewModel = viewModel
-        view.setNeedsDisplay()
+    func bindViewModel() {
+        let output = viewModel.transform(input: LoadingScreenViewModel.Input(viewDidLoadTrigger: viewDidLoadTrigger))
+        
+        output.loadingViewModel.onUpdate = { [weak self] value in
+            self?.loadingView.viewModel = viewModel
+            view.setNeedsDisplay()
+        }
     }
 }

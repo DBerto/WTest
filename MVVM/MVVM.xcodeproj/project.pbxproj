@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9668DE1325A8B8FA00802D8E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE1225A8B8FA00802D8E /* Coordinator.swift */; };
+		9668DE1B25A8B9B800802D8E /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE1A25A8B9B800802D8E /* LoadingScreenViewController.swift */; };
+		9668DE6525A8C28C00802D8E /* LoadingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE6425A8C28C00802D8E /* LoadingScreenViewModel.swift */; };
+		9668DE6925A8C4FE00802D8E /* PostalCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE6825A8C4FE00802D8E /* PostalCodeUseCase.swift */; };
+		9668DE7A25A8C62A00802D8E /* WTestCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE6D25A8C60600802D8E /* WTestCommon.framework */; };
+		9668DE7B25A8C62A00802D8E /* WTestCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE6D25A8C60600802D8E /* WTestCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9668DE7D25A8C62B00802D8E /* WTestDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE7125A8C60C00802D8E /* WTestDomain.framework */; };
+		9668DE7E25A8C62B00802D8E /* WTestDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE7125A8C60C00802D8E /* WTestDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9668DE7F25A8C62D00802D8E /* WTestRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE7525A8C61300802D8E /* WTestRealm.framework */; };
+		9668DE8025A8C62D00802D8E /* WTestRealm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE7525A8C61300802D8E /* WTestRealm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96D4B74D2593B3E800C035F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B74C2593B3E800C035F7 /* AppDelegate.swift */; };
 		96D4B74F2593B3E800C035F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B74E2593B3E800C035F7 /* SceneDelegate.swift */; };
 		96D4B7562593B3EF00C035F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D4B7552593B3EF00C035F7 /* Assets.xcassets */; };
@@ -16,7 +26,30 @@
 		96D4B7DD2593C3BF00C035F7 /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B7DC2593C3BF00C035F7 /* Variable.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9668DE7C25A8C62A00802D8E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9668DE7E25A8C62B00802D8E /* WTestDomain.framework in Embed Frameworks */,
+				9668DE7B25A8C62A00802D8E /* WTestCommon.framework in Embed Frameworks */,
+				9668DE8025A8C62D00802D8E /* WTestRealm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9668DE1225A8B8FA00802D8E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9668DE1A25A8B9B800802D8E /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
+		9668DE6425A8C28C00802D8E /* LoadingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewModel.swift; sourceTree = "<group>"; };
+		9668DE6825A8C4FE00802D8E /* PostalCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeUseCase.swift; sourceTree = "<group>"; };
+		9668DE6D25A8C60600802D8E /* WTestCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9668DE7125A8C60C00802D8E /* WTestDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9668DE7525A8C61300802D8E /* WTestRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D4B7492593B3E800C035F7 /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D4B74C2593B3E800C035F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96D4B74E2593B3E800C035F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,17 +66,88 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9668DE7D25A8C62B00802D8E /* WTestDomain.framework in Frameworks */,
+				9668DE7A25A8C62A00802D8E /* WTestCommon.framework in Frameworks */,
+				9668DE7F25A8C62D00802D8E /* WTestRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9668DE1525A8B95B00802D8E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9668DE5825A8BDFF00802D8E /* Loading Screen */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9668DE1625A8B96400802D8E /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		9668DE1725A8B98D00802D8E /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9668DE1A25A8B9B800802D8E /* LoadingScreenViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		9668DE1825A8B99400802D8E /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				9668DE6425A8C28C00802D8E /* LoadingScreenViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		9668DE1925A8B99900802D8E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		9668DE5825A8BDFF00802D8E /* Loading Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9668DE1625A8B96400802D8E /* Builder */,
+				9668DE1925A8B99900802D8E /* Coordinator */,
+				9668DE1825A8B99400802D8E /* View Model */,
+				9668DE1725A8B98D00802D8E /* View Controller */,
+			);
+			path = "Loading Screen";
+			sourceTree = "<group>";
+		};
+		9668DE6725A8C4E500802D8E /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				9668DE6825A8C4FE00802D8E /* PostalCodeUseCase.swift */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		9668DE6C25A8C60600802D8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9668DE7525A8C61300802D8E /* WTestRealm.framework */,
+				9668DE7125A8C60C00802D8E /* WTestDomain.framework */,
+				9668DE6D25A8C60600802D8E /* WTestCommon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		96D4B7402593B3E800C035F7 = {
 			isa = PBXGroup;
 			children = (
 				96D4B74B2593B3E800C035F7 /* MVVM */,
 				96D4B74A2593B3E800C035F7 /* Products */,
+				9668DE6C25A8C60600802D8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				96D4B7D42593C22F00C035F7 /* Common */,
+				9668DE1525A8B95B00802D8E /* Scenes */,
+				9668DE6725A8C4E500802D8E /* Use Cases */,
 				96D4B7612593B47D00C035F7 /* Application */,
 				96D4B7552593B3EF00C035F7 /* Assets.xcassets */,
 				96D4B75A2593B3EF00C035F7 /* Info.plist */,
@@ -82,6 +188,7 @@
 				96D4B7D52593C23D00C035F7 /* ViewModelType.swift */,
 				96D4B7D92593C26900C035F7 /* View.swift */,
 				96D4B7DC2593C3BF00C035F7 /* Variable.swift */,
+				9668DE1225A8B8FA00802D8E /* Coordinator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -96,6 +203,7 @@
 				96D4B7452593B3E800C035F7 /* Sources */,
 				96D4B7462593B3E800C035F7 /* Frameworks */,
 				96D4B7472593B3E800C035F7 /* Resources */,
+				9668DE7C25A8C62A00802D8E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,8 +264,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				96D4B7DA2593C26900C035F7 /* View.swift in Sources */,
+				9668DE6525A8C28C00802D8E /* LoadingScreenViewModel.swift in Sources */,
+				9668DE1B25A8B9B800802D8E /* LoadingScreenViewController.swift in Sources */,
 				96D4B74D2593B3E800C035F7 /* AppDelegate.swift in Sources */,
+				9668DE1325A8B8FA00802D8E /* Coordinator.swift in Sources */,
 				96D4B74F2593B3E800C035F7 /* SceneDelegate.swift in Sources */,
+				9668DE6925A8C4FE00802D8E /* PostalCodeUseCase.swift in Sources */,
 				96D4B7D62593C23D00C035F7 /* ViewModelType.swift in Sources */,
 				96D4B7DD2593C3BF00C035F7 /* Variable.swift in Sources */,
 			);

@@ -8,11 +8,11 @@
 
 import Foundation
 import UIKit
-import WTestCommom
+import WTestCommon
 
 class PostalCodesDataSource: TableDataSource {
     
-    override internal func dequeueCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+    override func dequeueCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
         guard let field = viewModel?.item(for: indexPath) as? PostalCodeViewModel else {
             assertionFailure("Field is nill")
             return UITableViewCell()

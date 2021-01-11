@@ -8,6 +8,7 @@
 
 import Foundation
 import WTestDomain
+import WTestCommon
 
 class PostalCodesViewModel: TableViewModelBase {
     init(postalCodes: [PostalCodeViewModel]) {

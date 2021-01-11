@@ -9,26 +9,26 @@
 import Foundation
 import UIKit
 
-class TableDataProvider: NSObject, UITableViewDelegate {
-    let dataSource: TableDataSource
-    var tableView: UITableView? {
+open class TableDataProvider: NSObject, UITableViewDelegate {
+    public let dataSource: TableDataSource
+    public var tableView: UITableView? {
         didSet {
             registerCells()
             tableView?.dataSource = dataSource
             tableView?.delegate = self
         }
     }
-    var viewModel: TableViewModelBase? {
+    public var viewModel: TableViewModelBase? {
         didSet {
             dataSource.viewModel = viewModel
         }
     }
     
-    required init(dataSource: TableDataSource) {
+    required public init(dataSource: TableDataSource) {
         self.dataSource = dataSource
     }
     
-    func registerCells() {
+    open func registerCells() {
         assertionFailure("Should be implemented by is subclasses")
     }
 }

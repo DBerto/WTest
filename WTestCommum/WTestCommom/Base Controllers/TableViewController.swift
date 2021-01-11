@@ -9,30 +9,30 @@
 import Foundation
 import UIKit
 
-class TableViewController: BaseViewController {
+open class TableViewController: BaseViewController {
     
     // MARK: - Properties
     
-    var tableView: UITableView!
-    var searchController: UISearchController?
-    var tableViewStyle: UITableView.Style! = .grouped {
+    public var tableView: UITableView!
+    public var searchController: UISearchController?
+    public var tableViewStyle: UITableView.Style! = .grouped {
         didSet {
             setupTableView()
         }
     }
-    var hasRefreshControl: Bool = false {
+    public var hasRefreshControl: Bool = false {
         didSet {
             configureRefreshControl(value: hasRefreshControl)
         }
     }
-    var hasSearchBar: Bool = false {
+    public var hasSearchBar: Bool = false {
         didSet {
             setupSearchController(hasSearchBar: hasSearchBar)
         }
     }
     // MARK: - Override
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupView()
@@ -40,7 +40,7 @@ class TableViewController: BaseViewController {
     
     // MARK: - Setup
     
-    func setupTableView() {
+    open func setupTableView() {
         if tableView != nil {
             tableView.removeFromSuperview()
         }
@@ -51,7 +51,7 @@ class TableViewController: BaseViewController {
         configureDataProvider()
     }
     
-    func addTableViewConstraints() {
+    open func addTableViewConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -61,7 +61,7 @@ class TableViewController: BaseViewController {
         ])
     }
     
-    func configureDataProvider() {
+    open func configureDataProvider() {
         assertionFailure("Should be implemented by is subclasses")
     }
     
@@ -83,7 +83,7 @@ extension TableViewController {
         }
     }
     
-    @objc func refresHandler(_ refreshControl: UIRefreshControl) {
+    @objc open func refresHandler(_ refreshControl: UIRefreshControl) {
         // Do your job, when done:
         assertionFailure("Should be implemented by is subclasses")
     }
@@ -92,7 +92,7 @@ extension TableViewController {
 // MARK: - UISearchBarDelegate
 
 extension TableViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    open func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
 }
@@ -100,7 +100,7 @@ extension TableViewController: UISearchBarDelegate {
 // MARK: - UISearchResultsUpdating
 
 extension TableViewController: UISearchResultsUpdating {
-    func setupSearchController(hasSearchBar: Bool) {
+    open func setupSearchController(hasSearchBar: Bool) {
         if !hasSearchBar {
             navigationItem.searchController = nil
         } else if searchController?.searchBar.superview == nil {
@@ -115,7 +115,7 @@ extension TableViewController: UISearchResultsUpdating {
         }
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
+    open func updateSearchResults(for searchController: UISearchController) {
         assertionFailure("Should be implemented by is subclasses")
     }
 }

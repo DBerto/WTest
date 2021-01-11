@@ -136,8 +136,8 @@
 			buildPhases = (
 				96B3433F24F7F01200372F70 /* Headers */,
 				96B3434024F7F01200372F70 /* Sources */,
-				96B3434124F7F01200372F70 /* Frameworks */,
 				96B3434224F7F01200372F70 /* Resources */,
+				96B3434124F7F01200372F70 /* Frameworks */,
 			);
 			buildRules = (
 			);

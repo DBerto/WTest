@@ -8,6 +8,7 @@
 
 import Foundation
 import WTestDomain
+import WTestCommon
 
 enum LoadingScreenInteractorError: LocalizedError {
     case downloadError

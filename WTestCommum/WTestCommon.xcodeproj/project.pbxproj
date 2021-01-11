@@ -3,10 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9668DE2325A8BB0B00802D8E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE2225A8BB0B00802D8E /* LoadingView.swift */; };
+		9668DE2C25A8BB3E00802D8E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE2A25A8BB3E00802D8E /* TableViewController.swift */; };
+		9668DE2D25A8BB3E00802D8E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE2B25A8BB3E00802D8E /* BaseViewController.swift */; };
+		9668DE3725A8BC4900802D8E /* TableViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE3525A8BC4900802D8E /* TableViewModelBase.swift */; };
+		9668DE3825A8BC4900802D8E /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE3625A8BC4900802D8E /* LoadingViewModel.swift */; };
+		9668DE4F25A8BCCE00802D8E /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE4E25A8BCCE00802D8E /* TableDataProvider.swift */; };
+		9668DE5425A8BCE300802D8E /* PostalCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE5325A8BCE300802D8E /* PostalCodeCell.swift */; };
+		9668DE8125A8C6B000802D8E /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE3C25A8BC5F00802D8E /* TableDataSource.swift */; };
+		9668DE8B25A8C70200802D8E /* PostalCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE8A25A8C70200802D8E /* PostalCodeViewModel.swift */; };
+		9668DEC925A8CC0000802D8E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9668DEC825A8CC0000802D8E /* SnapKit */; };
+		9668DEE225A8CD4000802D8E /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 9668DEE125A8CD4000802D8E /* Rswift */; };
+		9668DEF125A8CDC200802D8E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DEEF25A8CDC200802D8E /* Configuration.swift */; };
+		9668DEF225A8CDC200802D8E /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9668DEF025A8CDC200802D8E /* Config.plist */; };
+		9668DF1C25A8D15700802D8E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DF1B25A8D15700802D8E /* R.generated.swift */; };
 		96D4B7792593B64E00C035F7 /* WTestCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D4B76F2593B64E00C035F7 /* WTestCommon.framework */; };
 		96D4B77E2593B64E00C035F7 /* WTestCommomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B77D2593B64E00C035F7 /* WTestCommomTests.swift */; };
 		96D4B7802593B64E00C035F7 /* WTestCommom.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D4B7722593B64E00C035F7 /* WTestCommom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +40,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9668DE2225A8BB0B00802D8E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		9668DE2A25A8BB3E00802D8E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		9668DE2B25A8BB3E00802D8E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9668DE3525A8BC4900802D8E /* TableViewModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModelBase.swift; sourceTree = "<group>"; };
+		9668DE3625A8BC4900802D8E /* LoadingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
+		9668DE3C25A8BC5F00802D8E /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
+		9668DE4E25A8BCCE00802D8E /* TableDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
+		9668DE5325A8BCE300802D8E /* PostalCodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostalCodeCell.swift; sourceTree = "<group>"; };
+		9668DE8A25A8C70200802D8E /* PostalCodeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostalCodeViewModel.swift; sourceTree = "<group>"; };
+		9668DE9E25A8C93900802D8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9668DEEF25A8CDC200802D8E /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		9668DEF025A8CDC200802D8E /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		9668DF1B25A8D15700802D8E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		96D4B76F2593B64E00C035F7 /* WTestCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WTestCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D4B7722593B64E00C035F7 /* WTestCommom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTestCommom.h; sourceTree = "<group>"; };
 		96D4B7732593B64E00C035F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9668DEC925A8CC0000802D8E /* SnapKit in Frameworks */,
+				9668DEE225A8CD4000802D8E /* Rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +85,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9668DE2125A8BAFF00802D8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9668DE2225A8BB0B00802D8E /* LoadingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9668DE2725A8BB2700802D8E /* Base Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9668DE2B25A8BB3E00802D8E /* BaseViewController.swift */,
+				9668DE2A25A8BB3E00802D8E /* TableViewController.swift */,
+			);
+			path = "Base Controllers";
+			sourceTree = "<group>";
+		};
+		9668DE3425A8BC1B00802D8E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9668DE8A25A8C70200802D8E /* PostalCodeViewModel.swift */,
+				9668DE3625A8BC4900802D8E /* LoadingViewModel.swift */,
+				9668DE3525A8BC4900802D8E /* TableViewModelBase.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9668DE3E25A8BC5F00802D8E /* Data Providers */ = {
+			isa = PBXGroup;
+			children = (
+				9668DE4E25A8BCCE00802D8E /* TableDataProvider.swift */,
+				9668DE3C25A8BC5F00802D8E /* TableDataSource.swift */,
+			);
+			path = "Data Providers";
+			sourceTree = "<group>";
+		};
+		9668DE5225A8BCDD00802D8E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9668DE5325A8BCE300802D8E /* PostalCodeCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9668DE9725A8C91900802D8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9668DEF025A8CDC200802D8E /* Config.plist */,
+				9668DEEF25A8CDC200802D8E /* Configuration.swift */,
+				9668DE9F25A8C93900802D8E /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9668DF1A25A8D15700802D8E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9668DF1B25A8D15700802D8E /* R.generated.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		96D4B7652593B64D00C035F7 = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +168,15 @@
 		96D4B7712593B64E00C035F7 /* WTestCommom */ = {
 			isa = PBXGroup;
 			children = (
+				9668DE9725A8C91900802D8E /* Resources */,
+				9668DE5225A8BCDD00802D8E /* Cells */,
+				9668DE2725A8BB2700802D8E /* Base Controllers */,
+				9668DE2125A8BAFF00802D8E /* Views */,
+				9668DE3425A8BC1B00802D8E /* ViewModels */,
+				9668DE3E25A8BC5F00802D8E /* Data Providers */,
 				96D4B7A92593B86E00C035F7 /* Extensions */,
 				96D4B78C2593B66600C035F7 /* Utilities */,
+				9668DF1A25A8D15700802D8E /* SupportingFiles */,
 				96D4B7722593B64E00C035F7 /* WTestCommom.h */,
 				96D4B7732593B64E00C035F7 /* Info.plist */,
 			);
@@ -139,6 +237,10 @@
 			dependencies = (
 			);
 			name = WTestCommon;
+			packageProductDependencies = (
+				9668DEC825A8CC0000802D8E /* SnapKit */,
+				9668DEE125A8CD4000802D8E /* Rswift */,
+			);
 			productName = WTestCommom;
 			productReference = 96D4B76F2593B64E00C035F7 /* WTestCommon.framework */;
 			productType = "com.apple.product-type.framework";
@@ -188,6 +290,10 @@
 				Base,
 			);
 			mainGroup = 96D4B7652593B64D00C035F7;
+			packageReferences = (
+				9668DEC725A8CC0000802D8E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				9668DEE025A8CD4000802D8E /* XCRemoteSwiftPackageReference "R.swift" */,
+			);
 			productRefGroup = 96D4B7702593B64E00C035F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -203,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9668DEF225A8CDC200802D8E /* Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,8 +328,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				96D4B7AD2593B86E00C035F7 /* UITableView+Register.swift in Sources */,
+				9668DF1C25A8D15700802D8E /* R.generated.swift in Sources */,
+				9668DE4F25A8BCCE00802D8E /* TableDataProvider.swift in Sources */,
+				9668DE8B25A8C70200802D8E /* PostalCodeViewModel.swift in Sources */,
+				9668DE3725A8BC4900802D8E /* TableViewModelBase.swift in Sources */,
+				9668DE2325A8BB0B00802D8E /* LoadingView.swift in Sources */,
+				9668DE3825A8BC4900802D8E /* LoadingViewModel.swift in Sources */,
 				96D4B7982593B79500C035F7 /* ThreadHandler.swift in Sources */,
+				9668DEF125A8CDC200802D8E /* Configuration.swift in Sources */,
+				9668DE2C25A8BB3E00802D8E /* TableViewController.swift in Sources */,
 				96D4B7AC2593B86E00C035F7 /* NSObject+ClassName.swift in Sources */,
+				9668DE2D25A8BB3E00802D8E /* BaseViewController.swift in Sources */,
+				9668DE8125A8C6B000802D8E /* TableDataSource.swift in Sources */,
+				9668DE5425A8BCE300802D8E /* PostalCodeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +361,17 @@
 			targetProxy = 96D4B77A2593B64E00C035F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9668DE9F25A8C93900802D8E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9668DE9E25A8C93900802D8E /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		96D4B7812593B64E00C035F7 /* Debug */ = {
@@ -483,6 +612,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9668DEC725A8CC0000802D8E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		9668DEE025A8CD4000802D8E /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9668DEC825A8CC0000802D8E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9668DEC725A8CC0000802D8E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		9668DEE125A8CD4000802D8E /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9668DEE025A8CD4000802D8E /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = Rswift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 96D4B7662593B64D00C035F7 /* Project object */;
 }

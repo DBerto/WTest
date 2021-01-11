@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import WTestCommon
 
 class MainScreenViewController: BaseViewController, MainScreenViewInterface {
     

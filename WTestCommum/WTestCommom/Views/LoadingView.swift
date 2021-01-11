@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-class LoadingView: UIView {
+open class LoadingView: UIView {
     
     lazy var title: UILabel = {
         let label = UILabel()
@@ -55,7 +55,7 @@ class LoadingView: UIView {
         setupView()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
     }
@@ -91,7 +91,7 @@ class LoadingView: UIView {
     
     // MARK: - Biding
     
-    var viewModel: LoadingViewModel? {
+    public var viewModel: LoadingViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }
             bind(viewModel)

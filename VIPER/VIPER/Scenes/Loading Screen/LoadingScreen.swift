@@ -8,6 +8,7 @@
 
 import Foundation
 import WTestDomain
+import WTestCommon
 
 // MARK: Navigation Layer
 

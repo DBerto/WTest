@@ -8,6 +8,8 @@
 
 import Foundation
 import WTestDomain
+import WTestCommon
+import WTestCommon
 
 class LoadingScreenPresenter: LoadingScreenEventHandler, LoadingScreenPresenterInterface {
     

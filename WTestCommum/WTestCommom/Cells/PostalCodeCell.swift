@@ -8,13 +8,12 @@
 
 import Foundation
 import UIKit
-import WTestDomain
 
-class PostalCodeCell: UITableViewCell {
+public class PostalCodeCell: UITableViewCell {
     
     // MARK: - Properties
     
-    var item: PostalCodeViewModel? {
+    public var item: PostalCodeViewModel? {
         didSet {
             if let viewModel = item {
                 bindViewModel(viewModel)

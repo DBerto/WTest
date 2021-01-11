@@ -8,20 +8,20 @@
 
 import Foundation
 
-enum InfoPlistKeys: String {
+public enum InfoPlistKeys: String {
     case postalCodeURL = "POSTAL_CODE_URL"
     case articleV1URL = "ARTICLE_V1_URL"
     case articleV2URL = "ARTICLE_V2_URL"
     case configuration = "Config"
 }
 
-struct Configuration {
+public struct Configuration {
     
-    static let postalCodeURL: String = {
+    public static let postalCodeURL: String = {
         return fetchKeyValue(infoPlistKey: InfoPlistKeys.postalCodeURL)
     }()
     
-    static let articlesApiUrl: String = {
+    public static let articlesApiUrl: String = {
         #if VERSION2
         return fetchKeyValue(infoPlistKey: InfoPlistKeys.articleV2URL)
         #else

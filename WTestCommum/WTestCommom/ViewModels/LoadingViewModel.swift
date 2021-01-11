@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoadingViewModel {
+public class LoadingViewModel {
     var title: String
     var image: UIImage
     var downloadingLabel: String
