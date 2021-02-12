@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 public class LoadingViewModel {
-    var title: String
-    var image: UIImage
-    var downloadingLabel: String
-    var isDownloading: Bool
+    public var title: String
+    public var image: UIImage
+    public var downloadingLabel: String
+    public var isDownloading: Bool
     
-    init(title: String, image: UIImage, downloadingLabel: String, isDownloading: Bool) {
+    public init(title: String, image: UIImage, downloadingLabel: String, isDownloading: Bool) {
         self.title = title
         self.image = image
         self.downloadingLabel = downloadingLabel

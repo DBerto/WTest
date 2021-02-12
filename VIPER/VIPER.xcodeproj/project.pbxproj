@@ -424,7 +424,6 @@
 				963B2C6B24F54C910045D3A0 /* Resources */,
 				3A30974C24FD54AB0080814F /* Embed Frameworks */,
 				963B2C9624F551FC0045D3A0 /* SwiftLint */,
-				9668DF5025A8D46F00802D8E /* RSwift */,
 			);
 			buildRules = (
 			);
@@ -533,26 +532,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		9668DF5025A8D46F00802D8E /* RSwift */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$TEMP_DIR/rswift-lastrun",
-			);
-			name = RSwift;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(SRCROOT)/WTestCommom/SupportingFiles/R.generated.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/R.swift/rswift\" generate \"$SRCROOT/WTestCommom/SupportingFiles/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

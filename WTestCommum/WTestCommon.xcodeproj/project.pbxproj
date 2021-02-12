@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A57BD2025D6D98F002F8084 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 3A57BD1F25D6D98F002F8084 /* Rswift */; };
+		3A57BD4325D6E492002F8084 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57BD4225D6E492002F8084 /* R.generated.swift */; };
+		3A57BD4825D6E878002F8084 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9668DE9F25A8C93900802D8E /* Localizable.strings */; };
 		9668DE2325A8BB0B00802D8E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE2225A8BB0B00802D8E /* LoadingView.swift */; };
 		9668DE2C25A8BB3E00802D8E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE2A25A8BB3E00802D8E /* TableViewController.swift */; };
 		9668DE2D25A8BB3E00802D8E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE2B25A8BB3E00802D8E /* BaseViewController.swift */; };
@@ -17,10 +20,8 @@
 		9668DE8125A8C6B000802D8E /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE3C25A8BC5F00802D8E /* TableDataSource.swift */; };
 		9668DE8B25A8C70200802D8E /* PostalCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE8A25A8C70200802D8E /* PostalCodeViewModel.swift */; };
 		9668DEC925A8CC0000802D8E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9668DEC825A8CC0000802D8E /* SnapKit */; };
-		9668DEE225A8CD4000802D8E /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 9668DEE125A8CD4000802D8E /* Rswift */; };
 		9668DEF125A8CDC200802D8E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DEEF25A8CDC200802D8E /* Configuration.swift */; };
 		9668DEF225A8CDC200802D8E /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9668DEF025A8CDC200802D8E /* Config.plist */; };
-		9668DF1C25A8D15700802D8E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DF1B25A8D15700802D8E /* R.generated.swift */; };
 		96D4B7792593B64E00C035F7 /* WTestCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D4B76F2593B64E00C035F7 /* WTestCommon.framework */; };
 		96D4B77E2593B64E00C035F7 /* WTestCommomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B77D2593B64E00C035F7 /* WTestCommomTests.swift */; };
 		96D4B7802593B64E00C035F7 /* WTestCommom.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D4B7722593B64E00C035F7 /* WTestCommom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A57BD4225D6E492002F8084 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		9668DE2225A8BB0B00802D8E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9668DE2A25A8BB3E00802D8E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9668DE2B25A8BB3E00802D8E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +54,6 @@
 		9668DE9E25A8C93900802D8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9668DEEF25A8CDC200802D8E /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		9668DEF025A8CDC200802D8E /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
-		9668DF1B25A8D15700802D8E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		96D4B76F2593B64E00C035F7 /* WTestCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WTestCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D4B7722593B64E00C035F7 /* WTestCommom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTestCommom.h; sourceTree = "<group>"; };
 		96D4B7732593B64E00C035F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,7 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9668DEC925A8CC0000802D8E /* SnapKit in Frameworks */,
-				9668DEE225A8CD4000802D8E /* Rswift in Frameworks */,
+				3A57BD2025D6D98F002F8084 /* Rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +143,7 @@
 		9668DF1A25A8D15700802D8E /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				9668DF1B25A8D15700802D8E /* R.generated.swift */,
+				3A57BD4225D6E492002F8084 /* R.generated.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -228,6 +229,7 @@
 			buildConfigurationList = 96D4B7832593B64E00C035F7 /* Build configuration list for PBXNativeTarget "WTestCommon" */;
 			buildPhases = (
 				96D4B76A2593B64E00C035F7 /* Headers */,
+				3A57BD1525D6D772002F8084 /* RSwift */,
 				96D4B76B2593B64E00C035F7 /* Sources */,
 				96D4B76C2593B64E00C035F7 /* Frameworks */,
 				96D4B76D2593B64E00C035F7 /* Resources */,
@@ -239,7 +241,7 @@
 			name = WTestCommon;
 			packageProductDependencies = (
 				9668DEC825A8CC0000802D8E /* SnapKit */,
-				9668DEE125A8CD4000802D8E /* Rswift */,
+				3A57BD1F25D6D98F002F8084 /* Rswift */,
 			);
 			productName = WTestCommom;
 			productReference = 96D4B76F2593B64E00C035F7 /* WTestCommon.framework */;
@@ -292,7 +294,7 @@
 			mainGroup = 96D4B7652593B64D00C035F7;
 			packageReferences = (
 				9668DEC725A8CC0000802D8E /* XCRemoteSwiftPackageReference "SnapKit" */,
-				9668DEE025A8CD4000802D8E /* XCRemoteSwiftPackageReference "R.swift" */,
+				3A57BD1E25D6D98F002F8084 /* XCRemoteSwiftPackageReference "R.swift" */,
 			);
 			productRefGroup = 96D4B7702593B64E00C035F7 /* Products */;
 			projectDirPath = "";
@@ -310,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9668DEF225A8CDC200802D8E /* Config.plist in Resources */,
+				3A57BD4825D6E878002F8084 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,13 +325,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A57BD1525D6D772002F8084 /* RSwift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = RSwift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/WTestCommom/SupportingFiles/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/R.swift/rswift\" generate --accessLevel public \"$SRCROOT/WTestCommom/SupportingFiles/R.generated.swift\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		96D4B76B2593B64E00C035F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				96D4B7AD2593B86E00C035F7 /* UITableView+Register.swift in Sources */,
-				9668DF1C25A8D15700802D8E /* R.generated.swift in Sources */,
+				3A57BD4325D6E492002F8084 /* R.generated.swift in Sources */,
 				9668DE4F25A8BCCE00802D8E /* TableDataProvider.swift in Sources */,
 				9668DE8B25A8C70200802D8E /* PostalCodeViewModel.swift in Sources */,
 				9668DE3725A8BC4900802D8E /* TableViewModelBase.swift in Sources */,
@@ -614,6 +640,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3A57BD1E25D6D98F002F8084 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
 		9668DEC725A8CC0000802D8E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -622,26 +656,18 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		9668DEE025A8CD4000802D8E /* XCRemoteSwiftPackageReference "R.swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.3.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3A57BD1F25D6D98F002F8084 /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A57BD1E25D6D98F002F8084 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = Rswift;
+		};
 		9668DEC825A8CC0000802D8E /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9668DEC725A8CC0000802D8E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		9668DEE125A8CD4000802D8E /* Rswift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9668DEE025A8CD4000802D8E /* XCRemoteSwiftPackageReference "R.swift" */;
-			productName = Rswift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

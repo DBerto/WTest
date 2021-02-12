@@ -9,7 +9,6 @@
 import Foundation
 import WTestDomain
 import WTestCommon
-import WTestCommon
 
 class LoadingScreenPresenter: LoadingScreenEventHandler, LoadingScreenPresenterInterface {
     
@@ -20,9 +19,9 @@ class LoadingScreenPresenter: LoadingScreenEventHandler, LoadingScreenPresenterI
     var interactor: LoadingScreenInteractorInterface!
     
     lazy var viewModel: LoadingViewModel = {
-        return  LoadingViewModel(title: R.string.localizable.appTitle(), image: #imageLiteral(resourceName: "post-box"),
-                                 downloadingLabel: R.string.localizable.downloadingLabel(),
-                                 isDownloading: true)
+        return LoadingViewModel(title: R.string.localizable.appTitle(), image: #imageLiteral(resourceName: "post-box"),
+                                downloadingLabel: R.string.localizable.downloadingLabel(),
+                                isDownloading: true)
     }()
     
     // MARK: - LoadingScreenEventHandler
