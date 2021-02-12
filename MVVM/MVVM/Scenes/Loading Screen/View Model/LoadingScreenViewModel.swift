@@ -36,19 +36,19 @@ class LoadingScreenViewModel: ViewModelType{
     // MARK: - Transform
     
     func transform(input: Input) -> Output {
-        let outputLoadingViewModelResult: Variable<LoadingViewModel=> = .init(nil)
+        let outputResult: Variable<LoadingViewModel?> = .init(nil)
        
         input.viewDidLoadTrigger.onUpdate = { [weak self] (trigger) in
             guard trigger != nil else { return }
-            outputResult.value = loadingViewModel
+            outputResult.value = self?.loadingViewModel
         }
         
         input.viewWillAppearTrigger.onUpdate = { [weak self] (trigger) in
             guard trigger != nil else { return }
-            outputResult.value = loadingViewModel
+            outputResult.value = self?.loadingViewModel
         }
         
-        return Output(loadingViewModel: outputLoadingViewModelResult)
+        return Output(loadingViewModel: outputResult)
     }
     
 }

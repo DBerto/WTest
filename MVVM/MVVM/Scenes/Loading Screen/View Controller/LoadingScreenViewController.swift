@@ -14,7 +14,7 @@ protocol LoadingScreenViewControllerrType: class {
     var viewWillAppearTrigger: Variable<Void?> { get set }
 }
 
-class LoadingScreenViewController: BaseViewController, View {
+class LoadingScreenViewController: BaseViewController {
     
     // MARK: - Properties
     
@@ -61,11 +61,11 @@ class LoadingScreenViewController: BaseViewController, View {
     }
     
     func bindViewModel() {
-        let output = viewModel.transform(input: LoadingScreenViewModel.Input(viewDidLoadTrigger: viewDidLoadTrigger))
+        let output = viewModel.transform(input: LoadingScreenViewModel.Input(viewDidLoadTrigger: viewDidLoadTrigger,
+                                                                             viewWillAppearTrigger: viewWillAppearTrigger))
         
         output.loadingViewModel.onUpdate = { [weak self] value in
-            self?.loadingView.viewModel = viewModel
-            view.setNeedsDisplay()
+
         }
     }
 }
