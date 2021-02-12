@@ -9,6 +9,7 @@
 import Foundation
 
 public enum InfoPlistKeys: String {
+    case bundleId = "DBerto.WTestCommom"
     case postalCodeURL = "POSTAL_CODE_URL"
     case articleV1URL = "ARTICLE_V1_URL"
     case articleV2URL = "ARTICLE_V2_URL"
@@ -30,7 +31,7 @@ public struct Configuration {
     }()
     
     static private func fetchKeyValue(infoPlistKey: InfoPlistKeys) -> String {
-        if let path = Bundle.main.path(forResource: InfoPlistKeys.configuration.rawValue, ofType: "plist"),
+        if let path = Bundle(identifier: InfoPlistKeys.bundleId.rawValue)?.path(forResource: InfoPlistKeys.configuration.rawValue, ofType: "plist"),
             let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
             return (dict[infoPlistKey.rawValue]?.description)!
         }

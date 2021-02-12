@@ -39,7 +39,7 @@ class LoadingScreenPresenter: LoadingScreenEventHandler, LoadingScreenPresenterI
     func postalCodeFetchSucceed(_ postalCodes: [PostalCode]) {
         viewModel.downloadingLabel = R.string.localizable.savingLabel()
         view.updateView(with: viewModel)
-        DispatchQueue.main.async { [weak self] in
+        executeInMainThread { [weak self] in
             self?.interactor.savePostalCodes(postalCodes)
         }
     }
