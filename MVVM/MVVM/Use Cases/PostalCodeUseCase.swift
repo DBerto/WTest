@@ -15,9 +15,9 @@ protocol PostalCodeUseCaseType: class {
 
 class PostalCodeUseCase: PostalCodeUseCaseType {
     
-    private let repository: PostalCodesStorageRepositoryType
+    private let repository: PostalCodesRepositoryType
     
-    init(repository: PostalCodesStorageRepositoryType) {
+    init(repository: PostalCodesRepositoryType) {
         self.repository = repository
     }
     

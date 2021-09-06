@@ -14,10 +14,7 @@
 		96B343A424F7F85900372F70 /* Object+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343A324F7F85900372F70 /* Object+Creation.swift */; };
 		96B343A624F7F87200372F70 /* Realm+CascadeDeletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343A524F7F87200372F70 /* Realm+CascadeDeletion.swift */; };
 		96B343AF24F7FA4800372F70 /* PostalCodesStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343A924F7F91400372F70 /* PostalCodesStorageRepository.swift */; };
-		96B343B624F7FBAF00372F70 /* WTestDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B343B524F7FBAF00372F70 /* WTestDomain.framework */; };
-		96B343B724F7FBAF00372F70 /* WTestDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96B343B524F7FBAF00372F70 /* WTestDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		96B343BB24F8FCCB00372F70 /* PostalCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343BA24F8FCCB00372F70 /* PostalCodeModel.swift */; };
-		96B343BE24F8FDDA00372F70 /* PostalCode+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343BD24F8FDDA00372F70 /* PostalCode+Transform.swift */; };
+		96B343BB24F8FCCB00372F70 /* PostalCodeDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B343BA24F8FCCB00372F70 /* PostalCodeDB.swift */; };
 		96B343C024F9021300372F70 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 96B343BF24F9021300372F70 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
@@ -31,20 +28,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		96B343B824F7FBAF00372F70 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				96B343B724F7FBAF00372F70 /* WTestDomain.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		96B3437924F7F39B00372F70 /* WTestRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WTestRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B3437C24F7F39B00372F70 /* WTestRealm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTestRealm.h; sourceTree = "<group>"; };
@@ -57,8 +40,7 @@
 		96B343A524F7F87200372F70 /* Realm+CascadeDeletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+CascadeDeletion.swift"; sourceTree = "<group>"; };
 		96B343A924F7F91400372F70 /* PostalCodesStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesStorageRepository.swift; sourceTree = "<group>"; };
 		96B343B524F7FBAF00372F70 /* WTestDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96B343BA24F8FCCB00372F70 /* PostalCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeModel.swift; sourceTree = "<group>"; };
-		96B343BD24F8FDDA00372F70 /* PostalCode+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostalCode+Transform.swift"; sourceTree = "<group>"; };
+		96B343BA24F8FCCB00372F70 /* PostalCodeDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +49,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B343C024F9021300372F70 /* RealmSwift in Frameworks */,
-				96B343B624F7FBAF00372F70 /* WTestDomain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +87,6 @@
 			children = (
 				96B343A224F7F84700372F70 /* Extensions */,
 				96B3439324F7F3DD00372F70 /* Commom */,
-				96B343BC24F8FDB700372F70 /* Transforms */,
 				96B343B924F8FCBF00372F70 /* Models */,
 				96B343A724F7F8DD00372F70 /* Repositories */,
 				96B3437C24F7F39B00372F70 /* WTestRealm.h */,
@@ -168,17 +148,9 @@
 		96B343B924F8FCBF00372F70 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				96B343BA24F8FCCB00372F70 /* PostalCodeModel.swift */,
+				96B343BA24F8FCCB00372F70 /* PostalCodeDB.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		96B343BC24F8FDB700372F70 /* Transforms */ = {
-			isa = PBXGroup;
-			children = (
-				96B343BD24F8FDDA00372F70 /* PostalCode+Transform.swift */,
-			);
-			path = Transforms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +175,6 @@
 				96B3437524F7F39B00372F70 /* Sources */,
 				96B3437624F7F39B00372F70 /* Frameworks */,
 				96B3437724F7F39B00372F70 /* Resources */,
-				96B343B824F7FBAF00372F70 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,10 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B3439524F7F40800372F70 /* BaseStorageRepository.swift in Sources */,
-				96B343BB24F8FCCB00372F70 /* PostalCodeModel.swift in Sources */,
+				96B343BB24F8FCCB00372F70 /* PostalCodeDB.swift in Sources */,
 				96B343A424F7F85900372F70 /* Object+Creation.swift in Sources */,
 				96B343A624F7F87200372F70 /* Realm+CascadeDeletion.swift in Sources */,
-				96B343BE24F8FDDA00372F70 /* PostalCode+Transform.swift in Sources */,
 				96B343AF24F7FA4800372F70 /* PostalCodesStorageRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

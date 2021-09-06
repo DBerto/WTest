@@ -15,8 +15,6 @@
 		9668DE7B25A8C62A00802D8E /* WTestCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE6D25A8C60600802D8E /* WTestCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9668DE7D25A8C62B00802D8E /* WTestDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE7125A8C60C00802D8E /* WTestDomain.framework */; };
 		9668DE7E25A8C62B00802D8E /* WTestDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE7125A8C60C00802D8E /* WTestDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9668DE7F25A8C62D00802D8E /* WTestRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE7525A8C61300802D8E /* WTestRealm.framework */; };
-		9668DE8025A8C62D00802D8E /* WTestRealm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE7525A8C61300802D8E /* WTestRealm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96D4B74D2593B3E800C035F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B74C2593B3E800C035F7 /* AppDelegate.swift */; };
 		96D4B74F2593B3E800C035F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B74E2593B3E800C035F7 /* SceneDelegate.swift */; };
 		96D4B7562593B3EF00C035F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D4B7552593B3EF00C035F7 /* Assets.xcassets */; };
@@ -34,7 +32,6 @@
 			files = (
 				9668DE7E25A8C62B00802D8E /* WTestDomain.framework in Embed Frameworks */,
 				9668DE7B25A8C62A00802D8E /* WTestCommon.framework in Embed Frameworks */,
-				9668DE8025A8C62D00802D8E /* WTestRealm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,7 +63,6 @@
 			files = (
 				9668DE7D25A8C62B00802D8E /* WTestDomain.framework in Frameworks */,
 				9668DE7A25A8C62A00802D8E /* WTestCommon.framework in Frameworks */,
-				9668DE7F25A8C62D00802D8E /* WTestRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

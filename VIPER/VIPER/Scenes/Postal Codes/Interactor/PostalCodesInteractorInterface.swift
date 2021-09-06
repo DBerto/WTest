@@ -12,14 +12,14 @@ import WTestDomain
 class PostalCodesInteractor: PostalCodesInteractorInterface {
     
     weak var presenter: PostalCodesPresenterInterface!
-    let databaseRepository: PostalCodesStorageRepositoryType!
+    let repository: PostalCodesRepositoryType!
     
-    init(databaseRepository: PostalCodesStorageRepositoryType) {
-        self.databaseRepository = databaseRepository
+    init(repository: PostalCodesRepositoryType) {
+        self.repository = repository
     }
     
     func fetchPostalCodes() {
-        databaseRepository.fetchPostalCodes(withPredicate: nil) { [weak self] (result) in
+        repository.fetchPostalCodes(withPredicate: nil) { [weak self] (result) in
             switch result {
             case .success(let postalCodes):
                 self?.presenter.fetchPostalCodesSucceed(postalCodes)
@@ -36,7 +36,7 @@ class PostalCodesInteractor: PostalCodesInteractorInterface {
         }
         
         let predicate = createPredicate(withText: text)
-        databaseRepository.fetchPostalCodes(withPredicate: predicate) { [weak self] (result) in
+        repository.fetchPostalCodes(withPredicate: predicate) { [weak self] (result) in
             switch result {
             case .success(let postalCodes):
                 self?.presenter.fetchPostalCodesSucceed(postalCodes)
@@ -63,6 +63,6 @@ class PostalCodesInteractor: PostalCodesInteractorInterface {
             }
         }
         
-       return NSCompoundPredicate(type: .and, subpredicates: subPredicates)
+        return NSCompoundPredicate(type: .and, subpredicates: subPredicates)
     }
 }

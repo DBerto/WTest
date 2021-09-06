@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AB0A33826E6BDD60026B395 /* WTestRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0A33726E6BDD60026B395 /* WTestRealm.framework */; };
+		3AB0A33926E6BDD60026B395 /* WTestRealm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0A33726E6BDD60026B395 /* WTestRealm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3AB0A34626E6C0F20026B395 /* PostalCode+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0A33426E6BDB40026B395 /* PostalCode+Transform.swift */; };
 		96B3434E24F7F01200372F70 /* WTestDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B3434424F7F01200372F70 /* WTestDomain.framework */; };
 		96B3435324F7F01200372F70 /* WTestDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3435224F7F01200372F70 /* WTestDomainTests.swift */; };
 		96B3435524F7F01200372F70 /* WTestDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B3434724F7F01200372F70 /* WTestDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,7 +27,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3AB0A33A26E6BDD60026B395 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3AB0A33926E6BDD60026B395 /* WTestRealm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3AB0A33426E6BDB40026B395 /* PostalCode+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostalCode+Transform.swift"; sourceTree = "<group>"; };
+		3AB0A33726E6BDD60026B395 /* WTestRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B3434424F7F01200372F70 /* WTestDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WTestDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B3434724F7F01200372F70 /* WTestDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTestDomain.h; sourceTree = "<group>"; };
 		96B3434824F7F01200372F70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB0A33826E6BDD60026B395 /* WTestRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +74,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AB0A33526E6BDB40026B395 /* Transforms */ = {
+			isa = PBXGroup;
+			children = (
+				3AB0A33426E6BDB40026B395 /* PostalCode+Transform.swift */,
+			);
+			path = Transforms;
+			sourceTree = "<group>";
+		};
+		3AB0A33626E6BDD60026B395 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AB0A33726E6BDD60026B395 /* WTestRealm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		96B3433A24F7F01200372F70 = {
 			isa = PBXGroup;
 			children = (
 				96B3434624F7F01200372F70 /* WTestDomain */,
 				96B3435124F7F01200372F70 /* WTestDomainTests */,
 				96B3434524F7F01200372F70 /* Products */,
+				3AB0A33626E6BDD60026B395 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +112,7 @@
 		96B3434624F7F01200372F70 /* WTestDomain */ = {
 			isa = PBXGroup;
 			children = (
+				3AB0A33526E6BDB40026B395 /* Transforms */,
 				96B343B024F7FADD00372F70 /* Repositories */,
 				96B3435E24F7F02500372F70 /* Models */,
 				96B3434724F7F01200372F70 /* WTestDomain.h */,
@@ -138,6 +176,7 @@
 				96B3434024F7F01200372F70 /* Sources */,
 				96B3434224F7F01200372F70 /* Resources */,
 				96B3434124F7F01200372F70 /* Frameworks */,
+				3AB0A33A26E6BDD60026B395 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B3436024F7F03300372F70 /* PostalCode.swift in Sources */,
+				3AB0A34626E6C0F20026B395 /* PostalCode+Transform.swift in Sources */,
 				96B343B324F7FAFC00372F70 /* PostalCodesStorageRepositoryType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

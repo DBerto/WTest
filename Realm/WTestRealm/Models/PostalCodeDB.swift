@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 @objcMembers
-class PostalCodeModel: Object {
-    dynamic var local: String?
-    dynamic var number: String?
+public class PostalCodeDB: Object {
+    public dynamic var local: String?
+    public dynamic var number: String?
 }

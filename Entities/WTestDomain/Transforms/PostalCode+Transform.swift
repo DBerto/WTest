@@ -7,19 +7,20 @@
 //
 
 import Foundation
-import WTestDomain
+import WTestRealm
 
-internal extension PostalCode {
-    func asPostalCodeModel() -> PostalCodeModel {
-        return PostalCodeModel.create { (object) in
+extension PostalCode {
+    func asPostalCodeDB() -> PostalCodeDB {
+        return PostalCodeDB.create { (object) in
             object.local = local
             object.number = number
         }
     }
 }
 
-internal extension PostalCodeModel {
+extension PostalCodeDB {
     func asPostalCode() -> PostalCode {
-        return PostalCode(local: local ?? "", number: number ?? "")
+        return PostalCode(local: local ?? "",
+                          number: number ?? "")
     }
 }

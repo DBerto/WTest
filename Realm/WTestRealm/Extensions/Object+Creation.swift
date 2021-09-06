@@ -9,7 +9,7 @@
 import RealmSwift
 import Foundation
 
-internal extension Object {
+public extension Object {
     static func create<T: Object>(_ builder: (T) -> Void) -> T {
         let object = T()
         builder(object)

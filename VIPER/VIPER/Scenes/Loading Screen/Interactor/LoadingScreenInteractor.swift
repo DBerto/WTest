@@ -24,10 +24,10 @@ enum LoadingScreenInteractorError: LocalizedError {
 class LoadingScreenInteractor: LoadingScreenInteractorInterface {
     
     weak var presenter: LoadingScreenPresenterInterface!
-    let databaseRepository: PostalCodesStorageRepositoryType!
+    let repository: PostalCodesRepositoryType!
     
-    init(databaseRepository: PostalCodesStorageRepositoryType) {
-        self.databaseRepository = databaseRepository
+    init(repository: PostalCodesRepositoryType) {
+        self.repository = repository
     }
     
     private var isAppAlreadyLaunched: Bool = {
@@ -64,7 +64,7 @@ class LoadingScreenInteractor: LoadingScreenInteractorInterface {
     }
     
     func savePostalCodes(_ postalCodes: [PostalCode]) {
-        databaseRepository.savePostalCodes(postalCodes) { [weak self] (result) in
+        repository.savePostalCodes(postalCodes) { [weak self] (result) in
             switch result {
             case .success:
                 UserDefaults.standard.set(true, forKey: "isAppAlreadyLaunched")
