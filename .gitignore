@@ -2,3 +2,5 @@
 *.xcbkptlist
 WTest.xcworkspace/xcuserdata/dberto.xcuserdatad/xcschemes/xcschememanagement.plist
 WTest.xcworkspace/xcuserdata/dberto.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcuserstate
+WTestCommum/WTestCommon.xcodeproj/xcuserdata/davidberto.xcuserdatad/xcschemes/xcschememanagement.plist
