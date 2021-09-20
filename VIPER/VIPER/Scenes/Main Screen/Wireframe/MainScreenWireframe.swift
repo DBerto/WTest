@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 import WTestCommon
 
-class  MainScreenWireframe: BaseWireframe,  MainScreenWireframeInterface {
+class MainScreenWireframe: BaseWireframe,  MainScreenWireframeInterface {
     
     private let view: MainScreenViewController
     private let interactor: MainScreenInteractorInterface
     private let presenter: MainScreenPresenterInterface
     
-    init(view: MainScreenViewController, interactor: MainScreenInteractorInterface,
+    init(view: MainScreenViewController,
+         interactor: MainScreenInteractorInterface,
          presenter: MainScreenPresenterInterface) {
         self.view = view
         self.interactor = interactor
@@ -29,4 +30,3 @@ class  MainScreenWireframe: BaseWireframe,  MainScreenWireframeInterface {
         self.navigationController?.pushWireframe(postalCodesWireframe)
     }
 }
-

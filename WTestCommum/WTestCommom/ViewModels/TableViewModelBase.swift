@@ -22,16 +22,16 @@ open class TableViewModelBase {
         return sections[section].numberOfItems()
     }
     
-    public func item(for indexPath: IndexPath) -> Field {
+    public func item(for indexPath: IndexPath) -> FieldViewModel {
         return sections[indexPath.section].item(for: indexPath.row)
     }
 }
 
 public class ViewModelSection {
-    public var fields: [Field]
+    public var fields: [FieldViewModel]
     public var title: String
     
-    public init(fields: [Field], title: String = "") {
+    public init(fields: [FieldViewModel], title: String = "") {
         self.fields = fields
         self.title = title
     }
@@ -40,11 +40,9 @@ public class ViewModelSection {
         return fields.count
     }
     
-    public func item(for rowId: Int) -> Field {
+    public func item(for rowId: Int) -> FieldViewModel {
         return fields[rowId]
     }
 }
 
-public protocol Field {
-    
-}
+public class FieldViewModel { }

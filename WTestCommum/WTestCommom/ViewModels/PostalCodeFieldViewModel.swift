@@ -8,12 +8,13 @@
 
 import Foundation
 
-public struct PostalCodeViewModel: Field {
-    public init(local: String?, number: String?) {
+public class PostalCodeFieldViewModel: FieldViewModel {
+    let local: String?
+    let number: String?
+    
+    public init(local: String?,
+                number: String?) {
         self.local = local
         self.number = number
     }
-    
-    let local: String?
-    let number: String?
 }

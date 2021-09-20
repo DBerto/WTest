@@ -11,7 +11,7 @@ import WTestDomain
 import WTestCommon
 
 class PostalCodesViewModel: TableViewModelBase {
-    init(postalCodes: [PostalCodeViewModel]) {
+    init(postalCodes: [PostalCodeFieldViewModel]) {
         super.init()
         sections = [ViewModelSection(fields: postalCodes)]
     }

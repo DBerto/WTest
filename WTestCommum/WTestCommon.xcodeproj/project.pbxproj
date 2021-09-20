@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A42324026F9370400DD1D12 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42323F26F9370400DD1D12 /* BaseCell.swift */; };
 		3A57BD2025D6D98F002F8084 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 3A57BD1F25D6D98F002F8084 /* Rswift */; };
 		3A57BD4325D6E492002F8084 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57BD4225D6E492002F8084 /* R.generated.swift */; };
 		3A57BD4825D6E878002F8084 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9668DE9F25A8C93900802D8E /* Localizable.strings */; };
@@ -18,7 +19,7 @@
 		9668DE4F25A8BCCE00802D8E /* TableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE4E25A8BCCE00802D8E /* TableDataProvider.swift */; };
 		9668DE5425A8BCE300802D8E /* PostalCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE5325A8BCE300802D8E /* PostalCodeCell.swift */; };
 		9668DE8125A8C6B000802D8E /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE3C25A8BC5F00802D8E /* TableDataSource.swift */; };
-		9668DE8B25A8C70200802D8E /* PostalCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE8A25A8C70200802D8E /* PostalCodeViewModel.swift */; };
+		9668DE8B25A8C70200802D8E /* PostalCodeFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE8A25A8C70200802D8E /* PostalCodeFieldViewModel.swift */; };
 		9668DEC925A8CC0000802D8E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9668DEC825A8CC0000802D8E /* SnapKit */; };
 		9668DEF125A8CDC200802D8E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DEEF25A8CDC200802D8E /* Configuration.swift */; };
 		9668DEF225A8CDC200802D8E /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9668DEF025A8CDC200802D8E /* Config.plist */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A42323F26F9370400DD1D12 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		3A57BD4225D6E492002F8084 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		9668DE2225A8BB0B00802D8E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9668DE2A25A8BB3E00802D8E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +52,7 @@
 		9668DE3C25A8BC5F00802D8E /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		9668DE4E25A8BCCE00802D8E /* TableDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataProvider.swift; sourceTree = "<group>"; };
 		9668DE5325A8BCE300802D8E /* PostalCodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostalCodeCell.swift; sourceTree = "<group>"; };
-		9668DE8A25A8C70200802D8E /* PostalCodeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostalCodeViewModel.swift; sourceTree = "<group>"; };
+		9668DE8A25A8C70200802D8E /* PostalCodeFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostalCodeFieldViewModel.swift; sourceTree = "<group>"; };
 		9668DE9E25A8C93900802D8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9668DEEF25A8CDC200802D8E /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		9668DEF025A8CDC200802D8E /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
@@ -106,7 +108,7 @@
 		9668DE3425A8BC1B00802D8E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				9668DE8A25A8C70200802D8E /* PostalCodeViewModel.swift */,
+				9668DE8A25A8C70200802D8E /* PostalCodeFieldViewModel.swift */,
 				9668DE3625A8BC4900802D8E /* LoadingViewModel.swift */,
 				9668DE3525A8BC4900802D8E /* TableViewModelBase.swift */,
 			);
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				9668DE5325A8BCE300802D8E /* PostalCodeCell.swift */,
+				3A42323F26F9370400DD1D12 /* BaseCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -356,7 +359,7 @@
 				96D4B7AD2593B86E00C035F7 /* UITableView+Register.swift in Sources */,
 				3A57BD4325D6E492002F8084 /* R.generated.swift in Sources */,
 				9668DE4F25A8BCCE00802D8E /* TableDataProvider.swift in Sources */,
-				9668DE8B25A8C70200802D8E /* PostalCodeViewModel.swift in Sources */,
+				9668DE8B25A8C70200802D8E /* PostalCodeFieldViewModel.swift in Sources */,
 				9668DE3725A8BC4900802D8E /* TableViewModelBase.swift in Sources */,
 				9668DE2325A8BB0B00802D8E /* LoadingView.swift in Sources */,
 				9668DE3825A8BC4900802D8E /* LoadingViewModel.swift in Sources */,
@@ -366,6 +369,7 @@
 				96D4B7AC2593B86E00C035F7 /* NSObject+ClassName.swift in Sources */,
 				9668DE2D25A8BB3E00802D8E /* BaseViewController.swift in Sources */,
 				9668DE8125A8C6B000802D8E /* TableDataSource.swift in Sources */,
+				3A42324026F9370400DD1D12 /* BaseCell.swift in Sources */,
 				9668DE5425A8BCE300802D8E /* PostalCodeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

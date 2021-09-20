@@ -9,17 +9,9 @@
 import Foundation
 import UIKit
 
-public class PostalCodeCell: UITableViewCell {
+public class PostalCodeCell: BaseCell<PostalCodeFieldViewModel> {
     
     // MARK: - Properties
-    
-    public var item: PostalCodeViewModel? {
-        didSet {
-            if let viewModel = item {
-                bindViewModel(viewModel)
-            }
-        }
-    }
     
     // MARK: -
     
@@ -78,7 +70,7 @@ public class PostalCodeCell: UITableViewCell {
     
     // MARK: - Bindings
     
-    private func bindViewModel(_ viewModel: PostalCodeViewModel) {
+    override func bindViewModel(_ viewModel: PostalCodeFieldViewModel) {
         numberLabel.text = viewModel.number
         localLabel.text = viewModel.local
         layoutIfNeeded()

@@ -42,7 +42,8 @@ class PostalCodesPresenter: PostalCodesEventHandler, PostalCodesPresenterInterfa
     }
     
     func fetchPostalCodesSucceed(_ postalCodes: [PostalCode]) {
-        let postalCodes = postalCodes.map { PostalCodeViewModel(local: $0.local, number: $0.number) }
+        let postalCodes = postalCodes.map { PostalCodeFieldViewModel(local: $0.local,
+                                                                     number: $0.number) }
         view.updateView(with: PostalCodesViewModel(postalCodes: postalCodes))
         view.updateLoadingIndicator(false)
     }

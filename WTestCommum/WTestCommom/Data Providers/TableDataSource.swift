@@ -24,27 +24,50 @@ open class TableDataSource: NSObject, UITableViewDataSource {
         return numberOfSections
     }
     
-    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView,
+                        numberOfRowsInSection section: Int) -> Int {
         guard let viewModel = viewModel, viewModel.numberOfSections() > 0 else {
             return 0
         }
         return viewModel.numberOfRows(in: section)
     }
     
-    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView,
+                        cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueCell(in: tableView, for: indexPath)
         return cell
     }
     
-    open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    open func tableView(_ tableView: UITableView,
+                        titleForHeaderInSection section: Int) -> String? {
         guard let viewModel = viewModel, viewModel.numberOfSections() > section else {
             return nil
         }
         return viewModel.sections[section].title
     }
     
-    open func dequeueCell(in tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
-        assertionFailure("must be implemented by its subclasses")
-        return UITableViewCell()
+    open func dequeueCell(in tableView: UITableView,
+                          for indexPath: IndexPath) -> UITableViewCell {
+        guard let viewModel = viewModel?.item(for: indexPath) else {
+            assertionFailure("FieldViewModel is nill")
+            return UITableViewCell()
+        }
+        
+        guard let cell = dequeueCell(in: tableView,
+                                     for: viewModel,
+                                     atIndexPath: indexPath) else {
+            assertionFailure("Unknown cell type")
+            return UITableViewCell()
+        }
+        
+        cell.viewModel = viewModel
+        return cell
+    }
+    
+    open func dequeueCell(in tableView: UITableView,
+                          for fieldViewModel: FieldViewModel,
+                          atIndexPath indexPath: IndexPath) -> BaseCell<FieldViewModel>? {
+        assertionFailure("Override in subclass")
+        return nil
     }
 }
