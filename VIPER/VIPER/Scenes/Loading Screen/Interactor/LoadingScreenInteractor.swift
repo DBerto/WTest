@@ -35,7 +35,8 @@ class LoadingScreenInteractor: LoadingScreenInteractorInterface {
     }()
     
     func fetchPostalCodes() {
-        guard let postalCodeUrl = URL(string: Configuration.postalCodeURL), !isAppAlreadyLaunched else { return }
+        guard let postalCodeUrl = URL(string: Configuration.postalCodeURL),
+              !isAppAlreadyLaunched else { return }
         var errors: [Error] = []
         var postalCodes: [PostalCode] = []
         
@@ -64,14 +65,13 @@ class LoadingScreenInteractor: LoadingScreenInteractorInterface {
     }
     
     func savePostalCodes(_ postalCodes: [PostalCode]) {
-        repository.savePostalCodes(postalCodes) { [weak self] (result) in
-            switch result {
-            case .success:
-                UserDefaults.standard.set(true, forKey: "isAppAlreadyLaunched")
-                self?.presenter.postalCodeSaveSucceed()
-            case .failure(let error):
-                self?.presenter.postalCodeSaveFailed(error)
-            }
+        let result = repository.savePostalCodes(postalCodes)
+        switch result {
+        case .success:
+            UserDefaults.standard.set(true, forKey: "isAppAlreadyLaunched")
+            self.presenter.postalCodeSaveSucceed()
+        case .failure(let error):
+            self.presenter.postalCodeSaveFailed(error)
         }
     }
 }

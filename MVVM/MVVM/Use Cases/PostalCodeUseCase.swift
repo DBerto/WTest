@@ -8,9 +8,10 @@
 import Foundation
 import WTestCommon
 import WTestDomain
+import Combine
 
 protocol PostalCodeUseCaseType: class {
-    func fetchPostalCodes(completion: @escaping (Result<[PostalCode], Error>) -> Void)
+    func fetchPostalCodes() -> Result<[PostalCode], Error>
 }
 
 class PostalCodeUseCase: PostalCodeUseCaseType {
@@ -21,7 +22,7 @@ class PostalCodeUseCase: PostalCodeUseCaseType {
         self.repository = repository
     }
     
-    func fetchPostalCodes(completion: @escaping (Result<[PostalCode], Error>) -> Void) {
-
+    func fetchPostalCodes() -> Result<[PostalCode], Error> {
+        repository.fetchPostalCodes(withPredicate: nil)
     }
 }

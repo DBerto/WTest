@@ -9,12 +9,11 @@ import Foundation
 import UIKit
 import WTestCommon
 
-protocol LoadingScreenViewControllerrType: class {
-    var viewDidLoadTrigger: Variable<Void?> { get set }
-    var viewWillAppearTrigger: Variable<Void?> { get set }
+protocol LoadingScreenViewControllerType: BaseViewController {
+    
 }
 
-class LoadingScreenViewController: BaseViewController {
+class LoadingScreenViewController: BaseViewController, LoadingScreenViewControllerType {
     
     // MARK: - Properties
     
@@ -24,9 +23,6 @@ class LoadingScreenViewController: BaseViewController {
         let view = LoadingView()
         return view
     }()
-    
-    var viewDidLoadTrigger: Variable<Void?> = .init(nil)
-    var viewWillAppearTrigger: Variable<Void?> = .init(nil)
 
     // MARK: - View Cycle
     
@@ -61,11 +57,6 @@ class LoadingScreenViewController: BaseViewController {
     }
     
     func bindViewModel() {
-        let output = viewModel.transform(input: LoadingScreenViewModel.Input(viewDidLoadTrigger: viewDidLoadTrigger,
-                                                                             viewWillAppearTrigger: viewWillAppearTrigger))
-        
-        output.loadingViewModel.onUpdate = { [weak self] value in
-
-        }
+        let output = viewModel.transform(input: LoadingScreenViewModel.Input())
     }
 }

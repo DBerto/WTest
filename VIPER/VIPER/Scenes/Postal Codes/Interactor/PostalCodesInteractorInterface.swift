@@ -19,13 +19,12 @@ class PostalCodesInteractor: PostalCodesInteractorInterface {
     }
     
     func fetchPostalCodes() {
-        repository.fetchPostalCodes(withPredicate: nil) { [weak self] (result) in
-            switch result {
-            case .success(let postalCodes):
-                self?.presenter.fetchPostalCodesSucceed(postalCodes)
-            case .failure(let error):
-                self?.presenter.fetchPostalCodesFailed(error)
-            }
+        let result = repository.fetchPostalCodes(withPredicate: nil)
+        switch result {
+        case .success(let postalCodes):
+            self.presenter.fetchPostalCodesSucceed(postalCodes)
+        case .failure(let error):
+            self.presenter.fetchPostalCodesFailed(error)
         }
     }
     
@@ -36,13 +35,12 @@ class PostalCodesInteractor: PostalCodesInteractorInterface {
         }
         
         let predicate = createPredicate(withText: text)
-        repository.fetchPostalCodes(withPredicate: predicate) { [weak self] (result) in
-            switch result {
-            case .success(let postalCodes):
-                self?.presenter.fetchPostalCodesSucceed(postalCodes)
-            case .failure(let error):
-                self?.presenter.fetchPostalCodesFailed(error)
-            }
+        let result = repository.fetchPostalCodes(withPredicate: predicate)
+        switch result {
+        case .success(let postalCodes):
+            self.presenter.fetchPostalCodesSucceed(postalCodes)
+        case .failure(let error):
+            self.presenter.fetchPostalCodesFailed(error)
         }
     }
     
