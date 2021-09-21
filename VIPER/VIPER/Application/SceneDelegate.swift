@@ -8,13 +8,14 @@
 
 import UIKit
 import SwiftUI
+import WTestCommon
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    private var isAppAlreadyLaunched: Bool = {
-        return UserDefaults.standard.bool(forKey: "isAppAlreadyLaunched")
-    }()
+    
+    @UserDefault(key: "isAppAlreadyLaunched", defaultValue: false)
+    var isAppAlreadyLaunched: Bool
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.

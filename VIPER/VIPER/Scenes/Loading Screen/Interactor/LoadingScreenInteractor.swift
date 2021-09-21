@@ -9,14 +9,18 @@
 import Foundation
 import WTestDomain
 import WTestCommon
+import WTestAPI
 
 enum LoadingScreenInteractorError: LocalizedError {
     case downloadError
+    case appAlreadyLaunched
     
     public var errorDescription: String? {
         switch self {
         case .downloadError:
             return R.string.localizable.postalCodesDownloadError()
+        case .appAlreadyLaunched:
+            return "appAlreadyLaunched"
         }
     }
 }
@@ -24,43 +28,28 @@ enum LoadingScreenInteractorError: LocalizedError {
 class LoadingScreenInteractor: LoadingScreenInteractorInterface {
     
     weak var presenter: LoadingScreenPresenterInterface!
-    let repository: PostalCodesRepositoryType!
+    
+    private let repository: PostalCodesRepositoryType!
     
     init(repository: PostalCodesRepositoryType) {
         self.repository = repository
     }
     
-    private var isAppAlreadyLaunched: Bool = {
-        return UserDefaults.standard.bool(forKey: "isAppAlreadyLaunched")
-    }()
+    @UserDefault(key: "isAppAlreadyLaunched", defaultValue: false)
+    var isAppAlreadyLaunched: Bool
     
     func fetchPostalCodes() {
-        guard let postalCodeUrl = URL(string: Configuration.postalCodeURL),
-              !isAppAlreadyLaunched else { return }
-        var errors: [Error] = []
-        var postalCodes: [PostalCode] = []
-        
-        do {
-            let contents = try String(contentsOf: postalCodeUrl)
-            var postalCodeStringList = contents.components(separatedBy: .newlines)
-            postalCodeStringList.remove(at: 0)
-            postalCodeStringList.remove(at: postalCodeStringList.count - 1)
-            
-            for postalCodeContent in postalCodeStringList {
-                let elements = postalCodeContent.components(separatedBy: ",")
-                let number =  (elements[elements.endIndex - 3]) + "-" + (elements[elements.endIndex - 2])
-                let local = (elements[elements.endIndex - 1])
-                let postalCode = PostalCode(local: local, number: number)
-                postalCodes.append(postalCode)
-            }
-        } catch {
-            errors.append(LoadingScreenInteractorError.downloadError)
+        guard !isAppAlreadyLaunched else {
+            presenter.postalCodeFetchFailed(LoadingScreenInteractorError.appAlreadyLaunched)
+            return
         }
         
-        if errors.isEmpty {
-            self.presenter.postalCodeFetchSucceed(postalCodes)
-        } else {
-            self.presenter.postalCodeFetchFailed(LoadingScreenInteractorError.downloadError)
+        let result = repository.downloadPostalCodes()
+        switch result {
+        case .success(let postalCodes):
+            presenter.postalCodeFetchSucceed(postalCodes)
+        case .failure:
+            presenter.postalCodeFetchFailed(LoadingScreenInteractorError.downloadError)
         }
     }
     
@@ -68,10 +57,10 @@ class LoadingScreenInteractor: LoadingScreenInteractorInterface {
         let result = repository.savePostalCodes(postalCodes)
         switch result {
         case .success:
-            UserDefaults.standard.set(true, forKey: "isAppAlreadyLaunched")
-            self.presenter.postalCodeSaveSucceed()
+            isAppAlreadyLaunched = true
+            presenter.postalCodeSaveSucceed()
         case .failure(let error):
-            self.presenter.postalCodeSaveFailed(error)
+            presenter.postalCodeSaveFailed(error)
         }
     }
 }

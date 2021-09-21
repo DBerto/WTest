@@ -16,4 +16,7 @@
    <FileRef
       location = "group:Realm/WTestRealm.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:WTestAPI/WTestAPI.xcodeproj">
+   </FileRef>
 </Workspace>

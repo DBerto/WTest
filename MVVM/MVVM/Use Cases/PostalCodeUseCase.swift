@@ -10,23 +10,38 @@ import WTestCommon
 import WTestDomain
 import Combine
 
+enum PostalCodeUseCaseError: LocalizedError {
+    case appAlreadyLaunched
+    
+    public var errorDescription: String? {
+        switch self {
+        case .appAlreadyLaunched:
+            return "appAlreadyLaunched"
+        }
+    }
+}
+
 protocol PostalCodeUseCaseType: class {
-    func fetchPostalCodes() -> Result<[PostalCode], Error>
+    func downloadPostalCodes() -> Result<[PostalCode], Error>
 }
 
 class PostalCodeUseCase: PostalCodeUseCaseType {
-    
     private let repository: PostalCodesRepositoryType
+    
+    @UserDefault(key: "isAppAlreadyLaunched", defaultValue: false)
+    var isAppAlreadyLaunched: Bool
     
     init(repository: PostalCodesRepositoryType) {
         self.repository = repository
     }
     
-    func fetchPostalCodes() -> Result<[PostalCode], Error> {
-        repository.fetchPostalCodes(withPredicate: nil)
+    func downloadPostalCodes() -> Result<[PostalCode], Error> {
+        guard isAppAlreadyLaunched == false else { return .failure(PostalCodeUseCaseError.appAlreadyLaunched) }
+        return repository.downloadPostalCodes()
     }
     
     func savePostalCodes(_ postalCodes: [PostalCode]) -> Result<Void, Error> {
-        repository.savePostalCodes(postalCodes)
+        isAppAlreadyLaunched = true
+        return repository.savePostalCodes(postalCodes)
     }
 }

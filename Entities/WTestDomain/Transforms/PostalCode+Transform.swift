@@ -8,19 +8,45 @@
 
 import Foundation
 import WTestRealm
+import WTestAPI
 
 extension PostalCode {
     func asPostalCodeDB() -> PostalCodeDB {
-        return PostalCodeDB.create { (object) in
+        PostalCodeDB.create { (object) in
             object.local = local
             object.number = number
         }
     }
 }
 
+extension Sequence where Element == PostalCode {
+    func asPostalCodeDBArray() -> [PostalCodeDB] {
+        return self.map { $0.asPostalCodeDB() }
+    }
+}
+
 extension PostalCodeDB {
     func asPostalCode() -> PostalCode {
-        return PostalCode(local: local ?? "",
-                          number: number ?? "")
+        PostalCode(local: local ?? "",
+                   number: number ?? "")
+    }
+}
+
+extension Sequence where Element == PostalCodeDB {
+    func asPostalCodeArray() -> [PostalCode] {
+        return self.map { $0.asPostalCode() }
+    }
+}
+
+extension PostalCodeResponse {
+    func asPostalCode() -> PostalCode {
+        PostalCode(local: local,
+                   number: number)
+    }
+}
+
+extension Sequence where Element == PostalCodeResponse {
+    func asPostalCodeArray() -> [PostalCode] {
+        return self.map { $0.asPostalCode() }
     }
 }

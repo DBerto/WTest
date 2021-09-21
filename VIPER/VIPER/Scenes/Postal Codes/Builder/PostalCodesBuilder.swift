@@ -9,6 +9,7 @@
 import Foundation
 import WTestDomain
 import WTestRealm
+import WTestAPI
 
 class PostalCodesBuilder {
     
@@ -29,7 +30,8 @@ class PostalCodesBuilder {
     }
     
     private func makeInteractor() -> PostalCodesInteractor {
-        PostalCodesInteractor(repository: PostalCodesRepository(storageRepository: PostalCodesStorageRepository()))
+        PostalCodesInteractor(repository: PostalCodesRepository(storageRepository: PostalCodesStorageRepository(),
+                                                                remoteRepository: PostalCodesRemoteRepository()))
     }
     
     private func makePresenter() -> PostalCodesPresenter {

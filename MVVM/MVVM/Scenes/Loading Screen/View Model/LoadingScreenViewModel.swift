@@ -61,14 +61,14 @@ class LoadingScreenViewModel: LoadingScreenViewModelType {
     // MARK: - Helpers
     
     private func viewDidLoadTrigger() {
-        let result = postalCodeUseCase.fetchPostalCodes()
+        let result = postalCodeUseCase.downloadPostalCodes()
         switch result {
         case .success(let postalCodes):
             loadingViewModel.downloadingLabel = R.string.localizable.savingLabel()
-            //postalCodeUseCase.savePostalCodes(postalCodes)
+            _ = postalCodeUseCase.savePostalCodes(postalCodes)
             dataSourceModel.send(self.loadingViewModel)
         case .failure(let error):
             errorTracker.send(error)
-        }        
+        }
     }
 }
