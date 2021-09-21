@@ -10,20 +10,22 @@ import UIKit
 import WTestCommon
 
 protocol LoadingScreenViewControllerType: BaseViewController {
-    
+    var viewDidLoadTrigger: Trigger { get }
 }
 
 class LoadingScreenViewController: BaseViewController, LoadingScreenViewControllerType {
     
     // MARK: - Properties
     
+    private(set) var viewDidLoadTrigger: Trigger = .init()
+    
     var viewModel: LoadingScreenViewModel!
     
-    lazy var loadingView: LoadingView = {
+    private lazy var loadingView: LoadingView = {
         let view = LoadingView()
         return view
     }()
-
+    
     // MARK: - View Cycle
     
     override func viewDidLoad() {
@@ -56,7 +58,18 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewControll
         }
     }
     
+    // MARK: - Bind ViewModel
+    
     func bindViewModel() {
-        let output = viewModel.transform(input: LoadingScreenViewModel.Input())
+        let output = viewModel.transform(input: LoadingScreenViewModel.Input(viewDidLoadTrigger: viewDidLoadTrigger.asDriver()),
+                                         disposeBag: disposeBag)
+        
+        output.dataSourceModel
+            .asDriver()
+            .sink { [weak self] (dataSourceModel) in
+                self?.loadingView.viewModel = dataSourceModel
+                self?.view.setNeedsDisplay()
+            }
+            .store(in: disposeBag)
     }
 }

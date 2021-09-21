@@ -7,6 +7,7 @@
 
 import Foundation
 import WTestCommon
+import Combine
 
 protocol LoadingScreenViewModelType: ViewModelType { }
 
@@ -17,11 +18,11 @@ class LoadingScreenViewModel: LoadingScreenViewModelType {
     private let postalCodeUseCase: PostalCodeUseCase
     
     struct Input {
-        
+        let viewDidLoadTrigger: Driver<Void>
     }
     
     struct Output {
-        
+        let dataSourceModel: PassthroughSubject<LoadingViewModel, Never>
     }
     
     private lazy var loadingViewModel: LoadingViewModel = {
@@ -31,6 +32,11 @@ class LoadingScreenViewModel: LoadingScreenViewModelType {
                                  isDownloading: true)
     }()
     
+    // MARK: - Publishers
+    
+    private let dataSourceModel: PassthroughSubject<LoadingViewModel, Never> = .init()
+    private let errorTracker: ErrorTracker = .init()
+    
     // MARK: - Init
     
     init(postalCodeUseCase: PostalCodeUseCase) {
@@ -39,8 +45,30 @@ class LoadingScreenViewModel: LoadingScreenViewModelType {
     
     // MARK: - Transform
     
-    func transform(input: Input) -> Output {
-        return Output()
+    func transform(input: Input,
+                   disposeBag: CancellableBag) -> Output {
+        
+        input.viewDidLoadTrigger
+            .sink { [weak self] in
+                self?.viewDidLoadTrigger()
+            }
+            .store(in: disposeBag)
+        
+        return Output(dataSourceModel: dataSourceModel)
     }
     
+    
+    // MARK: - Helpers
+    
+    private func viewDidLoadTrigger() {
+        let result = postalCodeUseCase.fetchPostalCodes()
+        switch result {
+        case .success(let postalCodes):
+            loadingViewModel.downloadingLabel = R.string.localizable.savingLabel()
+            //postalCodeUseCase.savePostalCodes(postalCodes)
+            dataSourceModel.send(self.loadingViewModel)
+        case .failure(let error):
+            errorTracker.send(error)
+        }        
+    }
 }

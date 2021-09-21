@@ -25,4 +25,8 @@ class PostalCodeUseCase: PostalCodeUseCaseType {
     func fetchPostalCodes() -> Result<[PostalCode], Error> {
         repository.fetchPostalCodes(withPredicate: nil)
     }
+    
+    func savePostalCodes(_ postalCodes: [PostalCode]) -> Result<Void, Error> {
+        repository.savePostalCodes(postalCodes)
+    }
 }

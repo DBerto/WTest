@@ -15,6 +15,10 @@ public protocol ViewInterface: class {
 
 open class BaseViewController: UIViewController {
     
+    // MARK: - Publishers
+    
+    public var disposeBag: CancellableBag = CancellableBag()
+    
     // MARK: - View Cycle
     
     open override func viewDidLoad() {

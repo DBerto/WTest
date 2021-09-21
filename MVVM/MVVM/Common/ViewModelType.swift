@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import WTestCommon
 
 protocol ViewModelType {
     associatedtype Input
     associatedtype Output
-
-    func transform(input: Input) -> Output
+    
+    func transform(input: Input,
+                   disposeBag: CancellableBag) -> Output
 }
