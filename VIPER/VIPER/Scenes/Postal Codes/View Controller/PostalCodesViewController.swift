@@ -40,7 +40,6 @@ class PostalCodesViewController: TableViewController, PostalCodesViewInterface {
         hasSearchBar = true
         dataProvider = PostalCodesDataProvider(dataSource: dataSource)
         dataProvider.tableView = tableView
-        tableView.reloadData()
     }
     
     // MARK: - PostalCodesViewInterface

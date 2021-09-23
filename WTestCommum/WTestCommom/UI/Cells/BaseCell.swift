@@ -8,16 +8,10 @@
 import Foundation
 import UIKit
 
-public class BaseCell<T: FieldViewModel>: UITableViewCell {
-    public var viewModel: T? {
-        didSet {
-            if let viewModel = viewModel {
-                bindViewModel(viewModel)
-            }
-        }
-    }
-    
-    func bindViewModel(_ viewModel: T) {
-        assertionFailure("Override in subclass")
-    }
+public typealias BindableBaseCell = BaseCell & BindableCell
+
+public class BaseCell: UITableViewCell { }
+
+public protocol BindableCell {
+    func bindViewModel<T: FieldViewModel>(_ viewModel: T)
 }

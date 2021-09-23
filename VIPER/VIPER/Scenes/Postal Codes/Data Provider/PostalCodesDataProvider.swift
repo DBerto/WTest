@@ -11,7 +11,7 @@ import UIKit
 import WTestCommon
 
 class PostalCodesDataProvider: TableDataProvider {
-    override func registerCells() {
+    override open func registerCells() {
         tableView?.register(PostalCodeCell.self)
     }
 }

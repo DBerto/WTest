@@ -11,10 +11,10 @@ import UIKit
 import WTestCommon
 
 class PostalCodesDataSource: TableDataSource {
-    override func dequeueCell(in tableView: UITableView,
-                              for fieldViewModel: FieldViewModel,
-                              atIndexPath indexPath: IndexPath) -> BaseCell<FieldViewModel>? {
+    override open func dequeueCell(in tableView: UITableView,
+                                   for fieldViewModel: FieldViewModel,
+                                   atIndexPath indexPath: IndexPath) -> UITableViewCell? {
         let identifier: String = PostalCodeCell.className
-        return tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? BaseCell<FieldViewModel>
+        return tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
     }
 }

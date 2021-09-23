@@ -55,18 +55,18 @@ open class TableDataSource: NSObject, UITableViewDataSource {
         
         guard let cell = dequeueCell(in: tableView,
                                      for: viewModel,
-                                     atIndexPath: indexPath) else {
+                                     atIndexPath: indexPath) as? BindableBaseCell else {
             assertionFailure("Unknown cell type")
             return UITableViewCell()
         }
         
-        cell.viewModel = viewModel
+        cell.bindViewModel(viewModel)
         return cell
     }
     
     open func dequeueCell(in tableView: UITableView,
                           for fieldViewModel: FieldViewModel,
-                          atIndexPath indexPath: IndexPath) -> BaseCell<FieldViewModel>? {
+                          atIndexPath indexPath: IndexPath) -> UITableViewCell? {
         assertionFailure("Override in subclass")
         return nil
     }

@@ -9,11 +9,9 @@
 import Foundation
 import UIKit
 
-public class PostalCodeCell: BaseCell<PostalCodeFieldViewModel> {
+public class PostalCodeCell: BindableBaseCell {
     
     // MARK: - Properties
-    
-    // MARK: -
     
     lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -70,9 +68,11 @@ public class PostalCodeCell: BaseCell<PostalCodeFieldViewModel> {
     
     // MARK: - Bindings
     
-    override func bindViewModel(_ viewModel: PostalCodeFieldViewModel) {
+    public func bindViewModel<T: FieldViewModel>(_ viewModel: T){
+        let viewModel = viewModel as! PostalCodeFieldViewModel
         numberLabel.text = viewModel.number
         localLabel.text = viewModel.local
         layoutIfNeeded()
     }
+    
 }
