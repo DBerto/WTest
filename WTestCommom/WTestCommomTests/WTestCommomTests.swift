@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import WTestCommum
+@testable import WTestCommom
 
 class WTestCommumTests: XCTestCase {
 
