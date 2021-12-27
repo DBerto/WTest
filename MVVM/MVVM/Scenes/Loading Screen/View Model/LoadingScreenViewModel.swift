@@ -11,11 +11,12 @@ import Combine
 
 protocol LoadingScreenViewModelType: ViewModelType { }
 
-class LoadingScreenViewModel: LoadingScreenViewModelType {
+final class LoadingScreenViewModel: LoadingScreenViewModelType {
     
     // MARK: - Properties
     
     private let postalCodeUseCase: PostalCodeUseCase
+    private let coordinator: LoadingScreenCoordinatorType
     
     struct Input {
         let viewDidLoadTrigger: Driver<Void>
@@ -26,10 +27,10 @@ class LoadingScreenViewModel: LoadingScreenViewModelType {
     }
     
     private lazy var loadingViewModel: LoadingViewModel = {
-        return  LoadingViewModel(title: R.string.localizable.appTitle(),
-                                 image: #imageLiteral(resourceName: "post-box"),
-                                 downloadingLabel: R.string.localizable.downloadingLabel(),
-                                 isDownloading: true)
+        LoadingViewModel(title: R.string.localizable.appTitle(),
+                         image: #imageLiteral(resourceName: "post-box"),
+                         downloadingLabel: R.string.localizable.downloadingLabel(),
+                         isDownloading: true)
     }()
     
     // MARK: - Publishers
@@ -39,8 +40,10 @@ class LoadingScreenViewModel: LoadingScreenViewModelType {
     
     // MARK: - Init
     
-    init(postalCodeUseCase: PostalCodeUseCase) {
+    init(postalCodeUseCase: PostalCodeUseCase,
+         coordinator: LoadingScreenCoordinatorType) {
         self.postalCodeUseCase = postalCodeUseCase
+        self.coordinator = coordinator
     }
     
     // MARK: - Transform
@@ -54,6 +57,13 @@ class LoadingScreenViewModel: LoadingScreenViewModelType {
             }
             .store(in: disposeBag)
         
+        errorTracker
+            .asDriver()
+            .sink { [weak self] error in
+                self?.coordinator.perform(.error(error))
+            }
+            .store(in: disposeBag)
+        
         return Output(dataSourceModel: dataSourceModel)
     }
     
@@ -61,14 +71,21 @@ class LoadingScreenViewModel: LoadingScreenViewModelType {
     // MARK: - Helpers
     
     private func viewDidLoadTrigger() {
-        let result = postalCodeUseCase.downloadPostalCodes()
-        switch result {
-        case .success(let postalCodes):
-            loadingViewModel.downloadingLabel = R.string.localizable.savingLabel()
-            _ = postalCodeUseCase.savePostalCodes(postalCodes)
-            dataSourceModel.send(self.loadingViewModel)
-        case .failure(let error):
-            errorTracker.send(error)
+        loadingViewModel.downloadingLabel = R.string.localizable.savingLabel()
+        dataSourceModel.send(loadingViewModel)
+        
+        executeInBackgroundThread { [weak self] in
+            let result = self?.postalCodeUseCase.downloadPostalCodes()
+            switch result {
+            case .success(let postalCodes):
+                executeInMainThread { [weak self] in
+                    _ = self?.postalCodeUseCase.savePostalCodes(postalCodes)
+                    self?.coordinator.perform(.showMainScreen)
+                }
+            case .failure(let error):
+                self?.errorTracker.send(error)
+            default: break
+            }
         }
     }
 }

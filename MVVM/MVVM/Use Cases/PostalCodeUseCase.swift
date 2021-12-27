@@ -21,11 +21,11 @@ enum PostalCodeUseCaseError: LocalizedError {
     }
 }
 
-protocol PostalCodeUseCaseType: class {
+protocol PostalCodeUseCaseType: AnyObject {
     func downloadPostalCodes() -> Result<[PostalCode], Error>
 }
 
-class PostalCodeUseCase: PostalCodeUseCaseType {
+final class PostalCodeUseCase: PostalCodeUseCaseType {
     private let repository: PostalCodesRepositoryType
     
     @UserDefault(key: "isAppAlreadyLaunched", defaultValue: false)

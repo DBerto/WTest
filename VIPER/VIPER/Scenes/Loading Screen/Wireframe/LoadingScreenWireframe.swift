@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 import WTestCommon
 
-class LoadingScreenWireframe: BaseWireframe, LoadingScreenWireframeInterface {
+final class LoadingScreenWireframe: BaseWireframe, LoadingScreenWireframeInterface {
     
     private let view: LoadingScreenViewController
     private let interactor: LoadingScreenInteractorInterface
     private let presenter: LoadingScreenPresenterInterface
     
-    init(view: LoadingScreenViewController, interactor: LoadingScreenInteractorInterface,
+    init(view: LoadingScreenViewController,
+         interactor: LoadingScreenInteractorInterface,
          presenter: LoadingScreenPresenterInterface) {
         self.view = view
         self.interactor = interactor

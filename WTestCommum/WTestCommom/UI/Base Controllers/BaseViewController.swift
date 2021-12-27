@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol ViewInterface: class {
+public protocol ViewInterface: AnyObject {
     func showError(_ error: Error)
 }
 

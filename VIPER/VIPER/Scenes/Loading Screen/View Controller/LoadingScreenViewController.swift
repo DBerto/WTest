@@ -43,13 +43,14 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewInterfac
     }
     
     private func setupNavBar() {
-        navigationController?.setToolbarHidden(true, animated: false)
+        navigationController?.setToolbarHidden(true,
+                                               animated: false)
     }
     
     private func setupConstraints() {
         loadingView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().offset(-10)
+            make.trailing.equalToSuperview().inset( 10)
             make.leading.equalToSuperview().offset(10)
         }
     }

@@ -68,7 +68,7 @@ public class PostalCodeCell: BindableBaseCell {
     
     // MARK: - Bindings
     
-    public func bindViewModel<T: FieldViewModel>(_ viewModel: T){
+    public func bindViewModel<T: FieldViewModel>(_ viewModel: T) {
         let viewModel = viewModel as! PostalCodeFieldViewModel
         numberLabel.text = viewModel.number
         localLabel.text = viewModel.local

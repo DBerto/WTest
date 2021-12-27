@@ -10,6 +10,8 @@ import Combine
 open class CancellableBag {
     var subscriptions = Set<AnyCancellable>()
     
+    public init() { }
+    
     func cancel() {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()

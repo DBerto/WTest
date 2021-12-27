@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/mac-cain13/R.swift.Library",
         "state": {
           "branch": null,
-          "revision": "5025163d8f60d3c56124c309db0246ba421aa8c6",
-          "version": "5.3.0"
+          "revision": "8998cfe77f4fce79ee6dfab0c88a7d551659d8fb",
+          "version": "5.4.0"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/realm/realm-cocoa",
         "state": {
           "branch": null,
-          "revision": "99c7d89791dfe8730c145461d59969eb4c56c557",
-          "version": "5.3.5"
+          "revision": "2dce752b48c3265c63ab04a8c66ddfdf9185f847",
+          "version": "5.5.2"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/realm/realm-core",
         "state": {
           "branch": null,
-          "revision": "b7c49bb107cfc933016792e78fc5daa2aca71a14",
-          "version": "6.0.19"
+          "revision": "66d79b3c5213fb14d491c1b22193077b488d49a6",
+          "version": "6.2.4"
         }
       },
       {

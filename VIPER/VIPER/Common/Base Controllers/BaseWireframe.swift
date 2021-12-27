@@ -9,11 +9,9 @@
 import Foundation
 import UIKit
 
-protocol WireframeInterface: class {
-    
-}
+protocol WireframeInterface: AnyObject { }
 
-class BaseWireframe: WireframeInterface {
+final class BaseWireframe: WireframeInterface {
 
     private unowned var _viewController: UIViewController
 

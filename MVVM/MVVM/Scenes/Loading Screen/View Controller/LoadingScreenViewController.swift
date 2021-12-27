@@ -13,7 +13,7 @@ protocol LoadingScreenViewControllerType: BaseViewController {
     var viewDidLoadTrigger: Trigger { get }
 }
 
-class LoadingScreenViewController: BaseViewController, LoadingScreenViewControllerType {
+final class LoadingScreenViewController: BaseViewController, LoadingScreenViewControllerType {
     
     // MARK: - Properties
     
@@ -33,6 +33,7 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewControll
         setupView()
         setupNavBar()
         bindViewModel()
+        viewDidLoadTrigger.send()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,7 +54,7 @@ class LoadingScreenViewController: BaseViewController, LoadingScreenViewControll
     private func setupConstraints() {
         loadingView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().offset(-10)
+            make.trailing.equalToSuperview().inset(10)
             make.leading.equalToSuperview().offset(10)
         }
     }

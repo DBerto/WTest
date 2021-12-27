@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let mainVC = isAppAlreadyLaunched ? LoadingScreenBuilder().setup() : LoadingScreenBuilder().setup()
+        let mainVC: BaseViewController = isAppAlreadyLaunched ? MainScreenBuilder().setup() : LoadingScreenBuilder().setup()
         let navController = UINavigationController(rootViewController: mainVC)
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)

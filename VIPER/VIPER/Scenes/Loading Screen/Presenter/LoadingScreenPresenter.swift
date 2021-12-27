@@ -10,7 +10,7 @@ import Foundation
 import WTestDomain
 import WTestCommon
 
-class LoadingScreenPresenter: LoadingScreenEventHandler, LoadingScreenPresenterInterface {
+final class LoadingScreenPresenter: LoadingScreenEventHandler, LoadingScreenPresenterInterface {
     
     // MARK: - Properties
     
@@ -19,7 +19,8 @@ class LoadingScreenPresenter: LoadingScreenEventHandler, LoadingScreenPresenterI
     var interactor: LoadingScreenInteractorInterface!
     
     lazy var viewModel: LoadingViewModel = {
-        return LoadingViewModel(title: R.string.localizable.appTitle(), image: #imageLiteral(resourceName: "post-box"),
+        return LoadingViewModel(title: R.string.localizable.appTitle(),
+                                image: #imageLiteral(resourceName: "post-box"),
                                 downloadingLabel: R.string.localizable.downloadingLabel(),
                                 isDownloading: true)
     }()

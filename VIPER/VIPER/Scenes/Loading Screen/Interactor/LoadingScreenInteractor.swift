@@ -25,7 +25,7 @@ enum LoadingScreenInteractorError: LocalizedError {
     }
 }
 
-class LoadingScreenInteractor: LoadingScreenInteractorInterface {
+final class LoadingScreenInteractor: LoadingScreenInteractorInterface {
     
     weak var presenter: LoadingScreenPresenterInterface!
     

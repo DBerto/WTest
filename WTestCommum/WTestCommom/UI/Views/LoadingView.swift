@@ -103,5 +103,6 @@ open class LoadingView: UIView {
         imageView.image = loadingViewModel.image
         downloadingLabel.text = loadingViewModel.downloadingLabel
         loadingViewModel.isDownloading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+        layoutIfNeeded()
     }
 }
