@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:WTestCommum/WTestCommon.xcodeproj">
+      location = "group:WTestCommom/WTestCommon.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:VIPER/VIPER.xcodeproj">
