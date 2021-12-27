@@ -1,8 +1,6 @@
 # WTest
 - Started as a chalenge for an iOS position, but will be updated during my free time with good pratices and code examples.
-- Structured by modules with two clean architecture examples:
-        - VIPER-B
-        - MVVM(-C) with combine
+- Structured by modules with two clean architecture examples, VIPER-B and MVVM(-C) with combine.
 - SwiftUI example (to be developed).
 - Swift Package Manager for dependecies.
 
