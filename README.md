@@ -1,13 +1,15 @@
 # WTest
-- Project example with VIPER-B and MVVM clean (to be developed) architectures. 
-- Also contains a module with SwiftUI + combine (to be developed).
-- Started as a chalenge for an iOS position, but will be updated during my free time.
-- Use Package Manager for downloading all dependecies.
+- Started as a chalenge for an iOS position, but will be updated during my free time with good pratices and code examples.
+- Structured by modules with two clean architecture examples:
+        - VIPER-B
+        - MVVM(-C) with combine
+- SwiftUI example (to be developed).
+- Swift Package Manager for dependecies.
 
-App currently behaviour:
-  - Start by downloading a CSV file with postal codes from Portugal.
-  - All the data is saved on Realm database.
-  - If by some reason the app is closed during the CSV file download, it will recover the process when launched again.
-  - The postal codes are presented in a tableView.
+App current behaviour:
+  - Starts downloading a CSV file with postal codes from Portugal.
+  - All data is saved in Realm database.
+  - If by some reason the app is closed during the CSV file download, the process restarts when launched again.
+  - The postal codes are presented as a list.
 
 Note: Work in progress
