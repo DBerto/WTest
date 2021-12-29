@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 import WTestCommon
 
-class MainScreenWireframe: BaseWireframe,  MainScreenWireframeInterface {
-    
+class MainScreenWireframe: BaseWireframe, MainScreenWireframeInterface {
     private let view: MainScreenViewController
     private let interactor: MainScreenInteractorInterface
     private let presenter: MainScreenPresenterInterface

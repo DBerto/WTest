@@ -13,6 +13,12 @@
 		3A729304277A20BA00F8BC11 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A729303277A20BA00F8BC11 /* MainScreenViewController.swift */; };
 		3A729306277A215900F8BC11 /* MainScreenViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A729305277A215900F8BC11 /* MainScreenViewViewModel.swift */; };
 		3A729308277A21BB00F8BC11 /* MainScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A729307277A21BB00F8BC11 /* MainScreenCoordinator.swift */; };
+		3A729310277C790600F8BC11 /* PostalCodesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72930F277C790600F8BC11 /* PostalCodesBuilder.swift */; };
+		3A729312277C793500F8BC11 /* PostalCodesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A729311277C793500F8BC11 /* PostalCodesCoordinator.swift */; };
+		3A729314277C797100F8BC11 /* PostalCodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A729313277C797100F8BC11 /* PostalCodesViewController.swift */; };
+		3A729316277C799E00F8BC11 /* PostalCodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A729315277C799E00F8BC11 /* PostalCodesViewModel.swift */; };
+		3A729319277C79C200F8BC11 /* PostalCodesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A729318277C79C200F8BC11 /* PostalCodesDataProvider.swift */; };
+		3A72931B277C79CC00F8BC11 /* PostalCodesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72931A277C79CC00F8BC11 /* PostalCodesDataSource.swift */; };
 		9668DE1325A8B8FA00802D8E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE1225A8B8FA00802D8E /* Coordinator.swift */; };
 		9668DE1B25A8B9B800802D8E /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE1A25A8B9B800802D8E /* LoadingScreenViewController.swift */; };
 		9668DE6525A8C28C00802D8E /* LoadingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE6425A8C28C00802D8E /* LoadingScreenViewModel.swift */; };
@@ -50,6 +56,12 @@
 		3A729303277A20BA00F8BC11 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		3A729305277A215900F8BC11 /* MainScreenViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewViewModel.swift; sourceTree = "<group>"; };
 		3A729307277A21BB00F8BC11 /* MainScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCoordinator.swift; sourceTree = "<group>"; };
+		3A72930F277C790600F8BC11 /* PostalCodesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesBuilder.swift; sourceTree = "<group>"; };
+		3A729311277C793500F8BC11 /* PostalCodesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesCoordinator.swift; sourceTree = "<group>"; };
+		3A729313277C797100F8BC11 /* PostalCodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesViewController.swift; sourceTree = "<group>"; };
+		3A729315277C799E00F8BC11 /* PostalCodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesViewModel.swift; sourceTree = "<group>"; };
+		3A729318277C79C200F8BC11 /* PostalCodesDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesDataProvider.swift; sourceTree = "<group>"; };
+		3A72931A277C79CC00F8BC11 /* PostalCodesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesDataSource.swift; sourceTree = "<group>"; };
 		9668DE1225A8B8FA00802D8E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9668DE1A25A8B9B800802D8E /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		9668DE6425A8C28C00802D8E /* LoadingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewModel.swift; sourceTree = "<group>"; };
@@ -99,9 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				3A729300277A1FDF00F8BC11 /* Builder */,
+				3A7292FD277A1FD200F8BC11 /* Coordinator */,
 				3A7292FF277A1FDB00F8BC11 /* View Model */,
 				3A7292FE277A1FD600F8BC11 /* View Controller */,
-				3A7292FD277A1FD200F8BC11 /* Coordinator */,
 			);
 			path = "Main Screen";
 			sourceTree = "<group>";
@@ -138,11 +150,73 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
+		3A729309277C78B600F8BC11 /* Postal Codes */ = {
+			isa = PBXGroup;
+			children = (
+				3A72930D277C78E100F8BC11 /* Builder */,
+				3A72930E277C78E800F8BC11 /* Coordinator */,
+				3A72930C277C78DC00F8BC11 /* View Model */,
+				3A72930B277C78D700F8BC11 /* View Controller */,
+				3A72930A277C78CA00F8BC11 /* Data Provider */,
+			);
+			path = "Postal Codes";
+			sourceTree = "<group>";
+		};
+		3A72930A277C78CA00F8BC11 /* Data Provider */ = {
+			isa = PBXGroup;
+			children = (
+				3A729317277C79B500F8BC11 /* Data Source */,
+				3A729318277C79C200F8BC11 /* PostalCodesDataProvider.swift */,
+			);
+			path = "Data Provider";
+			sourceTree = "<group>";
+		};
+		3A72930B277C78D700F8BC11 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A729313277C797100F8BC11 /* PostalCodesViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		3A72930C277C78DC00F8BC11 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A729315277C799E00F8BC11 /* PostalCodesViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		3A72930D277C78E100F8BC11 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				3A72930F277C790600F8BC11 /* PostalCodesBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		3A72930E277C78E800F8BC11 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3A729311277C793500F8BC11 /* PostalCodesCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3A729317277C79B500F8BC11 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				3A72931A277C79CC00F8BC11 /* PostalCodesDataSource.swift */,
+			);
+			path = "Data Source";
+			sourceTree = "<group>";
+		};
 		9668DE1525A8B95B00802D8E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				9668DE5825A8BDFF00802D8E /* Loading Screen */,
 				3A7292FC277A1FCA00F8BC11 /* Main Screen */,
+				3A729309277C78B600F8BC11 /* Postal Codes */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -313,6 +387,8 @@
 			files = (
 				9668DE6525A8C28C00802D8E /* LoadingScreenViewModel.swift in Sources */,
 				9668DE1B25A8B9B800802D8E /* LoadingScreenViewController.swift in Sources */,
+				3A72931B277C79CC00F8BC11 /* PostalCodesDataSource.swift in Sources */,
+				3A729312277C793500F8BC11 /* PostalCodesCoordinator.swift in Sources */,
 				3A4232B826FA9B8D00DD1D12 /* LoadingScreenBuilder.swift in Sources */,
 				3A7292FB277A0EF600F8BC11 /* LoadingScreenCoordinator.swift in Sources */,
 				3A729306277A215900F8BC11 /* MainScreenViewViewModel.swift in Sources */,
@@ -320,8 +396,12 @@
 				9668DE1325A8B8FA00802D8E /* Coordinator.swift in Sources */,
 				96D4B74F2593B3E800C035F7 /* SceneDelegate.swift in Sources */,
 				9668DE6925A8C4FE00802D8E /* PostalCodeUseCase.swift in Sources */,
+				3A729314277C797100F8BC11 /* PostalCodesViewController.swift in Sources */,
 				3A729304277A20BA00F8BC11 /* MainScreenViewController.swift in Sources */,
+				3A729319277C79C200F8BC11 /* PostalCodesDataProvider.swift in Sources */,
+				3A729316277C799E00F8BC11 /* PostalCodesViewModel.swift in Sources */,
 				3A729302277A202600F8BC11 /* MainScreenBuilder.swift in Sources */,
+				3A729310277C790600F8BC11 /* PostalCodesBuilder.swift in Sources */,
 				3A729308277A21BB00F8BC11 /* MainScreenCoordinator.swift in Sources */,
 				96D4B7D62593C23D00C035F7 /* ViewModelType.swift in Sources */,
 			);

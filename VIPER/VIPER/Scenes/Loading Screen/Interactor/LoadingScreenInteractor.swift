@@ -30,6 +30,7 @@ final class LoadingScreenInteractor: LoadingScreenInteractorInterface {
     weak var presenter: LoadingScreenPresenterInterface!
     
     private let repository: PostalCodesRepositoryType!
+    private let disposeBag: CancellableBag = .init()
     
     init(repository: PostalCodesRepositoryType) {
         self.repository = repository
@@ -44,23 +45,27 @@ final class LoadingScreenInteractor: LoadingScreenInteractorInterface {
             return
         }
         
-        let result = repository.downloadPostalCodes()
-        switch result {
-        case .success(let postalCodes):
-            presenter.postalCodeFetchSucceed(postalCodes)
-        case .failure:
-            presenter.postalCodeFetchFailed(LoadingScreenInteractorError.downloadError)
-        }
+        repository.downloadPostalCodes()
+            .sink(receiveCompletion: { [weak self] completion in
+                if case .failure = completion {
+                    self?.presenter.postalCodeFetchFailed(LoadingScreenInteractorError.downloadError)
+                }
+            }, receiveValue: { [weak self] postalCodes in
+                self?.presenter.postalCodeFetchSucceed(postalCodes)
+            })
+            .store(in: disposeBag)
     }
     
     func savePostalCodes(_ postalCodes: [PostalCode]) {
-        let result = repository.savePostalCodes(postalCodes)
-        switch result {
-        case .success:
-            isAppAlreadyLaunched = true
-            presenter.postalCodeSaveSucceed()
-        case .failure(let error):
-            presenter.postalCodeSaveFailed(error)
-        }
+        repository.savePostalCodes(postalCodes)
+            .sink(receiveCompletion: { [weak self] completion in
+                if case let .failure(error) = completion {
+                    self?.presenter.postalCodeFetchFailed(error)
+                }
+            }, receiveValue: { [weak self] _ in
+                self?.isAppAlreadyLaunched = true
+                self?.presenter.postalCodeSaveSucceed()
+            })
+            .store(in: disposeBag)
     }
 }

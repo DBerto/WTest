@@ -20,6 +20,8 @@
 		3A57BD2025D6D98F002F8084 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 3A57BD1F25D6D98F002F8084 /* Rswift */; };
 		3A57BD4325D6E492002F8084 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57BD4225D6E492002F8084 /* R.generated.swift */; };
 		3A57BD4825D6E878002F8084 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9668DE9F25A8C93900802D8E /* Localizable.strings */; };
+		3A72931F277C7B0300F8BC11 /* PostalCodeFieldsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72931E277C7B0300F8BC11 /* PostalCodeFieldsViewModel.swift */; };
+		3A729321277CA40100F8BC11 /* Publisher+ActivityTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A729320277CA40100F8BC11 /* Publisher+ActivityTracker.swift */; };
 		9668DE2325A8BB0B00802D8E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE2225A8BB0B00802D8E /* LoadingView.swift */; };
 		9668DE2C25A8BB3E00802D8E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE2A25A8BB3E00802D8E /* TableViewController.swift */; };
 		9668DE2D25A8BB3E00802D8E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE2B25A8BB3E00802D8E /* BaseViewController.swift */; };
@@ -62,6 +64,8 @@
 		3A42326526FA7E6900DD1D12 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		3A42326926FA7ED300DD1D12 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		3A57BD4225D6E492002F8084 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		3A72931E277C7B0300F8BC11 /* PostalCodeFieldsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeFieldsViewModel.swift; sourceTree = "<group>"; };
+		3A729320277CA40100F8BC11 /* Publisher+ActivityTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+ActivityTracker.swift"; sourceTree = "<group>"; };
 		9668DE2225A8BB0B00802D8E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9668DE2A25A8BB3E00802D8E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9668DE2B25A8BB3E00802D8E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				9668DE8A25A8C70200802D8E /* PostalCodeFieldViewModel.swift */,
 				9668DE3625A8BC4900802D8E /* LoadingViewModel.swift */,
 				9668DE3525A8BC4900802D8E /* TableViewModelBase.swift */,
+				3A72931E277C7B0300F8BC11 /* PostalCodeFieldsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				3A42325126FA7D0600DD1D12 /* Publisher+ErrorTracker.swift */,
 				3A42325526FA7D3D00DD1D12 /* Publisher+ObservableType.swift */,
 				3A42325926FA7D5C00DD1D12 /* PassthroughSubject+Trigger.swift */,
+				3A729320277CA40100F8BC11 /* Publisher+ActivityTracker.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				9668DE2325A8BB0B00802D8E /* LoadingView.swift in Sources */,
 				9668DE3825A8BC4900802D8E /* LoadingViewModel.swift in Sources */,
 				96D4B7982593B79500C035F7 /* ThreadHandler.swift in Sources */,
+				3A729321277CA40100F8BC11 /* Publisher+ActivityTracker.swift in Sources */,
 				9668DEF125A8CDC200802D8E /* Configuration.swift in Sources */,
 				9668DE2C25A8BB3E00802D8E /* TableViewController.swift in Sources */,
 				96D4B7AC2593B86E00C035F7 /* NSObject+ClassName.swift in Sources */,
@@ -422,6 +429,7 @@
 				3A42324E26FA7CEB00DD1D12 /* Publisher+Driver.swift in Sources */,
 				3A42325226FA7D0600DD1D12 /* Publisher+ErrorTracker.swift in Sources */,
 				3A42324626FA7CB300DD1D12 /* AnyCancellable+CancellableBag.swift in Sources */,
+				3A72931F277C7B0300F8BC11 /* PostalCodeFieldsViewModel.swift in Sources */,
 				3A42326A26FA7ED300DD1D12 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

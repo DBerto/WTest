@@ -7,50 +7,65 @@
 //
 
 import Foundation
+import WTestCommon
 import RealmSwift
+import Combine
 
 public protocol PostalCodesStorageRepositoryType {
-    func savePostalCode(_ postalCode: PostalCodeDB) -> Result<Void, Error>
-    func savePostalCodes(_ postalCodes: [PostalCodeDB]) -> Result<Void, Error>
-    func fetchPostalCodes(withPredicate predicate: NSPredicate?) -> Result<[PostalCodeDB], Error>
+    func savePostalCode(_ postalCode: PostalCodeDB) -> Future<Void, Error>
+    func savePostalCodes(_ postalCodes: [PostalCodeDB]) -> Future<Void, Error>
+    func fetchPostalCodes(withPredicate predicate: NSPredicate?) -> Future<[PostalCodeDB], Error>
 }
 
 public final class PostalCodesStorageRepository: BaseStorageRepository, PostalCodesStorageRepositoryType {
+    var token: NotificationToken?
     
-    public func savePostalCodes(_ postalCodes: [PostalCodeDB]) -> Result<Void, Error> {
-        let realm = self.realm
-        do {
-            try realm.write {
-                realm.add(postalCodes)
+    public func savePostalCodes(_ postalCodes: [PostalCodeDB]) -> Future<Void, Error> {
+        return Future<Void, Error> { promisse in
+            let realm = self.realm
+            do {
+                try realm.write {
+                    realm.add(postalCodes)
+                }
+                return promisse(.success(()))
+            } catch {
+                return promisse(.failure(error))
             }
-            return .success(())
-        } catch {
-            return .failure(error)
         }
     }
     
-    public func savePostalCode(_ postalCode: PostalCodeDB) -> Result<Void, Error> {
-        let realm = self.realm
-        do {
-            try realm.write {
-                realm.add(postalCode)
+    public func savePostalCode(_ postalCode: PostalCodeDB) -> Future<Void, Error> {
+        return Future<Void, Error> { promisse in
+            let realm = self.realm
+            do {
+                try realm.write {
+                    realm.add(postalCode)
+                }
+                return promisse(.success(()))
+            } catch {
+                return promisse(.failure(error))
             }
-            return .success(())
-        } catch {
-            return .failure(error)
         }
     }
     
-    public func fetchPostalCodes(withPredicate predicate: NSPredicate?) -> Result<[PostalCodeDB], Error>{
-        let realm = self.realm
-        var objects = realm.objects(PostalCodeDB.self)
-        
-        if let predicate = predicate {
-            objects = objects.filter(predicate)
+    public func fetchPostalCodes(withPredicate predicate: NSPredicate?) -> Future<[PostalCodeDB], Error> {
+        return Future<[PostalCodeDB], Error> { promisse in
+            let realm = self.realm
+            var objects = realm.objects(PostalCodeDB.self)
+            
+            if let predicate = predicate {
+                objects = objects.filter(predicate)
+            }
+            
+            self.token = objects.observe(on: .main) { changes in
+                switch changes {
+                case .initial(let collection):
+                    promisse(.success(Array(collection)))
+                case .update: break
+                case .error(let error):
+                    promisse(.failure(error))
+                }
+            }
         }
-        
-        let postalCodes = Array(objects)
-        return .success(postalCodes)
     }
-    
 }

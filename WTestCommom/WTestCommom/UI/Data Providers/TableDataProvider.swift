@@ -21,6 +21,7 @@ open class TableDataProvider: NSObject, UITableViewDelegate {
     public var viewModel: TableViewModelBase? {
         didSet {
             dataSource.viewModel = viewModel
+            tableView?.reloadData()
         }
     }
     

@@ -19,6 +19,7 @@ final class MainScreenViewModel: MainScreenViewModelType {
     
     struct Input {
         let viewDidLoadTrigger: Driver<Void>
+        let postalCodesButtonTrigger: Driver<Void>
     }
     
     struct Output { }
@@ -41,6 +42,12 @@ final class MainScreenViewModel: MainScreenViewModelType {
         input.viewDidLoadTrigger
             .sink { [weak self] in
                 self?.viewDidLoadTrigger()
+            }
+            .store(in: disposeBag)
+        
+        input.postalCodesButtonTrigger
+            .sink { [weak self] in
+                self?.coordinator.perform(.showPostalCodes)
             }
             .store(in: disposeBag)
         

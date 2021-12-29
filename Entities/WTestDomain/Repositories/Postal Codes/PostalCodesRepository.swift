@@ -7,14 +7,16 @@
 //
 
 import Foundation
+import WTestCommon
 import WTestRealm
 import WTestAPI
+import Combine
 
 public protocol PostalCodesRepositoryType {
-    func savePostalCode(_ postalCode: PostalCode) -> Result<Void, Error>
-    func savePostalCodes(_ postalCode: [PostalCode]) -> Result<Void, Error>
-    func fetchPostalCodes(withPredicate predicate: NSPredicate?) -> Result<[PostalCode], Error>
-    func downloadPostalCodes() -> Result<[PostalCode], Error>
+    func savePostalCode(_ postalCode: PostalCode) -> ObservableType<Void>
+    func savePostalCodes(_ postalCode: [PostalCode]) -> ObservableType<Void>
+    func fetchPostalCodes(withPredicate predicate: NSPredicate?) -> ObservableType<[PostalCode]>
+    func downloadPostalCodes() -> ObservableType<[PostalCode]>
 }
 
 public class PostalCodesRepository: PostalCodesRepositoryType {
@@ -27,27 +29,25 @@ public class PostalCodesRepository: PostalCodesRepositoryType {
         self.remoteRepository = remoteRepository
     }
     
-    public func savePostalCode(_ postalCode: PostalCode) -> Result<Void, Error> {
-        storageRepository.savePostalCode(postalCode.asPostalCodeDB())
+    public func savePostalCode(_ postalCode: PostalCode) -> ObservableType<Void> {
+        storageRepository.savePostalCode(postalCode.asPostalCodeDB()).asObservable()
     }
     
-    public func savePostalCodes(_ postalCode: [PostalCode]) -> Result<Void, Error> {
-        storageRepository.savePostalCodes(postalCode.compactMap { $0.asPostalCodeDB()})
+    public func savePostalCodes(_ postalCode: [PostalCode]) -> ObservableType<Void> {
+        storageRepository.savePostalCodes(postalCode.compactMap { $0.asPostalCodeDB()}).asObservable()
     }
     
-    public func fetchPostalCodes(withPredicate predicate: NSPredicate?) -> Result<[PostalCode], Error> {
-        let result = storageRepository.fetchPostalCodes(withPredicate: predicate)
-        switch result {
-        case .success(let postalCodesDB):
-            return .success(postalCodesDB.compactMap { $0.asPostalCode() })
-        case .failure(let error):
-            return .failure(error)
-        }
+    public func fetchPostalCodes(withPredicate predicate: NSPredicate?) -> ObservableType<[PostalCode]> {
+        storageRepository.fetchPostalCodes(withPredicate: predicate)
+            .compactMap {
+                $0.asPostalCodeArray()
+            }.asObservable()
     }
     
-    public func downloadPostalCodes() -> Result<[PostalCode], Error> {
-        remoteRepository.downloadPostalCodes().map {
-            $0.asPostalCodeArray()
-        }
+    public func downloadPostalCodes() -> ObservableType<[PostalCode]> {
+        remoteRepository.downloadPostalCodes()
+            .compactMap {
+                $0.asPostalCodeArray()
+            }.asObservable()
     }
 }

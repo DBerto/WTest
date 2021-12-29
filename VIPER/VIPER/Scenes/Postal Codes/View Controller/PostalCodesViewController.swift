@@ -44,21 +44,20 @@ class PostalCodesViewController: TableViewController, PostalCodesViewInterface {
     
     // MARK: - PostalCodesViewInterface
     
-    func updateView(with viewModel: PostalCodesViewModel) {
+    func updateView(with viewModel: PostalCodeFieldsViewModel) {
         executeInMainThread { [weak self] in
-            self?.dataProvider.viewModel = viewModel
-            self?.tableView.reloadData()
+            self?.dataProvider.viewModel = viewModel            
         }
     }
     
     func updateLoadingIndicator(_ value: Bool) {
         if value {
-            tableView.refreshControl?.isHidden = false
-            tableView.refreshControl?.beginRefreshing()
+            refreshControl?.isHidden = false
+            refreshControl?.beginRefreshing()
         } else {
             executeInMainThread { [weak self] in
-                self?.tableView.refreshControl?.isHidden = true
-                self?.tableView.refreshControl?.endRefreshing()
+                self?.refreshControl?.isHidden = true
+                self?.refreshControl?.endRefreshing()
             }
         }
     }
@@ -78,6 +77,7 @@ class PostalCodesViewController: TableViewController, PostalCodesViewInterface {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         oldTextSearch = nil
     }
+    
     // MARK: - UISearchResultsUpdating
     
     override func updateSearchResults(for searchController: UISearchController) {

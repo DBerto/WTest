@@ -8,40 +8,46 @@
 
 import Foundation
 import WTestDomain
+import WTestCommon
 
 class PostalCodesInteractor: PostalCodesInteractorInterface {
     
     weak var presenter: PostalCodesPresenterInterface!
     let repository: PostalCodesRepositoryType!
+    private let disposeBag: CancellableBag = .init()
     
     init(repository: PostalCodesRepositoryType) {
         self.repository = repository
     }
     
     func fetchPostalCodes() {
-        let result = repository.fetchPostalCodes(withPredicate: nil)
-        switch result {
-        case .success(let postalCodes):
-            self.presenter.fetchPostalCodesSucceed(postalCodes)
-        case .failure(let error):
-            self.presenter.fetchPostalCodesFailed(error)
-        }
+        repository.fetchPostalCodes(withPredicate: nil)
+            .sink(receiveCompletion: { [weak self] completion in
+                if case let .failure(error) = completion {
+                    self?.presenter.fetchPostalCodesFailed(error)
+                }
+            }, receiveValue: { [weak self] postalCodes in
+                self?.presenter.fetchPostalCodesSucceed(postalCodes)
+            })
+            .store(in: disposeBag)
     }
     
-    func searchPotalCodes(withText text: String) {
+    func searchPostalCodes(withText text: String) {
         guard !text.isEmpty else {
             fetchPostalCodes()
             return
         }
         
         let predicate = createPredicate(withText: text)
-        let result = repository.fetchPostalCodes(withPredicate: predicate)
-        switch result {
-        case .success(let postalCodes):
-            self.presenter.fetchPostalCodesSucceed(postalCodes)
-        case .failure(let error):
-            self.presenter.fetchPostalCodesFailed(error)
-        }
+        repository.fetchPostalCodes(withPredicate: predicate)
+            .sink(receiveCompletion: { [weak self] completion in
+                if case let .failure(error) = completion {
+                    self?.presenter.fetchPostalCodesFailed(error)
+                }
+            }, receiveValue: { [weak self] postalCodes in
+                self?.presenter.fetchPostalCodesSucceed(postalCodes)
+            })
+            .store(in: disposeBag)
     }
     
     private func createPredicate(withText text: String) -> NSPredicate {

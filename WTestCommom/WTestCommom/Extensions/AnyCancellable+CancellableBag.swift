@@ -12,7 +12,7 @@ open class CancellableBag {
     
     public init() { }
     
-    func cancel() {
+    public func cancel() {
         subscriptions.forEach { $0.cancel() }
         subscriptions.removeAll()
     }

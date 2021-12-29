@@ -7,6 +7,7 @@
 
 import Foundation
 import WTestCommon
+import WTestDomain
 import Combine
 
 protocol LoadingScreenViewModelType: ViewModelType { }
@@ -15,7 +16,7 @@ final class LoadingScreenViewModel: LoadingScreenViewModelType {
     
     // MARK: - Properties
     
-    private let postalCodeUseCase: PostalCodeUseCase
+    private let postalCodeUseCase: PostalCodeUseCaseType
     private let coordinator: LoadingScreenCoordinatorType
     
     struct Input {
@@ -37,10 +38,11 @@ final class LoadingScreenViewModel: LoadingScreenViewModelType {
     
     private let dataSourceModel: PassthroughSubject<LoadingViewModel, Never> = .init()
     private let errorTracker: ErrorTracker = .init()
+    private var disposeBag: CancellableBag!
     
     // MARK: - Init
     
-    init(postalCodeUseCase: PostalCodeUseCase,
+    init(postalCodeUseCase: PostalCodeUseCaseType,
          coordinator: LoadingScreenCoordinatorType) {
         self.postalCodeUseCase = postalCodeUseCase
         self.coordinator = coordinator
@@ -50,10 +52,15 @@ final class LoadingScreenViewModel: LoadingScreenViewModelType {
     
     func transform(input: Input,
                    disposeBag: CancellableBag) -> Output {
+        self.disposeBag = disposeBag
         
         input.viewDidLoadTrigger
-            .sink { [weak self] in
-                self?.viewDidLoadTrigger()
+            .sink { [weak self] _ in
+                self?.reloadDataSource()
+                
+                executeInBackgroundThread {
+                    self?.downloadPostalCodes()
+                }
             }
             .store(in: disposeBag)
         
@@ -70,22 +77,32 @@ final class LoadingScreenViewModel: LoadingScreenViewModelType {
     
     // MARK: - Helpers
     
-    private func viewDidLoadTrigger() {
-        loadingViewModel.downloadingLabel = R.string.localizable.savingLabel()
+    private func reloadDataSource() {
         dataSourceModel.send(loadingViewModel)
-        
-        executeInBackgroundThread { [weak self] in
-            let result = self?.postalCodeUseCase.downloadPostalCodes()
-            switch result {
-            case .success(let postalCodes):
-                executeInMainThread { [weak self] in
-                    _ = self?.postalCodeUseCase.savePostalCodes(postalCodes)
-                    self?.coordinator.perform(.showMainScreen)
+    }
+    
+    private func downloadPostalCodes() {
+        postalCodeUseCase.downloadPostalCodes()
+            .trackError(errorTracker)
+            .asDriver()
+            .sink { [weak self] postalCodes in
+                self?.loadingViewModel.downloadingLabel = R.string.localizable.savingLabel()
+                self?.reloadDataSource()
+                
+                executeInBackgroundThread {
+                    self?.savePostalCodes(postalCodes)
                 }
-            case .failure(let error):
-                self?.errorTracker.send(error)
-            default: break
             }
-        }
+            .store(in: disposeBag)
+    }
+    
+    private func savePostalCodes(_ postalCodes: [PostalCode]) {
+        postalCodeUseCase.savePostalCodes(postalCodes)
+            .trackError(errorTracker)
+            .asDriver()
+            .sink { [weak self] postalCodes in
+                self?.coordinator.perform(.showMainScreen)
+            }
+            .store(in: disposeBag)
     }
 }

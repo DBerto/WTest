@@ -23,14 +23,24 @@ final class MainScreenCoordinator: BaseCoordinator, MainScreenCoordinatorType {
     
     func perform(_ action: Action) {
         switch action {
+        case .showPostalCodes:
+            showPostalCodes()
         case .error(let error):
             showError(error, from: viewController)
         }
+    }
+    
+    private func showPostalCodes() {
+        let vc = PostalCodesBuilder().setup()
+        push(viewController: vc,
+             from: viewController,
+             animated: true)
     }
 }
 
 extension MainScreenCoordinator {
     enum Action {
+        case showPostalCodes
         case error(_ error: Error)
     }
 }

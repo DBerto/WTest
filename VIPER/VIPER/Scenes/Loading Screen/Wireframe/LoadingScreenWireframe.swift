@@ -11,7 +11,6 @@ import UIKit
 import WTestCommon
 
 final class LoadingScreenWireframe: BaseWireframe, LoadingScreenWireframeInterface {
-    
     private let view: LoadingScreenViewController
     private let interactor: LoadingScreenInteractorInterface
     private let presenter: LoadingScreenPresenterInterface

@@ -11,7 +11,7 @@ import UIKit
 
 protocol WireframeInterface: AnyObject { }
 
-final class BaseWireframe: WireframeInterface {
+class BaseWireframe: WireframeInterface {
 
     private unowned var _viewController: UIViewController
 

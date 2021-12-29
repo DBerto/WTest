@@ -29,9 +29,9 @@ class PostalCodesPresenter: PostalCodesEventHandler, PostalCodesPresenterInterfa
     
     func searchRequest(withText text: String) {
         view.updateLoadingIndicator(true)
-        view.updateView(with: PostalCodesViewModel(postalCodes: []))
+        view.updateView(with: PostalCodeFieldsViewModel(postalCodeFields: []))
         executeInBackgroundThread { [weak self] in
-            self?.interactor.searchPotalCodes(withText: text)
+            self?.interactor.searchPostalCodes(withText: text)
         }
     }
     
@@ -44,7 +44,7 @@ class PostalCodesPresenter: PostalCodesEventHandler, PostalCodesPresenterInterfa
     func fetchPostalCodesSucceed(_ postalCodes: [PostalCode]) {
         let postalCodes = postalCodes.map { PostalCodeFieldViewModel(local: $0.local,
                                                                      number: $0.number) }
-        view.updateView(with: PostalCodesViewModel(postalCodes: postalCodes))
+        view.updateView(with: PostalCodeFieldsViewModel(postalCodeFields: postalCodes))
         view.updateLoadingIndicator(false)
     }
     

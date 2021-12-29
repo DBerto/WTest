@@ -15,6 +15,8 @@ open class TableViewController: BaseViewController {
     
     public var tableView: UITableView!
     public var searchController: UISearchController?
+    public var refreshControl: UIRefreshControl?
+    
     public var tableViewStyle: UITableView.Style! = .grouped {
         didSet {
             setupTableView()
@@ -74,12 +76,12 @@ open class TableViewController: BaseViewController {
 
 extension TableViewController {
     private func configureRefreshControl(value: Bool) {
-        if value && tableView.refreshControl == nil {
-            let refreshControl = UIRefreshControl()
-            refreshControl.addTarget(self, action: #selector(refresHandler(_:)), for: .valueChanged)
+        if value && refreshControl == nil {
+            refreshControl = UIRefreshControl()
+            refreshControl?.addTarget(self, action: #selector(refresHandler(_:)), for: .valueChanged)
             tableView.refreshControl = refreshControl
-        } else if !value && tableView.refreshControl != nil {
-            tableView.refreshControl = nil
+        } else if !value && refreshControl != nil {
+            refreshControl = nil
         }
     }
     

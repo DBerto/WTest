@@ -19,7 +19,7 @@ protocol PostalCodesWireframeInterface: WireframeInterface {
 // MARK: User Interface Layer
 
 protocol PostalCodesViewInterface: ViewInterface {
-    func updateView(with viewModel: PostalCodesViewModel)
+    func updateView(with viewModel: PostalCodeFieldsViewModel)
     func updateLoadingIndicator(_ value: Bool)
 }
 
@@ -32,7 +32,7 @@ protocol PostalCodesEventHandler: class {
 
 protocol PostalCodesInteractorInterface: class {
     func fetchPostalCodes()
-    func searchPotalCodes(withText text: String)
+    func searchPostalCodes(withText text: String)
 }
 
 protocol PostalCodesPresenterInterface: class {

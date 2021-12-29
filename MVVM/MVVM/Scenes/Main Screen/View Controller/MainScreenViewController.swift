@@ -17,6 +17,7 @@ class MainScreenViewController: BaseViewController, MainScreenViewControllerType
     
     // MARK: - Properties
     private(set) var viewDidLoadTrigger: Trigger = .init()
+    private let postalCodesButtonTrigger: Trigger = .init()
     
     var viewModel: MainScreenViewModel!
     
@@ -31,6 +32,10 @@ class MainScreenViewController: BaseViewController, MainScreenViewControllerType
         let button = UIButton()
         button.setTitle(R.string.localizable.postalCodes(), for: .normal)
         button.backgroundColor = .systemBlue
+        button.publisher(for: .touchUpInside)
+            .map({ _ in return () })
+            .subscribe(postalCodesButtonTrigger)
+            .store(in: disposeBag)
         return button
     }()
     
@@ -40,6 +45,7 @@ class MainScreenViewController: BaseViewController, MainScreenViewControllerType
         super.viewDidLoad()
         setupView()
         setupNavBar()
+        bindViewModel()
     }
     
     // MARK: - Setup
@@ -69,7 +75,8 @@ class MainScreenViewController: BaseViewController, MainScreenViewControllerType
     // MARK: - Bind ViewModel
     
     func bindViewModel() {
-        _ = viewModel.transform(input: MainScreenViewModel.Input(viewDidLoadTrigger: viewDidLoadTrigger.asDriver()),
+        _ = viewModel.transform(input: MainScreenViewModel.Input(viewDidLoadTrigger: viewDidLoadTrigger.asDriver(),
+                                                                 postalCodesButtonTrigger: postalCodesButtonTrigger.asDriver()),
                                 disposeBag: disposeBag)
     }
 }
