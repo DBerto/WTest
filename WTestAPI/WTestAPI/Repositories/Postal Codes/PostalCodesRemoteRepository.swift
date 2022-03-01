@@ -15,7 +15,7 @@ public protocol PostalCodesRemoteRepositoryType {
 
 public final class PostalCodesRemoteRepository: BaseRemoteRepository, PostalCodesRemoteRepositoryType {
     public func downloadPostalCodes() -> Future<[PostalCodeResponse], Error> {
-        return Future<[PostalCodeResponse], Error> { promise in
+        Future<[PostalCodeResponse], Error> { promise in
             let postalCodeUrl = URL(string: Configuration.postalCodeURL)
             var postalCodes: [PostalCodeResponse] = []
             

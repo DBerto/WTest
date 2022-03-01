@@ -18,7 +18,7 @@ public protocol PostalCodesStorageRepositoryType {
 }
 
 public final class PostalCodesStorageRepository: BaseStorageRepository, PostalCodesStorageRepositoryType {
-    var token: NotificationToken?
+    private var token: NotificationToken?
     
     public func savePostalCodes(_ postalCodes: [PostalCodeDB]) -> Future<Void, Error> {
         return Future<Void, Error> { promisse in

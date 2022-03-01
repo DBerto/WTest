@@ -30,24 +30,28 @@ public class PostalCodesRepository: PostalCodesRepositoryType {
     }
     
     public func savePostalCode(_ postalCode: PostalCode) -> ObservableType<Void> {
-        storageRepository.savePostalCode(postalCode.asPostalCodeDB()).asObservable()
+        storageRepository.savePostalCode(postalCode.asPostalCodeDB())
+            .asObservable()
     }
     
     public func savePostalCodes(_ postalCode: [PostalCode]) -> ObservableType<Void> {
-        storageRepository.savePostalCodes(postalCode.compactMap { $0.asPostalCodeDB()}).asObservable()
+        storageRepository.savePostalCodes(postalCode.compactMap { $0.asPostalCodeDB()})
+            .asObservable()
     }
     
     public func fetchPostalCodes(withPredicate predicate: NSPredicate?) -> ObservableType<[PostalCode]> {
         storageRepository.fetchPostalCodes(withPredicate: predicate)
             .compactMap {
                 $0.asPostalCodeArray()
-            }.asObservable()
+            }
+            .asObservable()
     }
     
     public func downloadPostalCodes() -> ObservableType<[PostalCode]> {
         remoteRepository.downloadPostalCodes()
             .compactMap {
                 $0.asPostalCodeArray()
-            }.asObservable()
+            }
+            .asBackgroundActivity()
     }
 }

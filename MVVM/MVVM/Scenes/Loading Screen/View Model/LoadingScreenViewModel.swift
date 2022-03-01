@@ -13,11 +13,23 @@ import Combine
 protocol LoadingScreenViewModelType: ViewModelType { }
 
 final class LoadingScreenViewModel: LoadingScreenViewModelType {
+    // MARK: - Enums
     
-    // MARK: - Properties
+    enum Action {
+        case viewDidLoad
+        case reloadDataSource
+        case downloadPostalCodes
+        case savePostalCodes([PostalCode])
+        case showMainScreen
+        case showError(Error)
+    }
     
-    private let postalCodeUseCase: PostalCodeUseCaseType
-    private let coordinator: LoadingScreenCoordinatorType
+    enum Strings {
+        static let downloadingLabel = R.string.localizable.downloadingLabel()
+        static let savingLabel      = R.string.localizable.savingLabel()
+    }
+    
+    // MARK: - Input/Output
     
     struct Input {
         let viewDidLoadTrigger: Driver<Void>
@@ -27,10 +39,15 @@ final class LoadingScreenViewModel: LoadingScreenViewModelType {
         let dataSourceModel: PassthroughSubject<LoadingViewModel, Never>
     }
     
+    // MARK: - Properties
+    
+    private let postalCodeUseCase: PostalCodeUseCaseType
+    private let coordinator: LoadingScreenCoordinatorType
+    
     private lazy var loadingViewModel: LoadingViewModel = {
         LoadingViewModel(title: R.string.localizable.appTitle(),
                          image: #imageLiteral(resourceName: "post-box"),
-                         downloadingLabel: R.string.localizable.downloadingLabel(),
+                         downloadingLabel: Strings.downloadingLabel,
                          isDownloading: true)
     }()
     
@@ -55,19 +72,16 @@ final class LoadingScreenViewModel: LoadingScreenViewModelType {
         self.disposeBag = disposeBag
         
         input.viewDidLoadTrigger
-            .sink { [weak self] _ in
-                self?.reloadDataSource()
-                
-                executeInBackgroundThread {
-                    self?.downloadPostalCodes()
-                }
+            .sink { [unowned self] _ in
+                performAction(.viewDidLoad)
+                performAction(.downloadPostalCodes)
             }
             .store(in: disposeBag)
         
         errorTracker
             .asDriver()
             .sink { [weak self] error in
-                self?.coordinator.perform(.error(error))
+                self?.performAction(.showError(error))
             }
             .store(in: disposeBag)
         
@@ -76,6 +90,23 @@ final class LoadingScreenViewModel: LoadingScreenViewModelType {
     
     
     // MARK: - Helpers
+    
+    private func performAction(_ action: Action) {
+        switch action {
+        case .viewDidLoad:
+            performAction(.reloadDataSource)
+        case .reloadDataSource:
+            reloadDataSource()
+        case .downloadPostalCodes:
+            downloadPostalCodes()
+        case .savePostalCodes(let postalCodes):
+            savePostalCodes(postalCodes)
+        case .showMainScreen:
+            coordinator.perform(.showMainScreen)
+        case .showError(let error):
+            coordinator.perform(.error(error))
+        }
+    }
     
     private func reloadDataSource() {
         dataSourceModel.send(loadingViewModel)
@@ -86,12 +117,9 @@ final class LoadingScreenViewModel: LoadingScreenViewModelType {
             .trackError(errorTracker)
             .asDriver()
             .sink { [weak self] postalCodes in
-                self?.loadingViewModel.downloadingLabel = R.string.localizable.savingLabel()
-                self?.reloadDataSource()
-                
-                executeInBackgroundThread {
-                    self?.savePostalCodes(postalCodes)
-                }
+                self?.loadingViewModel.downloadingLabel = Strings.savingLabel
+                self?.performAction(.reloadDataSource)
+                self?.performAction(.savePostalCodes(postalCodes))
             }
             .store(in: disposeBag)
     }
@@ -101,7 +129,7 @@ final class LoadingScreenViewModel: LoadingScreenViewModelType {
             .trackError(errorTracker)
             .asDriver()
             .sink { [weak self] postalCodes in
-                self?.coordinator.perform(.showMainScreen)
+                self?.performAction(.showMainScreen)
             }
             .store(in: disposeBag)
     }

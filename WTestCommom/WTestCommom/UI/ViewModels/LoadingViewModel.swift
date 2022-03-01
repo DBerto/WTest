@@ -15,7 +15,10 @@ public class LoadingViewModel {
     public var downloadingLabel: String
     public var isDownloading: Bool
     
-    public init(title: String, image: UIImage, downloadingLabel: String, isDownloading: Bool) {
+    public init(title: String,
+                image: UIImage,
+                downloadingLabel: String,
+                isDownloading: Bool) {
         self.title = title
         self.image = image
         self.downloadingLabel = downloadingLabel

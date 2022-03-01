@@ -13,8 +13,20 @@ import Combine
 protocol PostalCodesViewModelType: ViewModelType { }
 
 final class PostalCodesViewModel: PostalCodesViewModelType {
+    // MARK: - Enums
     
-    // MARK: - Properties
+    enum Action {
+        case viewDidLoad
+        case reloadDataSource
+        case fetchPostalCodes
+        case search(String)
+    }
+    
+    enum Strings {
+        
+    }
+    
+    // MARK: - Input/Output
     
     struct Input {
         let viewDidLoadTrigger: Driver<Void>
@@ -25,6 +37,8 @@ final class PostalCodesViewModel: PostalCodesViewModelType {
         let isSearching: ActivityTracker
         let dataSourceModel: PassthroughSubject<PostalCodeFieldsViewModel, Never>
     }
+    
+    // MARK: - Properties
     
     private let useCase: PostalCodeUseCaseType
     private let coordinator: PostalCodesCoordinatorType
@@ -45,6 +59,7 @@ final class PostalCodesViewModel: PostalCodesViewModelType {
     
     // MARK: - Transform
     
+    private let endpointsBag: CancellableBag = .init()
     private let tempDisposeBag: CancellableBag = .init()
     
     func transform(input: Input,
@@ -67,8 +82,8 @@ final class PostalCodesViewModel: PostalCodesViewModelType {
             .compactMap { $0 }
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .removeDuplicates()
-            .sink { [weak self] searchTerm in
-                self?.searchRequestTrigger(searchTerm)
+            .sink { [unowned self] searchTerm in
+                performAction(.search(searchTerm))
             }
             .store(in: disposeBag)
         
@@ -79,7 +94,34 @@ final class PostalCodesViewModel: PostalCodesViewModelType {
     
     // MARK: - Helpers
     
-    private func searchRequestTrigger(_ searchTerm: String) {
+    private func performAction(_ action: Action) {
+        switch action {
+        case .viewDidLoad:
+            performAction(.reloadDataSource)
+            performAction(.fetchPostalCodes)
+        case .reloadDataSource:
+            reloadDataSource()
+        case .fetchPostalCodes:
+            fetchPostalCodes()
+        case .search(let searchTerm):
+            searchRequestBy(searchTerm)
+        }
+    }
+    
+    private func fetchPostalCodes() {
+        endpointsBag.cancel()
+        
+        useCase.fetchPostalCodes()
+            .trackActivity(isSearching)
+            .replaceError(with: [])
+            .sink { [weak self] postalCodes in
+                self?.postalCodes = postalCodes
+                self?.reloadDataSource()
+            }
+            .store(in: endpointsBag)
+    }
+    
+    private func searchRequestBy(_ searchTerm: String) {
         tempDisposeBag.cancel()
         
         useCase.searchPostalCodes(withText: searchTerm)

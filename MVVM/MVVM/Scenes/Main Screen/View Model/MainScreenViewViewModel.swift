@@ -12,10 +12,19 @@ import Combine
 protocol MainScreenViewModelType: ViewModelType { }
 
 final class MainScreenViewModel: MainScreenViewModelType {
+    // MARK: - Enums
     
-    // MARK: - Properties
+    enum Action {
+        case viewDidLoad
+        case showPostalCodes
+        case showError(Error)
+    }
     
-    private let coordinator: MainScreenCoordinatorType
+    enum Strings {
+        
+    }
+    
+    // MARK: - Input/Output
     
     struct Input {
         let viewDidLoadTrigger: Driver<Void>
@@ -23,6 +32,10 @@ final class MainScreenViewModel: MainScreenViewModelType {
     }
     
     struct Output { }
+    
+    // MARK: - Properties
+    
+    private let coordinator: MainScreenCoordinatorType
     
     // MARK: - Publishers
     
@@ -40,21 +53,21 @@ final class MainScreenViewModel: MainScreenViewModelType {
                    disposeBag: CancellableBag) -> Output {
         
         input.viewDidLoadTrigger
-            .sink { [weak self] in
-                self?.viewDidLoadTrigger()
+            .sink { [unowned self] in
+                performAction(.viewDidLoad)
             }
             .store(in: disposeBag)
         
         input.postalCodesButtonTrigger
-            .sink { [weak self] in
-                self?.coordinator.perform(.showPostalCodes)
+            .sink { [unowned self] in
+                performAction(.showPostalCodes)
             }
             .store(in: disposeBag)
         
         errorTracker
             .asDriver()
             .sink { [weak self] error in
-                self?.coordinator.perform(.error(error))
+                self?.performAction(.showError(error))
             }
             .store(in: disposeBag)
         
@@ -64,5 +77,13 @@ final class MainScreenViewModel: MainScreenViewModelType {
     
     // MARK: - Helpers
     
-    private func viewDidLoadTrigger() { }
+    private func performAction(_ action: Action) {
+        switch action {
+        case .viewDidLoad: break
+        case .showPostalCodes:
+            coordinator.perform(.showPostalCodes)
+        case .showError(let error):
+            coordinator.perform(.error(error))
+        }
+    }
 }
