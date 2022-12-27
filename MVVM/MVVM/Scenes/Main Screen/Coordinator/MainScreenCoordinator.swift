@@ -9,32 +9,38 @@ import Foundation
 import UIKit
 import WTestCommon
 
-protocol MainScreenCoordinatorType: Coordinator, BaseCoordinator {
-    var viewController: BaseViewController { get }
+protocol MainScreenCoordinatorProtocol: BaseCoordinator {
     func perform(_ action: MainScreenCoordinator.Action)
 }
 
-final class MainScreenCoordinator: BaseCoordinator, MainScreenCoordinatorType {
-    private(set) unowned var viewController: BaseViewController
+final class MainScreenCoordinator: BaseCoordinator,
+                                   MainScreenCoordinatorProtocol {
+    let navigationController: UINavigationController
     
-    init(viewController: BaseViewController) {
-        self.viewController = viewController
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    override func start() {
+        let vc = MainScreenBuilder().setup(coordinator: self)
+        viewController = vc
+        push(viewController: viewController,
+             from: navigationController)
     }
     
     func perform(_ action: Action) {
         switch action {
         case .showPostalCodes:
-            showPostalCodes()
+            coordinateToPostalCodes()
         case .error(let error):
-            showError(error, from: viewController)
+            showError(error,
+                      from: viewController)
         }
     }
     
-    private func showPostalCodes() {
-        let vc = PostalCodesBuilder().setup()
-        push(viewController: vc,
-             from: viewController,
-             animated: true)
+    private func coordinateToPostalCodes() {
+        let postalCodesCoordinator: PostalCodesCoordinator = .init(navigationController: navigationController)
+        coordinate(to: postalCodesCoordinator)
     }
 }
 

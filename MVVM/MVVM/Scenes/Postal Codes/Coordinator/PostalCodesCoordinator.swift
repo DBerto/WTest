@@ -9,16 +9,23 @@ import Foundation
 import UIKit
 import WTestCommon
 
-protocol PostalCodesCoordinatorType: Coordinator, BaseCoordinator {
-    var viewController: BaseViewController { get }
+protocol PostalCodesCoordinatorProtocol: BaseCoordinator {
     func perform(_ action: PostalCodesCoordinator.Action)
 }
 
-final class PostalCodesCoordinator: BaseCoordinator, PostalCodesCoordinatorType {
-    private(set) unowned var viewController: BaseViewController
+final class PostalCodesCoordinator: BaseCoordinator,
+                                    PostalCodesCoordinatorProtocol {
+    let navigationController: UINavigationController
     
-    init(viewController: BaseViewController) {
-        self.viewController = viewController
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    override func start() {
+        let vc = PostalCodesBuilder().setup(coordinator: self)
+        viewController = vc
+        push(viewController: viewController,
+             from: navigationController)
     }
     
     func perform(_ action: Action) { }

@@ -10,9 +10,9 @@ import WTestCommon
 import WTestDomain
 import Combine
 
-protocol PostalCodesViewModelType: ViewModelType { }
+protocol PostalCodesViewModelProtocol: ViewModelProtocol { }
 
-final class PostalCodesViewModel: PostalCodesViewModelType {
+final class PostalCodesViewModel: PostalCodesViewModelProtocol {
     // MARK: - Enums
     
     enum Action {
@@ -41,7 +41,7 @@ final class PostalCodesViewModel: PostalCodesViewModelType {
     // MARK: - Properties
     
     private let useCase: PostalCodeUseCaseType
-    private let coordinator: PostalCodesCoordinatorType
+    private let coordinator: PostalCodesCoordinatorProtocol
     private var postalCodes: [PostalCode] = []
     
     // MARK: - Publishers
@@ -52,7 +52,7 @@ final class PostalCodesViewModel: PostalCodesViewModelType {
     // MARK: - Init
     
     init(useCase: PostalCodeUseCaseType,
-         coordinator: PostalCodesCoordinatorType) {
+         coordinator: PostalCodesCoordinatorProtocol) {
         self.useCase = useCase
         self.coordinator = coordinator
     }

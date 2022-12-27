@@ -8,14 +8,13 @@
 import Foundation
 
 protocol MainScreenBuilderType: AnyObject {
-    func setup() -> MainScreenViewControllerType
+    func setup(coordinator: MainScreenCoordinator) -> MainScreenViewControllerProtocol
 }
 
 class MainScreenBuilder: MainScreenBuilderType {
-    func setup() -> MainScreenViewControllerType {
+    func setup(coordinator: MainScreenCoordinator) -> MainScreenViewControllerProtocol {
         let vc = MainScreenViewController()
         vc.navigationItem.hidesBackButton = true
-        let coordinator = MainScreenCoordinator(viewController: vc)
         let viewModel = MainScreenViewModel(coordinator: coordinator)
         vc.viewModel = viewModel
         return vc

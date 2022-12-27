@@ -11,18 +11,17 @@ import WTestRealm
 import WTestAPI
 
 protocol LoadingScreenBuilderType: AnyObject {
-    func setup() -> LoadingScreenViewControllerType
+    func setup(coordinator: LoadingScreenCoordinator) -> LoadingScreenViewControllerProtocol
 }
 
 class LoadingScreenBuilder: LoadingScreenBuilderType {
-    func setup() -> LoadingScreenViewControllerType {
+    func setup(coordinator: LoadingScreenCoordinator) -> LoadingScreenViewControllerProtocol {
         let storageRepository = PostalCodesStorageRepository()
         let remoteRepository = PostalCodesRemoteRepository()
         let repository = PostalCodesRepository(storageRepository: storageRepository,
                                                remoteRepository: remoteRepository)
         let useCase = PostalCodeUseCase(repository: repository)
         let vc = LoadingScreenViewController()
-        let coordinator = LoadingScreenCoordinator(viewController: vc)
         let vm = LoadingScreenViewModel(postalCodeUseCase: useCase,
                                         coordinator: coordinator)
         vc.viewModel = vm        

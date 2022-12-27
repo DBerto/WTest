@@ -10,12 +10,12 @@ import UIKit
 import WTestCommon
 import Combine
 
-protocol PostalCodesViewControllerType: TableViewController {
-    var viewDidLoadTrigger: Trigger { get }
+protocol PostalCodesViewControllerProtocol: TableViewController {
     var searchRequestTrigger: PassthroughSubject<String?, Never> { get }
 }
 
-class PostalCodesViewController: TableViewController, PostalCodesViewControllerType {
+class PostalCodesViewController: TableViewController,
+                                 PostalCodesViewControllerProtocol {
     
     // MARK: - Properties
     private(set) var viewDidLoadTrigger: Trigger = .init()
@@ -32,7 +32,7 @@ class PostalCodesViewController: TableViewController, PostalCodesViewControllerT
         super.viewDidLoad()
         setupNavBar()
         bindViewModel()
-        viewDidLoadTrigger.send(())
+        lifecycle.trigger(.viewDidLoad)
     }
     
     // MARK: - Setup
@@ -50,7 +50,7 @@ class PostalCodesViewController: TableViewController, PostalCodesViewControllerT
     // MARK: - Bind ViewModel
     
     func bindViewModel() {
-        let output = viewModel.transform(input: PostalCodesViewModel.Input(viewDidLoadTrigger: viewDidLoadTrigger.asDriver(),
+        let output = viewModel.transform(input: PostalCodesViewModel.Input(viewDidLoadTrigger: lifecycle.viewDidLoadObs.asDriver(),
                                                                            searchRequestTrigger: searchRequestTrigger.asDriver()),
                                          disposeBag: disposeBag)
         output.dataSourceModel

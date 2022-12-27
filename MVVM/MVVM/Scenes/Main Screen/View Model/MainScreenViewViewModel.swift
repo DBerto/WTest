@@ -9,9 +9,9 @@ import Foundation
 import WTestCommon
 import Combine
 
-protocol MainScreenViewModelType: ViewModelType { }
+protocol MainScreenViewModelProtocol: ViewModelProtocol { }
 
-final class MainScreenViewModel: MainScreenViewModelType {
+final class MainScreenViewModel: MainScreenViewModelProtocol {
     // MARK: - Enums
     
     enum Action {
@@ -35,7 +35,7 @@ final class MainScreenViewModel: MainScreenViewModelType {
     
     // MARK: - Properties
     
-    private let coordinator: MainScreenCoordinatorType
+    private let coordinator: MainScreenCoordinatorProtocol
     
     // MARK: - Publishers
     
@@ -43,7 +43,7 @@ final class MainScreenViewModel: MainScreenViewModelType {
     
     // MARK: - Init
     
-    init(coordinator: MainScreenCoordinatorType) {
+    init(coordinator: MainScreenCoordinatorProtocol) {
         self.coordinator = coordinator
     }
     

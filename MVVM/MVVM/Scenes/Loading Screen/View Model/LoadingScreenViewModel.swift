@@ -10,9 +10,9 @@ import WTestCommon
 import WTestDomain
 import Combine
 
-protocol LoadingScreenViewModelType: ViewModelType { }
+protocol LoadingScreenViewModelProtocol: ViewModelProtocol { }
 
-final class LoadingScreenViewModel: LoadingScreenViewModelType {
+final class LoadingScreenViewModel: LoadingScreenViewModelProtocol {
     // MARK: - Enums
     
     enum Action {
@@ -42,7 +42,7 @@ final class LoadingScreenViewModel: LoadingScreenViewModelType {
     // MARK: - Properties
     
     private let postalCodeUseCase: PostalCodeUseCaseType
-    private let coordinator: LoadingScreenCoordinatorType
+    private let coordinator: LoadingScreenCoordinatorProtocol
     
     private lazy var loadingViewModel: LoadingViewModel = {
         LoadingViewModel(title: R.string.localizable.appTitle(),
@@ -60,7 +60,7 @@ final class LoadingScreenViewModel: LoadingScreenViewModelType {
     // MARK: - Init
     
     init(postalCodeUseCase: PostalCodeUseCaseType,
-         coordinator: LoadingScreenCoordinatorType) {
+         coordinator: LoadingScreenCoordinatorProtocol) {
         self.postalCodeUseCase = postalCodeUseCase
         self.coordinator = coordinator
     }

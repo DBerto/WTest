@@ -11,15 +11,14 @@ import WTestAPI
 import WTestRealm
 
 protocol PostalCodesBuilderType: AnyObject {
-    func setup() -> PostalCodesViewControllerType
+    func setup(coordinator: PostalCodesCoordinator) -> PostalCodesViewControllerProtocol
 }
 
 class PostalCodesBuilder: PostalCodesBuilderType {
-    func setup() -> PostalCodesViewControllerType {
+    func setup(coordinator: PostalCodesCoordinator) -> PostalCodesViewControllerProtocol {
         let dataSource = PostalCodesDataSource()
         let dataProvider = PostalCodesDataProvider(dataSource: dataSource)
         let vc = PostalCodesViewController()
-        let coordinator = PostalCodesCoordinator(viewController: vc)
         let storageRepository = PostalCodesStorageRepository()
         let remoteRepository = PostalCodesRemoteRepository()
         let repository = PostalCodesRepository(storageRepository: storageRepository,

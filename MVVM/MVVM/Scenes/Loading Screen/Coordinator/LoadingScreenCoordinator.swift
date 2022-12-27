@@ -9,28 +9,38 @@ import Foundation
 import UIKit
 import WTestCommon
 
-protocol LoadingScreenCoordinatorType: Coordinator, BaseCoordinator {
-    var viewController: BaseViewController { get }
+protocol LoadingScreenCoordinatorProtocol: BaseCoordinator {
     func perform(_ action: LoadingScreenCoordinator.Action)
 }
 
-final class LoadingScreenCoordinator: BaseCoordinator, LoadingScreenCoordinatorType {
-    private(set) unowned var viewController: BaseViewController
+final class LoadingScreenCoordinator: BaseCoordinator,
+                                      LoadingScreenCoordinatorProtocol {
+    let navigationController: UINavigationController
     
-    init(viewController: BaseViewController) {
-        self.viewController = viewController
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    override func start() {
+        let vc = LoadingScreenBuilder().setup(coordinator: self)
+        viewController = vc
+        push(viewController: viewController,
+             from: navigationController)
     }
     
     func perform(_ action: Action) {
         switch action {
         case .showMainScreen:
-            let vc = MainScreenBuilder().setup()            
-            push(viewController: vc,
-                 from: viewController,
-                 animated: true)
+            coordinateToMainScreen()
         case .error(let error):
-            showError(error, from: viewController)
+            showError(error,
+                      from: viewController)
         }
+    }
+    
+    private func coordinateToMainScreen() {
+        let mainScreenCoordinator: MainScreenCoordinator = .init(navigationController: navigationController)
+        coordinate(to: mainScreenCoordinator)
     }
 }
 

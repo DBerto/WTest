@@ -19,7 +19,7 @@
 		3A729316277C799E00F8BC11 /* PostalCodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A729315277C799E00F8BC11 /* PostalCodesViewModel.swift */; };
 		3A729319277C79C200F8BC11 /* PostalCodesDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A729318277C79C200F8BC11 /* PostalCodesDataProvider.swift */; };
 		3A72931B277C79CC00F8BC11 /* PostalCodesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A72931A277C79CC00F8BC11 /* PostalCodesDataSource.swift */; };
-		9668DE1325A8B8FA00802D8E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE1225A8B8FA00802D8E /* Coordinator.swift */; };
+		9668DE1325A8B8FA00802D8E /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE1225A8B8FA00802D8E /* CoordinatorProtocol.swift */; };
 		9668DE1B25A8B9B800802D8E /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE1A25A8B9B800802D8E /* LoadingScreenViewController.swift */; };
 		9668DE6525A8C28C00802D8E /* LoadingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE6425A8C28C00802D8E /* LoadingScreenViewModel.swift */; };
 		9668DE6925A8C4FE00802D8E /* PostalCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9668DE6825A8C4FE00802D8E /* PostalCodeUseCase.swift */; };
@@ -27,11 +27,13 @@
 		9668DE7B25A8C62A00802D8E /* WTestCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE6D25A8C60600802D8E /* WTestCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9668DE7D25A8C62B00802D8E /* WTestDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE7125A8C60C00802D8E /* WTestDomain.framework */; };
 		9668DE7E25A8C62B00802D8E /* WTestDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9668DE7125A8C60C00802D8E /* WTestDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		966D3EB3295B156D003B1020 /* BuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D3EB2295B156D003B1020 /* BuilderProtocol.swift */; };
+		966D3EB5295B1D57003B1020 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D3EB4295B1D57003B1020 /* AppCoordinator.swift */; };
 		96D4B74D2593B3E800C035F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B74C2593B3E800C035F7 /* AppDelegate.swift */; };
 		96D4B74F2593B3E800C035F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B74E2593B3E800C035F7 /* SceneDelegate.swift */; };
 		96D4B7562593B3EF00C035F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D4B7552593B3EF00C035F7 /* Assets.xcassets */; };
 		96D4B7592593B3EF00C035F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D4B7572593B3EF00C035F7 /* LaunchScreen.storyboard */; };
-		96D4B7D62593C23D00C035F7 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B7D52593C23D00C035F7 /* ViewModelType.swift */; };
+		96D4B7D62593C23D00C035F7 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B7D52593C23D00C035F7 /* ViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,20 +64,22 @@
 		3A729315277C799E00F8BC11 /* PostalCodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesViewModel.swift; sourceTree = "<group>"; };
 		3A729318277C79C200F8BC11 /* PostalCodesDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesDataProvider.swift; sourceTree = "<group>"; };
 		3A72931A277C79CC00F8BC11 /* PostalCodesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesDataSource.swift; sourceTree = "<group>"; };
-		9668DE1225A8B8FA00802D8E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9668DE1225A8B8FA00802D8E /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		9668DE1A25A8B9B800802D8E /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		9668DE6425A8C28C00802D8E /* LoadingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewModel.swift; sourceTree = "<group>"; };
 		9668DE6825A8C4FE00802D8E /* PostalCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeUseCase.swift; sourceTree = "<group>"; };
 		9668DE6D25A8C60600802D8E /* WTestCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9668DE7125A8C60C00802D8E /* WTestDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9668DE7525A8C61300802D8E /* WTestRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		966D3EB2295B156D003B1020 /* BuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderProtocol.swift; sourceTree = "<group>"; };
+		966D3EB4295B1D57003B1020 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		96D4B7492593B3E800C035F7 /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D4B74C2593B3E800C035F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96D4B74E2593B3E800C035F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		96D4B7552593B3EF00C035F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96D4B7582593B3EF00C035F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96D4B75A2593B3EF00C035F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96D4B7D52593C23D00C035F7 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		96D4B7D52593C23D00C035F7 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +306,7 @@
 				96D4B74E2593B3E800C035F7 /* SceneDelegate.swift */,
 				96D4B74C2593B3E800C035F7 /* AppDelegate.swift */,
 				96D4B7572593B3EF00C035F7 /* LaunchScreen.storyboard */,
+				966D3EB4295B1D57003B1020 /* AppCoordinator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -309,8 +314,9 @@
 		96D4B7D42593C22F00C035F7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				96D4B7D52593C23D00C035F7 /* ViewModelType.swift */,
-				9668DE1225A8B8FA00802D8E /* Coordinator.swift */,
+				96D4B7D52593C23D00C035F7 /* ViewModelProtocol.swift */,
+				9668DE1225A8B8FA00802D8E /* CoordinatorProtocol.swift */,
+				966D3EB2295B156D003B1020 /* BuilderProtocol.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -391,9 +397,11 @@
 				3A729312277C793500F8BC11 /* PostalCodesCoordinator.swift in Sources */,
 				3A4232B826FA9B8D00DD1D12 /* LoadingScreenBuilder.swift in Sources */,
 				3A7292FB277A0EF600F8BC11 /* LoadingScreenCoordinator.swift in Sources */,
+				966D3EB5295B1D57003B1020 /* AppCoordinator.swift in Sources */,
+				966D3EB3295B156D003B1020 /* BuilderProtocol.swift in Sources */,
 				3A729306277A215900F8BC11 /* MainScreenViewViewModel.swift in Sources */,
 				96D4B74D2593B3E800C035F7 /* AppDelegate.swift in Sources */,
-				9668DE1325A8B8FA00802D8E /* Coordinator.swift in Sources */,
+				9668DE1325A8B8FA00802D8E /* CoordinatorProtocol.swift in Sources */,
 				96D4B74F2593B3E800C035F7 /* SceneDelegate.swift in Sources */,
 				9668DE6925A8C4FE00802D8E /* PostalCodeUseCase.swift in Sources */,
 				3A729314277C797100F8BC11 /* PostalCodesViewController.swift in Sources */,
@@ -403,7 +411,7 @@
 				3A729302277A202600F8BC11 /* MainScreenBuilder.swift in Sources */,
 				3A729310277C790600F8BC11 /* PostalCodesBuilder.swift in Sources */,
 				3A729308277A21BB00F8BC11 /* MainScreenCoordinator.swift in Sources */,
-				96D4B7D62593C23D00C035F7 /* ViewModelType.swift in Sources */,
+				96D4B7D62593C23D00C035F7 /* ViewModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

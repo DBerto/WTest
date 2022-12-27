@@ -21,6 +21,13 @@ open class BaseViewController: UIViewController {
     
     // MARK: - View Cycle
     
+    public let lifecycle: ViewLifecycle = .init()
+    
+    deinit {
+        lifecycle.trigger(.deinitialize)
+        print("deinit")
+    }
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

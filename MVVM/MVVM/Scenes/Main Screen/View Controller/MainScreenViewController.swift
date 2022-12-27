@@ -9,14 +9,15 @@ import Foundation
 import UIKit
 import WTestCommon
 
-protocol MainScreenViewControllerType: BaseViewController {
-    var viewDidLoadTrigger: Trigger { get }
+protocol MainScreenViewControllerProtocol: BaseViewController {
+    var viewModel: MainScreenViewModel! { get set }
 }
 
-class MainScreenViewController: BaseViewController, MainScreenViewControllerType {
+class MainScreenViewController: BaseViewController,
+                                MainScreenViewControllerProtocol {
     
     // MARK: - Properties
-    private(set) var viewDidLoadTrigger: Trigger = .init()
+    
     private let postalCodesButtonTrigger: Trigger = .init()
     
     var viewModel: MainScreenViewModel!
@@ -46,6 +47,7 @@ class MainScreenViewController: BaseViewController, MainScreenViewControllerType
         setupView()
         setupNavBar()
         bindViewModel()
+        lifecycle.trigger(.viewDidLoad)
     }
     
     // MARK: - Setup
@@ -75,7 +77,7 @@ class MainScreenViewController: BaseViewController, MainScreenViewControllerType
     // MARK: - Bind ViewModel
     
     func bindViewModel() {
-        _ = viewModel.transform(input: MainScreenViewModel.Input(viewDidLoadTrigger: viewDidLoadTrigger.asDriver(),
+        _ = viewModel.transform(input: MainScreenViewModel.Input(viewDidLoadTrigger: lifecycle.viewDidLoadObs.asDriver(),
                                                                  postalCodesButtonTrigger: postalCodesButtonTrigger.asDriver()),
                                 disposeBag: disposeBag)
     }

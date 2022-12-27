@@ -9,15 +9,13 @@ import Foundation
 import UIKit
 import WTestCommon
 
-protocol LoadingScreenViewControllerType: BaseViewController {
-    var viewDidLoadTrigger: Trigger { get }
+protocol LoadingScreenViewControllerProtocol: BaseViewController {
+    var viewModel: LoadingScreenViewModel! { get set }
 }
 
-final class LoadingScreenViewController: BaseViewController, LoadingScreenViewControllerType {
+final class LoadingScreenViewController: BaseViewController, LoadingScreenViewControllerProtocol {
     
     // MARK: - Properties
-    
-    private(set) var viewDidLoadTrigger: Trigger = .init()
     
     var viewModel: LoadingScreenViewModel!
     
@@ -33,7 +31,7 @@ final class LoadingScreenViewController: BaseViewController, LoadingScreenViewCo
         setupView()
         setupNavBar()
         bindViewModel()
-        viewDidLoadTrigger.send()
+        lifecycle.trigger(.viewDidLoad)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,7 +60,7 @@ final class LoadingScreenViewController: BaseViewController, LoadingScreenViewCo
     // MARK: - Bind ViewModel
     
     func bindViewModel() {
-        let output = viewModel.transform(input: LoadingScreenViewModel.Input(viewDidLoadTrigger: viewDidLoadTrigger.asDriver()),
+        let output = viewModel.transform(input: LoadingScreenViewModel.Input(viewDidLoadTrigger: lifecycle.viewDidLoadObs.asDriver()),
                                          disposeBag: disposeBag)
         
         output.dataSourceModel
