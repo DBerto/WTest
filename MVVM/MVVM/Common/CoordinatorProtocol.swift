@@ -9,6 +9,8 @@ import Foundation
 import WTestCommon
 import UIKit
 
+// https://betterprogramming.pub/implement-coordinator-design-pattern-using-combine-eed5008dafb1
+
 protocol CoordinatorProtocol: AnyObject {
     var viewController: BaseViewController! { get set }
     var childCoordinators: [CoordinatorProtocol] { get set }
@@ -21,7 +23,7 @@ protocol CoordinatorProtocol: AnyObject {
 extension CoordinatorProtocol {
     func coordinate(to coordinator: CoordinatorProtocol) {
         coordinator.start()
-        store(coordinator: coordinator)        
+        store(coordinator: coordinator)
     }
     
     // MARK: - Private Coordinator Actions
