@@ -12,18 +12,18 @@ import WTestRealm
 import WTestAPI
 import Combine
 
-public protocol PostalCodesRepositoryType {
+public protocol PostalCodesRepositoryProtocol {
     func savePostalCode(_ postalCode: PostalCode) -> ObservableType<Void>
     func savePostalCodes(_ postalCode: [PostalCode]) -> ObservableType<Void>
     func fetchPostalCodes(withPredicate predicate: NSPredicate?) -> ObservableType<[PostalCode]>
     func downloadPostalCodes() async -> APIResponse<[PostalCode]>
 }
 
-public class PostalCodesRepository: PostalCodesRepositoryType {
-    private let storageRepository: PostalCodesStorageRepositoryType
+public class PostalCodesRepository: PostalCodesRepositoryProtocol {
+    private let storageRepository: PostalCodesStorageRepositoryProtocol
     private let remoteRepository: PostalCodesRemoteRepositoryType
     
-    public init(storageRepository: PostalCodesStorageRepositoryType,
+    public init(storageRepository: PostalCodesStorageRepositoryProtocol,
                 remoteRepository: PostalCodesRemoteRepositoryType) {
         self.storageRepository = storageRepository
         self.remoteRepository = remoteRepository

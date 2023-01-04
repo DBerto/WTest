@@ -11,13 +11,14 @@ import WTestCommon
 import RealmSwift
 import Combine
 
-public protocol PostalCodesStorageRepositoryType {
+public protocol PostalCodesStorageRepositoryProtocol {
     func savePostalCode(_ postalCode: PostalCodeDB) -> Future<Void, Error>
     func savePostalCodes(_ postalCodes: [PostalCodeDB]) -> Future<Void, Error>
     func fetchPostalCodes(withPredicate predicate: NSPredicate?) -> Future<[PostalCodeDB], Error>
 }
 
-public final class PostalCodesStorageRepository: BaseStorageRepository, PostalCodesStorageRepositoryType {
+public final class PostalCodesStorageRepository: BaseStorageRepository,
+                                                 PostalCodesStorageRepositoryProtocol {
     private var token: NotificationToken?
     
     public func savePostalCodes(_ postalCodes: [PostalCodeDB]) -> Future<Void, Error> {

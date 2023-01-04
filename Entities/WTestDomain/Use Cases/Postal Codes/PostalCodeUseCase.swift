@@ -1,16 +1,16 @@
 //
 //  PostalCodeUseCase.swift
-//  MVVM
+//  WTestDomain
 //
-//  Created by David Manuel da Costa Berto on 08/01/2021.
+//  Created by Berto, David Manuel  on 04/01/2023.
+//  Copyright © 2023 David Manuel da Costa Berto. All rights reserved.
 //
 
 import Foundation
 import WTestCommon
-import WTestDomain
 import Combine
 
-enum PostalCodeUseCaseError: LocalizedError {
+public enum PostalCodeUseCaseError: LocalizedError {
     case appAlreadyLaunched
     
     public var errorDescription: String? {
@@ -21,24 +21,24 @@ enum PostalCodeUseCaseError: LocalizedError {
     }
 }
 
-protocol PostalCodeUseCaseType: AnyObject {
+public protocol PostalCodeUseCaseProtocol: AnyObject {
     func savePostalCodes(_ postalCodes: [PostalCode]) -> ObservableType<Void>
     func downloadPostalCodes() -> ObservableType<[PostalCode]>
     func fetchPostalCodes() -> ObservableType<[PostalCode]>
     func searchPostalCodes(withText text: String) -> ObservableType<[PostalCode]>
 }
 
-final class PostalCodeUseCase: PostalCodeUseCaseType {
-    private let repository: PostalCodesRepositoryType
+public final class PostalCodeUseCase: PostalCodeUseCaseProtocol {
+    private let repository: PostalCodesRepositoryProtocol
     
     @UserDefault(key: "isAppAlreadyLaunched", defaultValue: false)
-    var isAppAlreadyLaunched: Bool
+    public var isAppAlreadyLaunched: Bool
     
-    init(repository: PostalCodesRepositoryType) {
+    public init(repository: PostalCodesRepositoryProtocol) {
         self.repository = repository
     }
     
-    func downloadPostalCodes() -> ObservableType<[PostalCode]> {
+    public func downloadPostalCodes() -> ObservableType<[PostalCode]> {
         guard isAppAlreadyLaunched == false else {
             return Empty<[PostalCode], Never>().asObservable()
         }
@@ -49,16 +49,16 @@ final class PostalCodeUseCase: PostalCodeUseCaseType {
         }).asObservable()
     }
     
-    func savePostalCodes(_ postalCodes: [PostalCode]) -> ObservableType<Void> {
+    public func savePostalCodes(_ postalCodes: [PostalCode]) -> ObservableType<Void> {
         isAppAlreadyLaunched = true
         return repository.savePostalCodes(postalCodes)
     }
     
-    func fetchPostalCodes() -> ObservableType<[PostalCode]> {
+    public func fetchPostalCodes() -> ObservableType<[PostalCode]> {
         return repository.fetchPostalCodes(withPredicate: nil)
     }
     
-    func searchPostalCodes(withText text: String) -> ObservableType<[PostalCode]> {
+    public func searchPostalCodes(withText text: String) -> ObservableType<[PostalCode]> {
         guard !text.isEmpty else {
             return fetchPostalCodes()
         }

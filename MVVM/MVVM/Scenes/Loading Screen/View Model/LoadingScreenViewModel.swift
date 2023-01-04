@@ -41,7 +41,7 @@ final class LoadingScreenViewModel: LoadingScreenViewModelProtocol {
     
     // MARK: - Properties
     
-    private let postalCodeUseCase: PostalCodeUseCaseType
+    private let postalCodeUseCase: PostalCodeUseCaseProtocol
     private let coordinator: LoadingScreenCoordinatorProtocol
     
     private lazy var loadingViewModel: LoadingViewModel = {
@@ -59,7 +59,7 @@ final class LoadingScreenViewModel: LoadingScreenViewModelProtocol {
     
     // MARK: - Init
     
-    init(postalCodeUseCase: PostalCodeUseCaseType,
+    init(postalCodeUseCase: PostalCodeUseCaseProtocol,
          coordinator: LoadingScreenCoordinatorProtocol) {
         self.postalCodeUseCase = postalCodeUseCase
         self.coordinator = coordinator

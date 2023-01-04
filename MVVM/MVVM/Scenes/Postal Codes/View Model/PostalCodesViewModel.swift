@@ -40,7 +40,7 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
     
     // MARK: - Properties
     
-    private let useCase: PostalCodeUseCaseType
+    private let useCase: PostalCodeUseCaseProtocol
     private let coordinator: PostalCodesCoordinatorProtocol
     private var postalCodes: [PostalCode] = []
     
@@ -51,7 +51,7 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
     
     // MARK: - Init
     
-    init(useCase: PostalCodeUseCaseType,
+    init(useCase: PostalCodeUseCaseProtocol,
          coordinator: PostalCodesCoordinatorProtocol) {
         self.useCase = useCase
         self.coordinator = coordinator

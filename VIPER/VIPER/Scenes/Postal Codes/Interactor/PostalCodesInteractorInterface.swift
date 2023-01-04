@@ -13,10 +13,10 @@ import WTestCommon
 class PostalCodesInteractor: PostalCodesInteractorInterface {
     
     weak var presenter: PostalCodesPresenterInterface!
-    let repository: PostalCodesRepositoryType!
+    let repository: PostalCodesRepositoryProtocol!
     private let disposeBag: CancellableBag = .init()
     
-    init(repository: PostalCodesRepositoryType) {
+    init(repository: PostalCodesRepositoryProtocol) {
         self.repository = repository
     }
     

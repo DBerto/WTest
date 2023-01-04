@@ -29,10 +29,10 @@ final class LoadingScreenInteractor: LoadingScreenInteractorInterface {
     
     weak var presenter: LoadingScreenPresenterInterface!
     
-    private let repository: PostalCodesRepositoryType!
+    private let repository: PostalCodesRepositoryProtocol!
     private let disposeBag: CancellableBag = .init()
     
-    init(repository: PostalCodesRepositoryType) {
+    init(repository: PostalCodesRepositoryProtocol) {
         self.repository = repository
     }
     

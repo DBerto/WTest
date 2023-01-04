@@ -8,11 +8,12 @@
 
 import Foundation
 
-public struct PostalCode {
+public struct PostalCode: ModelProtcol {
     public let local: String
     public let number: String
     
-    public init(local: String, number: String) {
+    public init(local: String,
+                number: String) {
         self.local = local
         self.number = number
     }
