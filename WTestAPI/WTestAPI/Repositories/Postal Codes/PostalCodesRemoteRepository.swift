@@ -10,7 +10,7 @@ import WTestCommon
 import Combine
 
 public protocol PostalCodesRemoteRepositoryType: HTTPClientProtocol {
-    func getPostalCodes() async -> APIResponse<[PostalCodeResponse]>
+    func getPostalCodes() async throws -> [PostalCodeResponse]
 }
 
 public final class PostalCodesRemoteRepository: PostalCodesRemoteRepositoryType {
@@ -20,8 +20,8 @@ public final class PostalCodesRemoteRepository: PostalCodesRemoteRepositoryType 
         self.client = client
     }
     
-    public func getPostalCodes() async -> APIResponse<[PostalCodeResponse]> {
-        await sendRequest(endpoint: PostalCodeEndpoint.listOfPostalCodes,
-                          responseModel: [PostalCodeResponse].self)
+    public func getPostalCodes() async throws -> [PostalCodeResponse] {
+        try await sendRequest(endpoint: PostalCodeEndpoint.listOfPostalCodes,
+                              responseModel: [PostalCodeResponse].self)
     }
 }

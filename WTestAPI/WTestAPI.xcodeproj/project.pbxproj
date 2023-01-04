@@ -23,7 +23,6 @@
 		9686EC382965AF76008A3722 /* URLSession+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC372965AF76008A3722 /* URLSession+Default.swift */; };
 		9686EC3A2965AFBE008A3722 /* NetworkAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC392965AFBE008A3722 /* NetworkAgent.swift */; };
 		9686EC3C2965B066008A3722 /* PostalCodeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC3B2965B066008A3722 /* PostalCodeEndpoint.swift */; };
-		9686EC422965BA38008A3722 /* typeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC412965BA37008A3722 /* typeAlias.swift */; };
 		9686EC4E2965DB2C008A3722 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC4D2965DB2C008A3722 /* NetworkUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +69,6 @@
 		9686EC372965AF76008A3722 /* URLSession+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Default.swift"; sourceTree = "<group>"; };
 		9686EC392965AFBE008A3722 /* NetworkAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgent.swift; sourceTree = "<group>"; };
 		9686EC3B2965B066008A3722 /* PostalCodeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeEndpoint.swift; sourceTree = "<group>"; };
-		9686EC412965BA37008A3722 /* typeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = typeAlias.swift; sourceTree = "<group>"; };
 		9686EC4D2965DB2C008A3722 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +118,6 @@
 				3A4232AF26FA98A000DD1D12 /* Common */,
 				3A42329E26FA8E8E00DD1D12 /* Models */,
 				3A42329826FA8BDE00DD1D12 /* Repositories */,
-				9686EC412965BA37008A3722 /* typeAlias.swift */,
 				3A42327F26FA8B6000DD1D12 /* WTestAPI.h */,
 				3A42328026FA8B6000DD1D12 /* Info.plist */,
 			);
@@ -364,7 +361,6 @@
 				9686EC352965AE27008A3722 /* HTTPClient.swift in Sources */,
 				3A4232A026FA8EEB00DD1D12 /* PostalCodeResponse.swift in Sources */,
 				9686EC312965AD82008A3722 /* ModelDtoProtocol.swift in Sources */,
-				9686EC422965BA38008A3722 /* typeAlias.swift in Sources */,
 				9686EC3C2965B066008A3722 /* PostalCodeEndpoint.swift in Sources */,
 				9686EC3A2965AFBE008A3722 /* NetworkAgent.swift in Sources */,
 				9686EC4E2965DB2C008A3722 /* NetworkUtils.swift in Sources */,

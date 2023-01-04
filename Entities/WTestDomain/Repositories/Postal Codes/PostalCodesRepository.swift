@@ -16,7 +16,7 @@ public protocol PostalCodesRepositoryProtocol {
     func savePostalCode(_ postalCode: PostalCode) -> ObservableType<Void>
     func savePostalCodes(_ postalCode: [PostalCode]) -> ObservableType<Void>
     func fetchPostalCodes(withPredicate predicate: NSPredicate?) -> ObservableType<[PostalCode]>
-    func downloadPostalCodes() async -> APIResponse<[PostalCode]>
+    func downloadPostalCodes() async throws -> [PostalCode]
 }
 
 public class PostalCodesRepository: PostalCodesRepositoryProtocol {
@@ -47,8 +47,8 @@ public class PostalCodesRepository: PostalCodesRepositoryProtocol {
             .asObservable()
     }
     
-    public func downloadPostalCodes() async -> APIResponse<[PostalCode]> {
-        await remoteRepository.getPostalCodes()
-            .map { $0.asPostalCodeArray() }
+    public func downloadPostalCodes() async throws -> [PostalCode] {
+        try await remoteRepository.getPostalCodes()
+            .asPostalCodeArray()
     }
 }

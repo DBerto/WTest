@@ -54,4 +54,13 @@ extension Future where Failure == Error {
             }
         }
     }
+    
+    public convenience init(asyncFunc: @escaping () async throws -> Output) {
+        self.init { promise in
+            Task {
+                let result = try await asyncFunc()
+                promise(.success(result))
+            }
+        }
+    }
 }

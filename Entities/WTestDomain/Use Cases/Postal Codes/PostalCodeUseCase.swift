@@ -44,8 +44,7 @@ public final class PostalCodeUseCase: PostalCodeUseCaseProtocol {
         }
         
         return Future(asyncFunc: { [unowned self] in
-            await repository.downloadPostalCodes()
-                .mapError { $0.toAppError() }
+            try await repository.downloadPostalCodes()
         }).asObservable()
     }
     
