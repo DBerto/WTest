@@ -7,6 +7,8 @@
 
 import Foundation
 
+// https://betterprogramming.pub/async-await-generic-network-layer-with-swift-5-5-2bdd51224ea9
+
 public protocol HTTPClientProtocol {
     var client: NetworkAgent { get }
     func sendRequest<T: Decodable>(endpoint: EndpointProtocol,
