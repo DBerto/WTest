@@ -14,7 +14,17 @@
 		3A4232A026FA8EEB00DD1D12 /* PostalCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42329F26FA8EEB00DD1D12 /* PostalCodeResponse.swift */; };
 		3A4232AB26FA90BE00DD1D12 /* WTestCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4232AA26FA90BE00DD1D12 /* WTestCommon.framework */; };
 		3A4232AC26FA90BE00DD1D12 /* WTestCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4232AA26FA90BE00DD1D12 /* WTestCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3A4232B126FA98AE00DD1D12 /* BaseRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4232B026FA98AE00DD1D12 /* BaseRemoteRepository.swift */; };
+		9686EC262965AB20008A3722 /* EndpointProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC252965AB20008A3722 /* EndpointProtocol.swift */; };
+		9686EC282965AB60008A3722 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC272965AB60008A3722 /* HttpMethod.swift */; };
+		9686EC2A2965AB82008A3722 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC292965AB82008A3722 /* APIError.swift */; };
+		9686EC2C2965ABEC008A3722 /* ResponseFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC2B2965ABEB008A3722 /* ResponseFormat.swift */; };
+		9686EC312965AD82008A3722 /* ModelDtoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC302965AD82008A3722 /* ModelDtoProtocol.swift */; };
+		9686EC352965AE27008A3722 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC342965AE27008A3722 /* HTTPClient.swift */; };
+		9686EC382965AF76008A3722 /* URLSession+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC372965AF76008A3722 /* URLSession+Default.swift */; };
+		9686EC3A2965AFBE008A3722 /* NetworkAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC392965AFBE008A3722 /* NetworkAgent.swift */; };
+		9686EC3C2965B066008A3722 /* PostalCodeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC3B2965B066008A3722 /* PostalCodeEndpoint.swift */; };
+		9686EC422965BA38008A3722 /* typeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC412965BA37008A3722 /* typeAlias.swift */; };
+		9686EC4E2965DB2C008A3722 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC4D2965DB2C008A3722 /* NetworkUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +61,17 @@
 		3A42329A26FA8C0C00DD1D12 /* PostalCodesRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodesRemoteRepository.swift; sourceTree = "<group>"; };
 		3A42329F26FA8EEB00DD1D12 /* PostalCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeResponse.swift; sourceTree = "<group>"; };
 		3A4232AA26FA90BE00DD1D12 /* WTestCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WTestCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A4232B026FA98AE00DD1D12 /* BaseRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRemoteRepository.swift; sourceTree = "<group>"; };
+		9686EC252965AB20008A3722 /* EndpointProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointProtocol.swift; sourceTree = "<group>"; };
+		9686EC272965AB60008A3722 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		9686EC292965AB82008A3722 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		9686EC2B2965ABEB008A3722 /* ResponseFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseFormat.swift; sourceTree = "<group>"; };
+		9686EC302965AD82008A3722 /* ModelDtoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDtoProtocol.swift; sourceTree = "<group>"; };
+		9686EC342965AE27008A3722 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		9686EC372965AF76008A3722 /* URLSession+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Default.swift"; sourceTree = "<group>"; };
+		9686EC392965AFBE008A3722 /* NetworkAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgent.swift; sourceTree = "<group>"; };
+		9686EC3B2965B066008A3722 /* PostalCodeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeEndpoint.swift; sourceTree = "<group>"; };
+		9686EC412965BA37008A3722 /* typeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = typeAlias.swift; sourceTree = "<group>"; };
+		9686EC4D2965DB2C008A3722 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +116,11 @@
 		3A42327E26FA8B6000DD1D12 /* WTestAPI */ = {
 			isa = PBXGroup;
 			children = (
+				9686EC4C2965DAFB008A3722 /* Utils */,
 				3A4232AF26FA98A000DD1D12 /* Common */,
 				3A42329E26FA8E8E00DD1D12 /* Models */,
 				3A42329826FA8BDE00DD1D12 /* Repositories */,
+				9686EC412965BA37008A3722 /* typeAlias.swift */,
 				3A42327F26FA8B6000DD1D12 /* WTestAPI.h */,
 				3A42328026FA8B6000DD1D12 /* Info.plist */,
 			);
@@ -133,7 +155,8 @@
 		3A42329E26FA8E8E00DD1D12 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3A42329F26FA8EEB00DD1D12 /* PostalCodeResponse.swift */,
+				9686EC2E2965AD70008A3722 /* Common */,
+				9686EC2F2965AD77008A3722 /* Postal Codes */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,9 +172,80 @@
 		3A4232AF26FA98A000DD1D12 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				3A4232B026FA98AE00DD1D12 /* BaseRemoteRepository.swift */,
+				9686EC362965AF68008A3722 /* Extensions */,
+				9686EC242965AB12008A3722 /* Base Types */,
+				9686EC3D2965B099008A3722 /* Endpoints */,
+				9686EC332965AE1C008A3722 /* HTTPClient */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		9686EC242965AB12008A3722 /* Base Types */ = {
+			isa = PBXGroup;
+			children = (
+				9686EC252965AB20008A3722 /* EndpointProtocol.swift */,
+				9686EC272965AB60008A3722 /* HttpMethod.swift */,
+				9686EC292965AB82008A3722 /* APIError.swift */,
+				9686EC2B2965ABEB008A3722 /* ResponseFormat.swift */,
+			);
+			path = "Base Types";
+			sourceTree = "<group>";
+		};
+		9686EC2E2965AD70008A3722 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9686EC302965AD82008A3722 /* ModelDtoProtocol.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9686EC2F2965AD77008A3722 /* Postal Codes */ = {
+			isa = PBXGroup;
+			children = (
+				3A42329F26FA8EEB00DD1D12 /* PostalCodeResponse.swift */,
+			);
+			path = "Postal Codes";
+			sourceTree = "<group>";
+		};
+		9686EC332965AE1C008A3722 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				9686EC392965AFBE008A3722 /* NetworkAgent.swift */,
+				9686EC342965AE27008A3722 /* HTTPClient.swift */,
+			);
+			path = HTTPClient;
+			sourceTree = "<group>";
+		};
+		9686EC362965AF68008A3722 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9686EC372965AF76008A3722 /* URLSession+Default.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9686EC3D2965B099008A3722 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				9686EC3E2965B0AE008A3722 /* PostalCode */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		9686EC3E2965B0AE008A3722 /* PostalCode */ = {
+			isa = PBXGroup;
+			children = (
+				9686EC3B2965B066008A3722 /* PostalCodeEndpoint.swift */,
+			);
+			path = PostalCode;
+			sourceTree = "<group>";
+		};
+		9686EC4C2965DAFB008A3722 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9686EC4D2965DB2C008A3722 /* NetworkUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +358,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A4232B126FA98AE00DD1D12 /* BaseRemoteRepository.swift in Sources */,
+				9686EC262965AB20008A3722 /* EndpointProtocol.swift in Sources */,
+				9686EC382965AF76008A3722 /* URLSession+Default.swift in Sources */,
+				9686EC2A2965AB82008A3722 /* APIError.swift in Sources */,
+				9686EC352965AE27008A3722 /* HTTPClient.swift in Sources */,
 				3A4232A026FA8EEB00DD1D12 /* PostalCodeResponse.swift in Sources */,
+				9686EC312965AD82008A3722 /* ModelDtoProtocol.swift in Sources */,
+				9686EC422965BA38008A3722 /* typeAlias.swift in Sources */,
+				9686EC3C2965B066008A3722 /* PostalCodeEndpoint.swift in Sources */,
+				9686EC3A2965AFBE008A3722 /* NetworkAgent.swift in Sources */,
+				9686EC4E2965DB2C008A3722 /* NetworkUtils.swift in Sources */,
+				9686EC282965AB60008A3722 /* HttpMethod.swift in Sources */,
+				9686EC2C2965ABEC008A3722 /* ResponseFormat.swift in Sources */,
 				3A42329B26FA8C0C00DD1D12 /* PostalCodesRemoteRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

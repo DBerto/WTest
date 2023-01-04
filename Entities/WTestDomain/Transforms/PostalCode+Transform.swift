@@ -40,8 +40,13 @@ extension Sequence where Element == PostalCodeDB {
 
 extension PostalCodeResponse {
     func asPostalCode() -> PostalCode {
-        PostalCode(local: local,
-                   number: number)
+        let numCodPostal: String = self.numCodPostal ?? ""
+        let extCodPostal: String = self.extCodPostal ?? ""
+        let nomeLocalidade: String = self.nomeLocalidade ?? ""
+        let number: String = numCodPostal + " - " + extCodPostal
+        
+        return .init(local: nomeLocalidade,
+                     number: number)
     }
 }
 

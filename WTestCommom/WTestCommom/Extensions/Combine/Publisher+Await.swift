@@ -15,7 +15,7 @@ extension Publisher {
     ///
     /// - Parameter transform: A closure that takes an element as a parameter and returns a publisher that produces elements of that type.
     /// - Returns: A publisher that transforms elements from an upstream  publisher into a publisher of that element's type.
-    func `await`<T>(_ transform: @escaping (Output) async -> T) -> AnyPublisher<T, Failure> {
+    public func `await`<T>(_ transform: @escaping (Output) async -> T) -> AnyPublisher<T, Failure> {
         flatMap { value -> Future<T, Failure> in
             Future { promise in
                 Task {
@@ -27,7 +27,7 @@ extension Publisher {
         .eraseToAnyPublisher()
     }
     
-    func `await`<T>(_ transform: @escaping () async -> T) -> AnyPublisher<T, Failure> {
+    public func `await`<T>(_ transform: @escaping () async -> T) -> AnyPublisher<T, Failure> {
         flatMap { _ -> Future<T, Failure> in
             Future { promise in
                 Task {
@@ -37,5 +37,21 @@ extension Publisher {
             }
         }
         .eraseToAnyPublisher()
+    }
+}
+
+extension Future where Failure == Error {
+    public convenience init(asyncFunc: @escaping () async -> Result<Output, Failure>) {
+        self.init { promise in
+            Task {
+                let result = await asyncFunc()
+                switch result {
+                case .success(let value):
+                    promise(.success(value))
+                case .failure(let error):
+                    promise(.failure(error))
+                }
+            }
+        }
     }
 }

@@ -65,7 +65,7 @@
 		966D3EA9295600F5003B1020 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D3EA8295600F5003B1020 /* DependencyManager.swift */; };
 		966D3EAC29561531003B1020 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 966D3EAB29561531003B1020 /* Swinject */; };
 		966D3EAF295620B5003B1020 /* ViewLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D3EAE295620B5003B1020 /* ViewLifecycle.swift */; };
-		9686EC222965A361008A3722 /* Publisher+await.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC212965A361008A3722 /* Publisher+await.swift */; };
+		9686EC222965A361008A3722 /* Publisher+Await.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC212965A361008A3722 /* Publisher+Await.swift */; };
 		96D4B7792593B64E00C035F7 /* WTestCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D4B76F2593B64E00C035F7 /* WTestCommon.framework */; };
 		96D4B77E2593B64E00C035F7 /* WTestCommomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B77D2593B64E00C035F7 /* WTestCommomTests.swift */; };
 		96D4B7802593B64E00C035F7 /* WTestCommom.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D4B7722593B64E00C035F7 /* WTestCommom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -138,7 +138,7 @@
 		966D3EA029560071003B1020 /* ViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		966D3EA8295600F5003B1020 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		966D3EAE295620B5003B1020 /* ViewLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLifecycle.swift; sourceTree = "<group>"; };
-		9686EC212965A361008A3722 /* Publisher+await.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+await.swift"; sourceTree = "<group>"; };
+		9686EC212965A361008A3722 /* Publisher+Await.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Await.swift"; sourceTree = "<group>"; };
 		96D4B76F2593B64E00C035F7 /* WTestCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WTestCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D4B7722593B64E00C035F7 /* WTestCommom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTestCommom.h; sourceTree = "<group>"; };
 		96D4B7732593B64E00C035F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -270,7 +270,7 @@
 				3A42325926FA7D5C00DD1D12 /* PassthroughSubject+Trigger.swift */,
 				3A729320277CA40100F8BC11 /* Publisher+ActivityTracker.swift */,
 				3AE4563B27CE30CC003D4B38 /* Publisher+Background.swift */,
-				9686EC212965A361008A3722 /* Publisher+await.swift */,
+				9686EC212965A361008A3722 /* Publisher+Await.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -636,7 +636,7 @@
 				3A42324A26FA7CD400DD1D12 /* Combine+UIKit.swift in Sources */,
 				966D3E6F2955D77D003B1020 /* MutableCollection+Map.swift in Sources */,
 				966D3E902955DB8E003B1020 /* PGHtmlElement.swift in Sources */,
-				9686EC222965A361008A3722 /* Publisher+await.swift in Sources */,
+				9686EC222965A361008A3722 /* Publisher+Await.swift in Sources */,
 				966D3E942955DBAC003B1020 /* PGLabel.swift in Sources */,
 				966D3E8B2955DB4D003B1020 /* PGPageRenderer.swift in Sources */,
 				9668DE2D25A8BB3E00802D8E /* BaseViewController.swift in Sources */,

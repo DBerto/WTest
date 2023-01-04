@@ -43,7 +43,10 @@ final class PostalCodeUseCase: PostalCodeUseCaseType {
             return Empty<[PostalCode], Never>().asObservable()
         }
         
-        return repository.downloadPostalCodes()
+        return Future(asyncFunc: { [unowned self] in
+            await repository.downloadPostalCodes()
+                .mapError { $0.toAppError() }
+        }).asObservable()
     }
     
     func savePostalCodes(_ postalCodes: [PostalCode]) -> ObservableType<Void> {
