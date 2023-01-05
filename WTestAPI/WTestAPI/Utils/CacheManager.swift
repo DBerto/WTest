@@ -1,5 +1,5 @@
 //
-//  ApiCacheManager.swift
+//  CacheManager.swift
 //  WTestAPI
 //
 //  Created by Berto, David Manuel  on 05/01/2023.
@@ -10,14 +10,14 @@ import WTestCommon
 
 // https://blog.devgenius.io/caching-with-nscache-in-ios-2e97be8d6b53
 
-public enum ApiCachePolicy: String, CaseIterable {
+public enum CachePolicy: String, CaseIterable {
     case ignoringCache
     case cacheElseLoad
     case cacheAndLoad
     case cacheDontLoad
 }
 
-public protocol ApiCacheManagerProtocol<Key, Value> {
+public protocol CacheManagerProtocol<Key, Value> {
     associatedtype Key
     associatedtype Value
     
@@ -30,7 +30,7 @@ public protocol ApiCacheManagerProtocol<Key, Value> {
     func removeValue(forKey key: Key)
 }
 
-public final class ApiCacheManager<Key: Hashable, Value>: ApiCacheManagerProtocol {
+public final class CacheManager<Key: Hashable, Value>: CacheManagerProtocol {
     // MARK: - KeyWrapper
     
     public final class KeyWrapper: NSObject {

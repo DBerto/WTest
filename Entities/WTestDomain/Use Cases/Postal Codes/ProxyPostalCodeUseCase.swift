@@ -8,10 +8,9 @@
 import Foundation
 import Combine
 import WTestCommon
-import WTestAPI
 
 public protocol ProxyPostalCodeUseCaseProtocol: PostalCodeUseCaseProtocol {
-    func downloadPostalCodes(cachePolicy: ApiCachePolicy) -> ObservableType<[PostalCode]>
+    func downloadPostalCodes(cachePolicy: CachePolicy) -> ObservableType<[PostalCode]>
 }
 
 public final class ProxyPostalCodeUseCase: ProxyPostalCodeUseCaseProtocol {
@@ -23,9 +22,9 @@ public final class ProxyPostalCodeUseCase: ProxyPostalCodeUseCaseProtocol {
     
     // MARK: - Proxy Functions
     
-    public func downloadPostalCodes(cachePolicy: ApiCachePolicy) -> ObservableType<[PostalCode]> {
+    public func downloadPostalCodes(cachePolicy: CachePolicy) -> ObservableType<[PostalCode]> {
         let key: String = #function
-        let cache: ApiCacheManager<String, [PostalCode]> = .init()
+        let cache: CacheManager<String, [PostalCode]> = .init()
         let cachedValue: [PostalCode]? = cache.value(forKey: key)
         
         switch cachePolicy {
