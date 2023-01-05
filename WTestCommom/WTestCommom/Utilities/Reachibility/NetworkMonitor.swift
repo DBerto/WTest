@@ -22,7 +22,7 @@ public  enum NetworkConnectionStatus {
     case disconnected
 }
 
-final class NetworkMonitor: NetworkMonitorProtocol {
+public final class NetworkMonitor: NetworkMonitorProtocol {
     // MARK: Protocol vars
     
     public let connectionStatusSignal: CurrentValueSubject<NetworkConnectionStatus, Never>

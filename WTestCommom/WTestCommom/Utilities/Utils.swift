@@ -7,10 +7,10 @@
 
 import Foundation
 
-func resultOf<T>(_ code: () -> T) -> T {
+public func resultOf<T>(_ code: () -> T) -> T {
     return code()
 }
 
-func isNil<T>(_ obj: T?) -> Bool {
+public func isNil<T>(_ obj: T?) -> Bool {
     return obj == nil
 }

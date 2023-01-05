@@ -24,6 +24,8 @@
 		9686EC3A2965AFBE008A3722 /* NetworkAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC392965AFBE008A3722 /* NetworkAgent.swift */; };
 		9686EC3C2965B066008A3722 /* PostalCodeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC3B2965B066008A3722 /* PostalCodeEndpoint.swift */; };
 		9686EC4E2965DB2C008A3722 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC4D2965DB2C008A3722 /* NetworkUtils.swift */; };
+		9686EC57296716F7008A3722 /* ApiCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC56296716F7008A3722 /* ApiCacheManager.swift */; };
+		9686EC5B29671B97008A3722 /* CachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC5A29671B97008A3722 /* CachePolicy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		9686EC392965AFBE008A3722 /* NetworkAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAgent.swift; sourceTree = "<group>"; };
 		9686EC3B2965B066008A3722 /* PostalCodeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeEndpoint.swift; sourceTree = "<group>"; };
 		9686EC4D2965DB2C008A3722 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
+		9686EC56296716F7008A3722 /* ApiCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCacheManager.swift; sourceTree = "<group>"; };
+		9686EC5A29671B97008A3722 /* CachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePolicy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				9686EC4D2965DB2C008A3722 /* NetworkUtils.swift */,
+				9686EC56296716F7008A3722 /* ApiCacheManager.swift */,
+				9686EC5A29671B97008A3722 /* CachePolicy.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -363,8 +369,10 @@
 				9686EC312965AD82008A3722 /* ModelDtoProtocol.swift in Sources */,
 				9686EC3C2965B066008A3722 /* PostalCodeEndpoint.swift in Sources */,
 				9686EC3A2965AFBE008A3722 /* NetworkAgent.swift in Sources */,
+				9686EC5B29671B97008A3722 /* CachePolicy.swift in Sources */,
 				9686EC4E2965DB2C008A3722 /* NetworkUtils.swift in Sources */,
 				9686EC282965AB60008A3722 /* HttpMethod.swift in Sources */,
+				9686EC57296716F7008A3722 /* ApiCacheManager.swift in Sources */,
 				9686EC2C2965ABEC008A3722 /* ResponseFormat.swift in Sources */,
 				3A42329B26FA8C0C00DD1D12 /* PostalCodesRemoteRepository.swift in Sources */,
 			);

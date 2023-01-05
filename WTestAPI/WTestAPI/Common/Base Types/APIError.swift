@@ -14,6 +14,7 @@ public enum APIError: Error {
     case unauthorized
     case unexpectedStatusCode
     case unknown
+    case noConnection
     
     public var customMessage: String {
         switch self {
@@ -21,6 +22,8 @@ public enum APIError: Error {
             return "Decode error"
         case .unauthorized:
             return "Session expired"
+        case .noConnection:
+            return "No connection"
         default:
             return "Unknown error"
         }

@@ -15,6 +15,7 @@ public protocol EndpointProtocol {
     var header: [String: String]? { get }
     var body: [String: String]? { get }
     var responseFormat: ResponseFormat { get }
+    var cachePolicy: URlCachePolicy { get }
 }
 
 extension EndpointProtocol {
@@ -24,5 +25,9 @@ extension EndpointProtocol {
 
     var host: String {
         return "api.themoviedb.org"
+    }
+    
+    var cachePolicy: URlCachePolicy {
+        return .reloadIgnoringLocalCacheData
     }
 }

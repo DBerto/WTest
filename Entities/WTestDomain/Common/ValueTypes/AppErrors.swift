@@ -32,6 +32,8 @@ extension APIError {
                 .unexpectedStatusCode,
                 .unknown:
             return .network(description: customMessage)
+        case .noConnection:
+            return .noInternetConnection
         }
     }
 }

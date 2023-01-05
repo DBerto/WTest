@@ -64,4 +64,13 @@ extension PostalCodeEndpoint: EndpointProtocol {
             return .json
         }
     }
+    
+    var cachePolicy: URlCachePolicy {
+        switch self {
+        case .listOfPostalCodes:
+            return .returnCacheDataElseLoad
+        case .exampleWithAuth:
+            return .reloadIgnoringLocalCacheData
+        }
+    }
 }

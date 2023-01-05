@@ -66,6 +66,7 @@
 		966D3EAC29561531003B1020 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 966D3EAB29561531003B1020 /* Swinject */; };
 		966D3EAF295620B5003B1020 /* ViewLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966D3EAE295620B5003B1020 /* ViewLifecycle.swift */; };
 		9686EC222965A361008A3722 /* Publisher+Await.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC212965A361008A3722 /* Publisher+Await.swift */; };
+		9686EC5929671A0A008A3722 /* Date+Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC5829671A09008A3722 /* Date+Validations.swift */; };
 		96D4B7792593B64E00C035F7 /* WTestCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D4B76F2593B64E00C035F7 /* WTestCommon.framework */; };
 		96D4B77E2593B64E00C035F7 /* WTestCommomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D4B77D2593B64E00C035F7 /* WTestCommomTests.swift */; };
 		96D4B7802593B64E00C035F7 /* WTestCommom.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D4B7722593B64E00C035F7 /* WTestCommom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -139,6 +140,7 @@
 		966D3EA8295600F5003B1020 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		966D3EAE295620B5003B1020 /* ViewLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLifecycle.swift; sourceTree = "<group>"; };
 		9686EC212965A361008A3722 /* Publisher+Await.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Await.swift"; sourceTree = "<group>"; };
+		9686EC5829671A09008A3722 /* Date+Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Validations.swift"; sourceTree = "<group>"; };
 		96D4B76F2593B64E00C035F7 /* WTestCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WTestCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D4B7722593B64E00C035F7 /* WTestCommom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTestCommom.h; sourceTree = "<group>"; };
 		96D4B7732593B64E00C035F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				966D3E6E2955D77D003B1020 /* MutableCollection+Map.swift */,
 				966D3E702955D799003B1020 /* MutableCollection+Safe.swift */,
 				966D3E722955D7BC003B1020 /* Array+Append.swift */,
+				9686EC5829671A09008A3722 /* Date+Validations.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				966D3E772955D840003B1020 /* UIViewController+isModal.swift in Sources */,
 				3AE4563C27CE30CC003D4B38 /* Publisher+Background.swift in Sources */,
 				966D3E712955D799003B1020 /* MutableCollection+Safe.swift in Sources */,
+				9686EC5929671A0A008A3722 /* Date+Validations.swift in Sources */,
 				9668DE3825A8BC4900802D8E /* LoadingViewModel.swift in Sources */,
 				966D3E7D2955D94D003B1020 /* UIView+Accessibility.swift in Sources */,
 				966D3E852955DB02003B1020 /* PGOutput.swift in Sources */,
