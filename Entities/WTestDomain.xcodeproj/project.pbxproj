@@ -15,6 +15,7 @@
 		9686EC4B2965BF1C008A3722 /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC4A2965BF1C008A3722 /* AppErrors.swift */; };
 		9686EC512965DDC6008A3722 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC502965DDC6008A3722 /* ModelProtocol.swift */; };
 		9686EC542965DF30008A3722 /* PostalCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC532965DF30008A3722 /* PostalCodeUseCase.swift */; };
+		9686EC5F2967496B008A3722 /* ProxyPostalCodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9686EC5E2967496A008A3722 /* ProxyPostalCodeUseCase.swift */; };
 		96B3434E24F7F01200372F70 /* WTestDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B3434424F7F01200372F70 /* WTestDomain.framework */; };
 		96B3435324F7F01200372F70 /* WTestDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3435224F7F01200372F70 /* WTestDomainTests.swift */; };
 		96B3435524F7F01200372F70 /* WTestDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B3434724F7F01200372F70 /* WTestDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,6 +55,7 @@
 		9686EC4A2965BF1C008A3722 /* AppErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
 		9686EC502965DDC6008A3722 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
 		9686EC532965DF30008A3722 /* PostalCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCodeUseCase.swift; sourceTree = "<group>"; };
+		9686EC5E2967496A008A3722 /* ProxyPostalCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyPostalCodeUseCase.swift; sourceTree = "<group>"; };
 		96B3434424F7F01200372F70 /* WTestDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WTestDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B3434724F7F01200372F70 /* WTestDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTestDomain.h; sourceTree = "<group>"; };
 		96B3434824F7F01200372F70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		9686EC552965DFC3008A3722 /* Postal Codes */ = {
 			isa = PBXGroup;
 			children = (
+				9686EC5E2967496A008A3722 /* ProxyPostalCodeUseCase.swift */,
 				9686EC532965DF30008A3722 /* PostalCodeUseCase.swift */,
 			);
 			path = "Postal Codes";
@@ -317,6 +320,7 @@
 				9686EC512965DDC6008A3722 /* ModelProtocol.swift in Sources */,
 				9686EC542965DF30008A3722 /* PostalCodeUseCase.swift in Sources */,
 				3AB0A34626E6C0F20026B395 /* PostalCode+Transform.swift in Sources */,
+				9686EC5F2967496B008A3722 /* ProxyPostalCodeUseCase.swift in Sources */,
 				96B343B324F7FAFC00372F70 /* PostalCodesRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

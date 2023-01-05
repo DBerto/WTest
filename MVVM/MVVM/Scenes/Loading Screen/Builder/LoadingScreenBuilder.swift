@@ -21,8 +21,9 @@ class LoadingScreenBuilder: LoadingScreenBuilderType {
         let repository = PostalCodesRepository(storageRepository: storageRepository,
                                                remoteRepository: remoteRepository)
         let useCase = PostalCodeUseCase(repository: repository)
+        let proxyUseCase = ProxyPostalCodeUseCase(useCase: useCase)
         let vc = LoadingScreenViewController()
-        let vm = LoadingScreenViewModel(postalCodeUseCase: useCase,
+        let vm = LoadingScreenViewModel(proxyPostalCodeUseCase: proxyUseCase,
                                         coordinator: coordinator)
         vc.viewModel = vm        
         return vc

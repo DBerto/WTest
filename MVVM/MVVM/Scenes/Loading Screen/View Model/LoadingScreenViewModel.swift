@@ -41,7 +41,7 @@ final class LoadingScreenViewModel: LoadingScreenViewModelProtocol {
     
     // MARK: - Properties
     
-    private let postalCodeUseCase: PostalCodeUseCaseProtocol
+    private let proxyPostalCodeUseCase: ProxyPostalCodeUseCaseProtocol
     private let coordinator: LoadingScreenCoordinatorProtocol
     
     private lazy var loadingViewModel: LoadingViewModel = {
@@ -59,9 +59,9 @@ final class LoadingScreenViewModel: LoadingScreenViewModelProtocol {
     
     // MARK: - Init
     
-    init(postalCodeUseCase: PostalCodeUseCaseProtocol,
+    init(proxyPostalCodeUseCase: ProxyPostalCodeUseCaseProtocol,
          coordinator: LoadingScreenCoordinatorProtocol) {
-        self.postalCodeUseCase = postalCodeUseCase
+        self.proxyPostalCodeUseCase = proxyPostalCodeUseCase
         self.coordinator = coordinator
     }
     
@@ -113,7 +113,7 @@ final class LoadingScreenViewModel: LoadingScreenViewModelProtocol {
     }
     
     private func downloadPostalCodes() {
-        postalCodeUseCase.downloadPostalCodes()
+        proxyPostalCodeUseCase.downloadPostalCodes(cachePolicy: .cacheElseLoad)
             .trackError(errorTracker)
             .asDriver()
             .sink { [weak self] postalCodes in
@@ -125,7 +125,7 @@ final class LoadingScreenViewModel: LoadingScreenViewModelProtocol {
     }
     
     private func savePostalCodes(_ postalCodes: [PostalCode]) {
-        postalCodeUseCase.savePostalCodes(postalCodes)
+        proxyPostalCodeUseCase.savePostalCodes(postalCodes)
             .trackError(errorTracker)
             .asDriver()
             .sink { [weak self] postalCodes in

@@ -21,10 +21,10 @@ public protocol PostalCodesRepositoryProtocol {
 
 public class PostalCodesRepository: PostalCodesRepositoryProtocol {
     private let storageRepository: PostalCodesStorageRepositoryProtocol
-    private let remoteRepository: PostalCodesRemoteRepositoryType
+    private let remoteRepository: PostalCodesRemoteRepositoryProtocol
     
     public init(storageRepository: PostalCodesStorageRepositoryProtocol,
-                remoteRepository: PostalCodesRemoteRepositoryType) {
+                remoteRepository: PostalCodesRemoteRepositoryProtocol) {
         self.storageRepository = storageRepository
         self.remoteRepository = remoteRepository
     }

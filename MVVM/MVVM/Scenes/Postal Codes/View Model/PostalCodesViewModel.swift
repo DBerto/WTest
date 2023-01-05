@@ -40,7 +40,7 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
     
     // MARK: - Properties
     
-    private let useCase: PostalCodeUseCaseProtocol
+    private let proxyUseCase: ProxyPostalCodeUseCaseProtocol
     private let coordinator: PostalCodesCoordinatorProtocol
     private var postalCodes: [PostalCode] = []
     
@@ -51,9 +51,9 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
     
     // MARK: - Init
     
-    init(useCase: PostalCodeUseCaseProtocol,
+    init(proxyUseCase: ProxyPostalCodeUseCaseProtocol,
          coordinator: PostalCodesCoordinatorProtocol) {
-        self.useCase = useCase
+        self.proxyUseCase = proxyUseCase
         self.coordinator = coordinator
     }
     
@@ -68,7 +68,7 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
         input.viewDidLoadTrigger
             .flatMap { [weak self] _ -> ObservableType<[PostalCode]> in
                 guard let self = self else { return Empty<[PostalCode], Never>().asObservable() }
-                return self.useCase.fetchPostalCodes()
+                return self.proxyUseCase.fetchPostalCodes()
                     .trackActivity(self.isSearching)
             }
             .replaceError(with: [])
@@ -111,7 +111,7 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
     private func fetchPostalCodes() {
         endpointsBag.cancel()
         
-        useCase.fetchPostalCodes()
+        proxyUseCase.fetchPostalCodes()
             .trackActivity(isSearching)
             .replaceError(with: [])
             .sink { [weak self] postalCodes in
@@ -124,7 +124,7 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
     private func searchRequestBy(_ searchTerm: String) {
         tempDisposeBag.cancel()
         
-        useCase.searchPostalCodes(withText: searchTerm)
+        proxyUseCase.searchPostalCodes(withText: searchTerm)
             .trackActivity(isSearching)
             .replaceError(with: [])
             .sink { [weak self] postalCodes in

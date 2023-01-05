@@ -9,11 +9,11 @@ import Foundation
 import WTestCommon
 import Combine
 
-public protocol PostalCodesRemoteRepositoryType: HTTPClientProtocol {
+public protocol PostalCodesRemoteRepositoryProtocol: HTTPClientProtocol {
     func getPostalCodes() async throws -> [PostalCodeResponse]
 }
 
-public final class PostalCodesRemoteRepository: PostalCodesRemoteRepositoryType {
+public final class PostalCodesRemoteRepository: PostalCodesRemoteRepositoryProtocol {
     public let client: NetworkAgent
     
     public init(client: NetworkAgent = .init()) {

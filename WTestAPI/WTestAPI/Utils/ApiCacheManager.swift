@@ -10,7 +10,27 @@ import WTestCommon
 
 // https://blog.devgenius.io/caching-with-nscache-in-ios-2e97be8d6b53
 
-public final class ApiCacheManager<Key: Hashable, Value> {
+public enum ApiCachePolicy: String, CaseIterable {
+    case ignoringCache
+    case cacheElseLoad
+    case cacheAndLoad
+    case cacheDontLoad
+}
+
+public protocol ApiCacheManagerProtocol<Key, Value> {
+    associatedtype Key
+    associatedtype Value
+    
+    func insert(_ value: Value,
+                forKey key: Key,
+                timeToLiveInMinutes: Int)
+    func insert(_ value: Value,
+                forKey key: Key)
+    func value(forKey key: Key) -> Value?
+    func removeValue(forKey key: Key)
+}
+
+public final class ApiCacheManager<Key: Hashable, Value>: ApiCacheManagerProtocol {
     // MARK: - KeyWrapper
     
     public final class KeyWrapper: NSObject {
@@ -49,7 +69,7 @@ public final class ApiCacheManager<Key: Hashable, Value> {
     
     // MARK: - Init
     
-    init(cache: NSCache<KeyWrapper, CacheEntry> = .init()) {
+    public init(cache: NSCache<KeyWrapper, CacheEntry> = .init()) {
         self.cache = cache
     }
     
@@ -71,7 +91,7 @@ public final class ApiCacheManager<Key: Hashable, Value> {
     
     // MARK: - Functions
     
-    func insert(_ value: Value,
+    public func insert(_ value: Value,
                 forKey key: Key,
                 timeToLiveInMinutes: Int = 5) {
         let timeInSeconds: Double = .init(timeToLiveInMinutes * 60)
@@ -83,14 +103,14 @@ public final class ApiCacheManager<Key: Hashable, Value> {
                         forKey: KeyWrapper(key))
     }
     
-    func insert(_ value: Value,
+    public func insert(_ value: Value,
                 forKey key: Key) {
         let entry: CacheEntry = .init(value: value)
         cache.setObject(entry,
                         forKey: KeyWrapper(key))
     }
     
-    func value(forKey key: Key) -> Value? {
+    public func value(forKey key: Key) -> Value? {
         guard let entry = cache.object(forKey: KeyWrapper(key)) else { return nil }
         guard let expiryDate = entry.expiryDate else { return entry.value }
         
@@ -104,7 +124,7 @@ public final class ApiCacheManager<Key: Hashable, Value> {
         return entry.value
     }
     
-    func removeValue(forKey key: Key) {
+    public func removeValue(forKey key: Key) {
         cache.removeObject(forKey: KeyWrapper(key))
     }
 }
