@@ -27,7 +27,7 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
     
     // MARK: - ViewInput
 
-    @ObservedObject var viewState: ViewInputObservable<ViewData>
+    var viewState: ViewInputObservable<ViewData>
 
     // MARK: - Properties
 

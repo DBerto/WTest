@@ -17,7 +17,7 @@ protocol ViewModelProtocol {
                    disposeBag: CancellableBag) -> Output
 }
 
-public class ViewInputObservable<T: Hashable>: ObservableObject {
+public class ViewInputObservable<T: Hashable> {
     public init() { }
     public var value = PassthroughSubject<ViewInput<T>, Never>()
 }

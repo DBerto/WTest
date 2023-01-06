@@ -31,7 +31,7 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
     
     // MARK: - ViewInput
     
-    @ObservedObject var viewState: ViewInputObservable<ViewData>
+    var viewState: ViewInputObservable<ViewData>
     
     // MARK: - Properties
     
