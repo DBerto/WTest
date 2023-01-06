@@ -77,7 +77,7 @@ class MainScreenViewController: BaseViewController,
     // MARK: - Bind ViewModel
     
     func bindViewModel() {
-        viewModel.viewState.value
+        viewModel.viewState
             .sink { viewData in
                 switch viewData {
                 case .load: break

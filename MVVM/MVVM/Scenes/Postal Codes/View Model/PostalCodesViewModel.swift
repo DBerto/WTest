@@ -83,7 +83,7 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
     private func rxSetup() {
         isSearching
             .sink { [weak self] value in
-                self?.viewState.value.send(.isLoading(value))
+                self?.viewState.send(.isLoading(value))
             }
             .store(in: disposeBag)
         
@@ -137,6 +137,6 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
         let postalCodeFields = postalCodes.map { PostalCodeFieldViewModel(local: $0.local,
                                                                           number: $0.number) }
         let postalCodesVM = PostalCodeFieldsViewModel(postalCodeFields: postalCodeFields)
-        viewState.value.send(.load(.dataSourceModel(postalCodesVM)))
+        viewState.send(.load(.dataSourceModel(postalCodesVM)))
     }
 }

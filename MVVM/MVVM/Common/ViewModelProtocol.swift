@@ -17,10 +17,7 @@ protocol ViewModelProtocol {
                    disposeBag: CancellableBag) -> Output
 }
 
-public class ViewInputObservable<T: Hashable> {
-    public init() { }
-    public var value = PassthroughSubject<ViewInput<T>, Never>()
-}
+typealias ViewInputObservable<T: Hashable> = PassthroughSubject<ViewInput<T>, Never>
 
 public enum ViewInput<T: Hashable> {
     case load(T)

@@ -46,7 +46,7 @@ class PostalCodesViewController: TableViewController,
     // MARK: - Bind ViewModel
     
     func bindViewModel() {
-        viewModel.viewState.value
+        viewModel.viewState
             .asDriver()
             .sink { [weak self] viewDate in
                 switch viewDate {
