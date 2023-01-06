@@ -23,6 +23,7 @@ open class ViewLifecycle: LifecycleObservable {
              viewWillAppear,
              viewDidAppear,
              viewWillDisappear,
+             viewDidDisappear,
              deinitialize
     }
     
@@ -30,6 +31,7 @@ open class ViewLifecycle: LifecycleObservable {
     public private(set) lazy var viewWillAppearObs = Trigger()
     public private(set) lazy var viewDidAppearObs = Trigger()
     public private(set) lazy var viewWillDisappearObs = Trigger()
+    public private(set) lazy var viewDidDisappearObs = Trigger()
     public private(set) lazy var deinitializeObs = Trigger()
     
     public func trigger(_ event: Event) {
@@ -42,6 +44,8 @@ open class ViewLifecycle: LifecycleObservable {
             viewDidAppearObs.trigger()
         case .viewWillDisappear:
             viewWillDisappearObs.trigger()
+        case .viewDidDisappear:
+            viewDidDisappearObs.trigger()
         case .deinitialize:
             deinitializeObs.trigger()
         }

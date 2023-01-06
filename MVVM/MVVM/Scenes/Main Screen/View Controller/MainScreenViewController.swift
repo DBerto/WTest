@@ -18,9 +18,8 @@ class MainScreenViewController: BaseViewController,
     
     // MARK: - Properties
     
-    private let postalCodesButtonTrigger: Trigger = .init()
-    
     var viewModel: MainScreenViewModel!
+    private(set) var input: ViewInputObservable<MainScreenViewModel.ViewData> = .init()
     
     lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView()
@@ -34,8 +33,9 @@ class MainScreenViewController: BaseViewController,
         button.setTitle(R.string.localizable.postalCodes(), for: .normal)
         button.backgroundColor = .systemBlue
         button.publisher(for: .touchUpInside)
-            .map({ _ in return () })
-            .subscribe(postalCodesButtonTrigger)
+            .sink { [weak self] _ in
+                self?.viewModel.performAction(.showPostalCodes)
+            }
             .store(in: disposeBag)
         return button
     }()
@@ -47,7 +47,7 @@ class MainScreenViewController: BaseViewController,
         setupView()
         setupNavBar()
         bindViewModel()
-        lifecycle.trigger(.viewDidLoad)
+        viewModel.performAction(.viewDidLoad)
     }
     
     // MARK: - Setup
@@ -77,8 +77,13 @@ class MainScreenViewController: BaseViewController,
     // MARK: - Bind ViewModel
     
     func bindViewModel() {
-        _ = viewModel.transform(input: MainScreenViewModel.Input(viewDidLoadTrigger: lifecycle.viewDidLoadObs.asDriver(),
-                                                                 postalCodesButtonTrigger: postalCodesButtonTrigger.asDriver()),
-                                disposeBag: disposeBag)
+        viewModel.viewState.value
+            .sink { viewData in
+                switch viewData {
+                case .load: break
+                case .isLoading: break
+                }
+            }
+            .store(in: disposeBag)
     }
 }

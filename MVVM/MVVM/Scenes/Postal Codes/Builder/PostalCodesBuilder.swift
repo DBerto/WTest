@@ -25,7 +25,8 @@ class PostalCodesBuilder: PostalCodesBuilderType {
                                                remoteRepository: remoteRepository)
         let useCase = PostalCodeUseCase(repository: repository)
         let proxyUseCase = ProxyPostalCodeUseCase(useCase: useCase)
-        let viewModel = PostalCodesViewModel(proxyUseCase: proxyUseCase,
+        let viewModel = PostalCodesViewModel(viewState: vc.input,
+                                             proxyUseCase: proxyUseCase,
                                              coordinator: coordinator)
         vc.viewModel = viewModel
         vc.dataProvider = dataProvider

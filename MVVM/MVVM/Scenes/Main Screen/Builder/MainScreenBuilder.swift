@@ -15,7 +15,8 @@ class MainScreenBuilder: MainScreenBuilderType {
     func setup(coordinator: MainScreenCoordinator) -> MainScreenViewControllerProtocol {
         let vc = MainScreenViewController()
         vc.navigationItem.hidesBackButton = true
-        let viewModel = MainScreenViewModel(coordinator: coordinator)
+        let viewModel = MainScreenViewModel(viewState: vc.input,
+                                            coordinator: coordinator)
         vc.viewModel = viewModel
         return vc
     }

@@ -31,6 +31,27 @@ open class BaseViewController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        lifecycle.trigger(.viewDidLoad)
+    }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        lifecycle.trigger(.viewWillAppear)
+    }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        lifecycle.trigger(.viewDidAppear)
+    }
+    
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        lifecycle.trigger(.viewWillDisappear)
+    }
+    
+    open override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        lifecycle.trigger(.viewDidDisappear)
     }
     
     public func showAlert(with title: String? = nil, message: String? = nil) {

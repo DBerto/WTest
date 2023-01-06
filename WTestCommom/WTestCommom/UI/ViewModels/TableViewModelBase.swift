@@ -8,8 +8,7 @@
 
 import Foundation
 
-open class TableViewModelBase {
-
+open class TableViewModelBase: Hashable {
     public init() { }
     
     public var sections: [ViewModelSection]!
@@ -25,9 +24,17 @@ open class TableViewModelBase {
     public func item(for indexPath: IndexPath) -> FieldViewModel {
         return sections[indexPath.section].item(for: indexPath.row)
     }
+    public static func == (lhs: TableViewModelBase,
+                           rhs: TableViewModelBase) -> Bool {
+        lhs.sections == rhs.sections
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(sections)
+    }
 }
 
-public class ViewModelSection {
+public class ViewModelSection: Hashable {
     public var fields: [FieldViewModel]
     public var title: String
     
@@ -43,6 +50,22 @@ public class ViewModelSection {
     public func item(for rowId: Int) -> FieldViewModel {
         return fields[rowId]
     }
+    
+    public static func == (lhs: ViewModelSection,
+                           rhs: ViewModelSection) -> Bool {
+        lhs.fields == rhs.fields &&
+        lhs.title == rhs.title
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(fields)
+        hasher.combine(title)
+    }
 }
 
-public class FieldViewModel { }
+public class FieldViewModel: Hashable {
+    public static func == (lhs: FieldViewModel,
+                           rhs: FieldViewModel) -> Bool { true }
+    
+    public func hash(into hasher: inout Hasher) { }
+}

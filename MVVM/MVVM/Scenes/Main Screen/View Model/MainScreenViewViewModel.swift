@@ -8,8 +8,9 @@
 import Foundation
 import WTestCommon
 import Combine
+import SwiftUI
 
-protocol MainScreenViewModelProtocol: ViewModelProtocol { }
+protocol MainScreenViewModelProtocol { }
 
 final class MainScreenViewModel: MainScreenViewModelProtocol {
     // MARK: - Enums
@@ -20,69 +21,66 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
         case showError(Error)
     }
     
-    enum Strings {
-        
-    }
+    enum Strings { }
     
-    // MARK: - Input/Output
+    enum ViewData: Hashable { }
     
-    struct Input {
-        let viewDidLoadTrigger: Driver<Void>
-        let postalCodesButtonTrigger: Driver<Void>
-    }
-    
-    struct Output { }
-    
+    // MARK: - ViewInput
+
+    @ObservedObject var viewState: ViewInputObservable<ViewData>
+
     // MARK: - Properties
-    
+
     private let coordinator: MainScreenCoordinatorProtocol
     
     // MARK: - Publishers
     
     private let errorTracker: ErrorTracker = .init()
+    private let disposeBag: CancellableBag = .init()
     
     // MARK: - Init
     
-    init(coordinator: MainScreenCoordinatorProtocol) {
+    init(viewState: ViewInputObservable<ViewData>,
+         coordinator: MainScreenCoordinatorProtocol) {
         self.coordinator = coordinator
+        self.viewState = viewState
+        rxSetup()
     }
     
-    // MARK: - Transform
+    // MARK: - Perform Action
     
-    func transform(input: Input,
-                   disposeBag: CancellableBag) -> Output {
-        
-        input.viewDidLoadTrigger
-            .sink { [unowned self] in
-                performAction(.viewDidLoad)
-            }
-            .store(in: disposeBag)
-        
-        input.postalCodesButtonTrigger
-            .sink { [unowned self] in
-                performAction(.showPostalCodes)
-            }
-            .store(in: disposeBag)
-        
+    func performAction(_ action: Action) {
+        switch action {
+        case .viewDidLoad:
+            present(action)
+        case .showPostalCodes:
+            present(action)
+        case .showError(let error):
+            present(action, content: error)
+        }
+    }
+    
+    // MARK: - Helpers
+    
+    private func rxSetup() {
         errorTracker
             .asDriver()
             .sink { [weak self] error in
                 self?.performAction(.showError(error))
             }
             .store(in: disposeBag)
-        
-        return Output()
     }
     
-    
-    // MARK: - Helpers
-    
-    private func performAction(_ action: Action) {
+    private func present(_ action: Action,
+                         content: Any? = nil) {
+        let error: Error? = content as? Error
+        
         switch action {
         case .viewDidLoad: break
         case .showPostalCodes:
             coordinator.perform(.showPostalCodes)
-        case .showError(let error):
+        case .showError:
+            guard let error = error else { return }
             coordinator.perform(.error(error))
         }
     }

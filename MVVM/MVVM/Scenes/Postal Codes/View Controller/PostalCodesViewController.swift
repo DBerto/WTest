@@ -10,21 +10,17 @@ import UIKit
 import WTestCommon
 import Combine
 
-protocol PostalCodesViewControllerProtocol: TableViewController {
-    var searchRequestTrigger: PassthroughSubject<String?, Never> { get }
-}
+protocol PostalCodesViewControllerProtocol: TableViewController { }
 
 class PostalCodesViewController: TableViewController,
                                  PostalCodesViewControllerProtocol {
     
     // MARK: - Properties
-    private(set) var viewDidLoadTrigger: Trigger = .init()
-    private(set) var searchRequestTrigger: PassthroughSubject<String?, Never> = .init()
-    
-    private var oldTextSearch: String?
     
     var viewModel: PostalCodesViewModel!
     var dataProvider: PostalCodesDataProvider!
+    private(set) var input: ViewInputObservable<PostalCodesViewModel.ViewData> = .init()
+    private var oldTextSearch: String?
     
     // MARK: - View Cycle
     
@@ -32,7 +28,7 @@ class PostalCodesViewController: TableViewController,
         super.viewDidLoad()
         setupNavBar()
         bindViewModel()
-        lifecycle.trigger(.viewDidLoad)
+        viewModel.performAction(.viewDidLoad)
     }
     
     // MARK: - Setup
@@ -50,27 +46,26 @@ class PostalCodesViewController: TableViewController,
     // MARK: - Bind ViewModel
     
     func bindViewModel() {
-        let output = viewModel.transform(input: PostalCodesViewModel.Input(viewDidLoadTrigger: lifecycle.viewDidLoadObs.asDriver(),
-                                                                           searchRequestTrigger: searchRequestTrigger.asDriver()),
-                                         disposeBag: disposeBag)
-        output.dataSourceModel
+        viewModel.viewState.value
             .asDriver()
-            .sink { [weak self] dataSourceModel in
-                self?.dataProvider.viewModel = dataSourceModel
-            }.store(in: disposeBag)
-        
-        output.isSearching
-            .dropFirst()
-            .asDriver()
-            .sink { [weak self] value in
-                if value {
-                    self?.refreshControl?.isHidden = false
-                    self?.refreshControl?.beginRefreshing()
-                } else {
-                    self?.refreshControl?.isHidden = true
-                    self?.refreshControl?.endRefreshing()
+            .sink { [weak self] viewDate in
+                switch viewDate {
+                case .isLoading(let value):
+                    if value {
+                        self?.refreshControl?.isHidden = false
+                        self?.refreshControl?.beginRefreshing()
+                    } else {
+                        self?.refreshControl?.isHidden = true
+                        self?.refreshControl?.endRefreshing()
+                    }
+                case .load(let model):
+                    switch model {
+                    case .dataSourceModel(let postalCodes):
+                        self?.dataProvider.viewModel = postalCodes
+                    }
                 }
-            }.store(in: disposeBag)
+            }
+            .store(in: disposeBag)
     }
     
     // MARK: - UISearchResultsUpdating
@@ -95,7 +90,7 @@ class PostalCodesViewController: TableViewController,
         let text = searchController.searchBar.text
         
         if oldTextSearch != nil {
-            searchRequestTrigger.send(text)
+            viewModel.performAction(.search(text ?? ""))
         }
         
         oldTextSearch = text

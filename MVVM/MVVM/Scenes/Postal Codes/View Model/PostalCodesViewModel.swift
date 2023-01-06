@@ -9,8 +9,9 @@ import Foundation
 import WTestCommon
 import WTestDomain
 import Combine
+import SwiftUI
 
-protocol PostalCodesViewModelProtocol: ViewModelProtocol { }
+protocol PostalCodesViewModelProtocol { }
 
 final class PostalCodesViewModel: PostalCodesViewModelProtocol {
     // MARK: - Enums
@@ -19,24 +20,18 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
         case viewDidLoad
         case reloadDataSource
         case fetchPostalCodes
-        case search(String)
+        case search(String?)
     }
     
-    enum Strings {
-        
+    enum Strings { }
+    
+    enum ViewData: Hashable {
+        case dataSourceModel(PostalCodeFieldsViewModel)
     }
     
-    // MARK: - Input/Output
+    // MARK: - ViewInput
     
-    struct Input {
-        let viewDidLoadTrigger: Driver<Void>
-        let searchRequestTrigger: Driver<String?>
-    }
-    
-    struct Output {
-        let isSearching: ActivityTracker
-        let dataSourceModel: PassthroughSubject<PostalCodeFieldsViewModel, Never>
-    }
+    @ObservedObject var viewState: ViewInputObservable<ViewData>
     
     // MARK: - Properties
     
@@ -46,55 +41,29 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
     
     // MARK: - Publishers
     
+    private let searchRequestTrigger: PassthroughSubject<String?, Never> = .init()
     private let isSearching: ActivityTracker = .init(false)
-    private let dataSourceModel: PassthroughSubject<PostalCodeFieldsViewModel, Never> = .init()
     
-    // MARK: - Init
-    
-    init(proxyUseCase: ProxyPostalCodeUseCaseProtocol,
-         coordinator: PostalCodesCoordinatorProtocol) {
-        self.proxyUseCase = proxyUseCase
-        self.coordinator = coordinator
-    }
-    
-    // MARK: - Transform
-    
+    private let disposeBag: CancellableBag = .init()
     private let endpointsBag: CancellableBag = .init()
     private let tempDisposeBag: CancellableBag = .init()
     
-    func transform(input: Input,
-                   disposeBag: CancellableBag) -> Output {
-        
-        input.viewDidLoadTrigger
-            .flatMap { [weak self] _ -> ObservableType<[PostalCode]> in
-                guard let self = self else { return Empty<[PostalCode], Never>().asObservable() }
-                return self.proxyUseCase.fetchPostalCodes()
-                    .trackActivity(self.isSearching)
-            }
-            .replaceError(with: [])
-            .sink { [weak self] postalCodes in
-                self?.postalCodes = postalCodes
-                self?.reloadDataSource()
-            }
-            .store(in: disposeBag)
-        
-        input.searchRequestTrigger
-            .compactMap { $0 }
-            .debounce(for: 0.5, scheduler: RunLoop.main)
-            .removeDuplicates()
-            .sink { [unowned self] searchTerm in
-                performAction(.search(searchTerm))
-            }
-            .store(in: disposeBag)
-        
-        return Output(isSearching: isSearching,
-                      dataSourceModel: dataSourceModel)
+    // MARK: - Init
+    
+    init(viewState: ViewInputObservable<ViewData>,
+         proxyUseCase: ProxyPostalCodeUseCaseProtocol,
+         coordinator: PostalCodesCoordinatorProtocol) {
+        self.viewState = viewState
+        self.proxyUseCase = proxyUseCase
+        self.coordinator = coordinator
+        rxSetup()
     }
     
+    // MARK: - Perform Action
     
-    // MARK: - Helpers
-    
-    private func performAction(_ action: Action) {
+    func performAction(_ action: Action) {
+        tempDisposeBag.cancel()
+        
         switch action {
         case .viewDidLoad:
             performAction(.reloadDataSource)
@@ -104,7 +73,37 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
         case .fetchPostalCodes:
             fetchPostalCodes()
         case .search(let searchTerm):
-            searchRequestBy(searchTerm)
+            searchRequestTrigger.send(searchTerm)
+        }
+    }
+    
+    
+    // MARK: - Helpers
+    
+    private func rxSetup() {
+        isSearching
+            .sink { [weak self] value in
+                self?.viewState.value.send(.isLoading(value))
+            }
+            .store(in: disposeBag)
+        
+        searchRequestTrigger
+            .compactMap { $0 }
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink { [unowned self] searchTerm in
+                searchRequestBy(searchTerm)
+            }
+            .store(in: disposeBag)
+    }
+    
+    private func present(_ action: Action,
+                         content: Any? = nil) {
+        switch action {
+        case .viewDidLoad: break
+        case .reloadDataSource: break
+        case .fetchPostalCodes: break
+        case .search: break
         }
     }
     
@@ -138,6 +137,6 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
         let postalCodeFields = postalCodes.map { PostalCodeFieldViewModel(local: $0.local,
                                                                           number: $0.number) }
         let postalCodesVM = PostalCodeFieldsViewModel(postalCodeFields: postalCodeFields)
-        dataSourceModel.send(postalCodesVM)
+        viewState.value.send(.load(.dataSourceModel(postalCodesVM)))
     }
 }
