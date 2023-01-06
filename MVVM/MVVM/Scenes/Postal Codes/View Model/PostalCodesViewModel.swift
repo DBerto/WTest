@@ -115,7 +115,7 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
             .replaceError(with: [])
             .sink { [weak self] postalCodes in
                 self?.postalCodes = postalCodes
-                self?.reloadDataSource()
+                self?.performAction(.reloadDataSource)
             }
             .store(in: endpointsBag)
     }
@@ -128,7 +128,7 @@ final class PostalCodesViewModel: PostalCodesViewModelProtocol {
             .replaceError(with: [])
             .sink { [weak self] postalCodes in
                 self?.postalCodes = postalCodes
-                self?.reloadDataSource()
+                self?.performAction(.reloadDataSource)
             }
             .store(in: tempDisposeBag)
     }
