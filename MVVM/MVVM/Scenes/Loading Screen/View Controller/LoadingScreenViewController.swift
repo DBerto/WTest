@@ -31,7 +31,6 @@ final class LoadingScreenViewController: BaseViewController, LoadingScreenViewCo
         setupView()
         setupNavBar()
         bindViewModel()
-        lifecycle.trigger(.viewDidLoad)
     }
     
     override func viewDidAppear(_ animated: Bool) {
